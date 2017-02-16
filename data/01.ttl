@@ -1,0 +1,127 @@
+@prefix : <https://w3id.org/akn/data/undo/> .
+@prefix undo: <https://w3id.org/akn/ontology/undo/> .
+@prefix allot: <https://w3id.org/akn/ontology/allot/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix lan: <http://id.loc.gov/vocabulary/iso639-1/> .
+@prefix oa: <http://www.w3.org/ns/oa#> .
+
+# Linking to the main ontology
+<https://w3id.org/akn/ontology/undo-abox> a owl:Ontology ;
+    owl:imports <https://w3id.org/akn/ontology/undo> .
+
+
+# In the preface of the UN resolution A/RES/50/100 of 2 February 1996
+# there are references to:
+# 1. the UN resolution A/RES/47/180 of 22 December 1992;
+# 2. the Government of Turkey;
+# 3. the United Nations Conference on Human Settlements (Habitat II).
+
+:a-res-50-100-1996-02-02 a undo:UNResolution ;
+	allot:mentions
+		:a-res-47-180-1992-12-22 ,
+		:government-of-turkey ,
+		:habitat-ii .
+
+:a-res-47-180-1992-12-22 a undo:UNResolution .
+
+:government-of-turkey a allot:Organization .
+
+:habitat-ii a allot:Event .
+
+
+# According to the content of the UN resolution A/RES/50/100 of 2
+# February 1996, the General Assembly:
+# 1. recalls the resolution A/RES/47/180 of 22 December 1992;
+# 2. reiterates its gratitude to the Government of Turkey;
+# 3. notes the progress that has been made so far in the
+#    preparations for the United Nations Conference on Human
+#    Settlements (Habitat II).
+
+:a-res-50-100-1996-02-02 a undo:UNResolution .
+
+:a-res-47-180-1992-12-22 a undo:UNResolution .
+
+:general-assembly a allot:Organization .
+
+:organization a allot:Organization .
+
+:government-of-turkey a allot:Organization .
+
+:habitat-ii a allot:Event .
+
+:recall a allot:Concept .
+
+:reiterate-its-gratitude a allot:Concept .
+
+:note-the-progress a allot:Concept .
+
+:relation-1 a undo:Relation ;
+	undo:hasProponent :general-assembly ;
+	undo:hasSemantics :recall ;
+	undo:hasReceiver :a-res-47-180-1992-12-22 .
+
+:relation-2 a undo:Relation ;
+	undo:hasProponent :general-assembly ;
+	undo:hasSemantics :reiterate-its-gratitude ;
+	undo:hasReceiver :government-of-turkey .
+
+:relation-3 a undo:Relation ;
+	undo:hasProponent :general-assembly ;
+	undo:hasSemantics :note-the-progress ;
+	undo:hasReceiver :habitat-ii .
+
+:annotation-1-a-res-50-100-1996-02-02 a undo:Annotation ;
+    oa:hasBody :relation-1 ;
+    oa:hasTarget :a-res-50-100-1996-02-02 .
+
+:annotation-2-a-res-50-100-1996-02-02 a undo:Annotation ;
+    oa:hasBody :relation-2 ;
+    oa:hasTarget :a-res-50-100-1996-02-02 .
+
+:annotation-3-a-res-50-100-1996-02-02 a undo:Annotation ;
+    oa:hasBody :relation-3 ;
+    oa:hasTarget :a-res-50-100-1996-02-02 .
+
+
+# The UN resolution A/RES/50/100 has been published in six different
+# languages. The term "decides" has been used twice in the English
+# version, and, in parallel, the term "decide" has been used twice
+# in the Spanish version. Both the terms actually refers to the same
+# higher-level concept of taking a decision, even if this aspect has
+# not been made formally explicit in the document itself.
+
+:a-res-50-100-1996-02-02 a undo:UNResolution ;
+    allot:hasRealization
+        :a-res-50-100-1996-02-02-en ,
+        :a-res-50-100-1996-02-02-es .
+
+:a-res-50-100-1996-02-02-en a undo:UNDocumentVersion ;
+    dcterms:language lan:en .
+
+:a-res-50-100-1996-02-02-es a undo:UNDocumentVersion ;
+    dcterms:language lan:es .
+
+:decides a allot:Term ;
+    undo:hasRelatedConcept :taking-a-decision .
+
+:annotation-1-a-res-50-100-1996-02-02-en a undo:Annotation ;
+    oa:hasBody :decides ;
+    oa:hasTarget :a-res-50-100-1996-02-02-en .
+
+:annotation-2-a-res-50-100-1996-02-02-en a undo:Annotation ;
+    oa:hasBody :decides ;
+    oa:hasTarget :a-res-50-100-1996-02-02-en .
+
+:decide a allot:Term ;
+    undo:hasRelatedConcept :taking-a-decision .
+
+:annotation-1-a-res-50-100-1996-02-02-es a undo:Annotation ;
+    oa:hasBody :decide ;
+    oa:hasTarget :a-res-50-100-1996-02-02-es .
+
+:annotation-2-a-res-50-100-1996-02-02-es a undo:Annotation ;
+    oa:hasBody :decide ;
+    oa:hasTarget :a-res-50-100-1996-02-02-es .
+
+:taking-a-decision a allot:Concept .
