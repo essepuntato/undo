@@ -17,13 +17,13 @@
 # 2. the Government of Turkey;
 # 3. the United Nations Conference on Human Settlements (Habitat II).
 
-:a-res-50-100-1996-02-02 a undo:UNResolution ;
+:a-res-50-100-1996-02-02 a undo:Resolution ;
 	allot:mentions
 		:a-res-47-180-1992-12-22 ,
 		:government-of-turkey ,
 		:habitat-ii .
 
-:a-res-47-180-1992-12-22 a undo:UNResolution .
+:a-res-47-180-1992-12-22 a undo:Resolution .
 
 :government-of-turkey a allot:Organization .
 
@@ -38,9 +38,9 @@
 #    preparations for the United Nations Conference on Human
 #    Settlements (Habitat II).
 
-:a-res-50-100-1996-02-02 a undo:UNResolution .
+:a-res-50-100-1996-02-02 a undo:Resolution .
 
-:a-res-47-180-1992-12-22 a undo:UNResolution .
+:a-res-47-180-1992-12-22 a undo:Resolution .
 
 :general-assembly a allot:Organization .
 
@@ -91,15 +91,15 @@
 # higher-level concept of taking a decision, even if this aspect has
 # not been made formally explicit in the document itself.
 
-:a-res-50-100-1996-02-02 a undo:UNResolution ;
+:a-res-50-100-1996-02-02 a undo:Resolution ;
     allot:hasRealization
         :a-res-50-100-1996-02-02-en ,
         :a-res-50-100-1996-02-02-es .
 
-:a-res-50-100-1996-02-02-en a undo:UNDocumentVersion ;
+:a-res-50-100-1996-02-02-en a undo:DocumentVersion ;
     dcterms:language lan:en .
 
-:a-res-50-100-1996-02-02-es a undo:UNDocumentVersion ;
+:a-res-50-100-1996-02-02-es a undo:DocumentVersion ;
     dcterms:language lan:es .
 
 :decides a allot:Term ;

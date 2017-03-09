@@ -1,0 +1,41 @@
+@prefix : <https://w3id.org/akn/ontology/undo-imports/> .
+@prefix undo: <https://w3id.org/akn/ontology/undo/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix oa: <http://www.w3.org/ns/oa#> .
+@prefix lan: <http://id.loc.gov/vocabulary/iso639-1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pro: <http://purl.org/spar/pro/> .
+@prefix pso: <http://purl.org/spar/pso/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix tvc: <http://www.essepuntato.it/2012/04/tvc/> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix frbr: <http://purl.org/vocab/frbr/core#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix scoro: <http://purl.org/spar/scoro/> .
+@prefix dcterms: <http://purl.org/spar/dcterms/> .
+@prefix fedregs: <http://www.example.com/fedregs/> .
+
+<https://w3id.org/akn/ontology/undo-imports> a owl:Ontology ;
+	owl:versionIRI :2017-03-08 ;
+	owl:imports undo:2017-03-08 , 
+	<https://w3id.org/akn/ontology/allot/2017-01-31> , 
+	<http://www.estrellaproject.org/lkif-core/action.owl> , 
+	<http://www.estrellaproject.org/lkif-core/role.owl> , 
+	<http://www.w3.org/ns/oa#> , 
+	<http://purl.org/spar/frbr> , 
+	<http://purl.org/spar/pso> , 
+	<http://purl.org/spar/fabio/> , 
+	<http://purl.org/spar/pro/> , 
+	<http://www.w3.org/2004/02/skos/core> ;
+	rdfs:comment "This is a particular version of the United Nations Document Ontology (UNDO) that explicitly specifies all the imported ontologies formally."@en ;
+	<http://purl.org/vocab/vann/preferredNamespacePrefix> "undo" ;
+	rdfs:label "UNDO - imports"@en ;
+	owl:versionInfo "March 8, 2017"@en ;
+	dc:title "The United Nations Document Ontology (UNDO): formal imports"@en ;
+	dc:creator "Silvio Peroni (http://orcid.org/0000-0003-0530-4305)" ;
+	<http://purl.org/vocab/vann/preferredNamespaceUri> "https://w3id.org/akn/ontology/undo-imports/" .
+
+
