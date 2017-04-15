@@ -1557,6 +1557,7 @@ What was the last entities produced by all the workflow executions?
             ?step pwo:hasNextStep ?another_step .
         }
     }"""@en ;
+    dc:rights "This work is distributed under a Creative Commons Attribution License (http://creativecommons.org/licenses/by/4.0/)."@en ;
     dc:title "The United Nations System Document Ontology (UNDO)"@en ;
     ns1:preferredNamespacePrefix "undo" ;
     ns1:preferredNamespaceUri "https://w3id.org/un/ontology/undo/" ;
