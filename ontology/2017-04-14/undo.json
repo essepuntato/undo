@@ -15,9 +15,21 @@
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "The class of all the types for categorising the steps in workflow descriptions."
+      }
+    ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
         "@id": "https://w3id.org/un/ontology/undo"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "step type"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
@@ -42,29 +54,41 @@
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "An atomic unit of a workflow that involves some input entity needed to complete the step, and produces some outcomes, such as a document."
+      }
+    ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
         "@id": "https://w3id.org/un/ontology/undo"
       }
     ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "step"
+      }
+    ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "_:fa7b28e9a37474b6fba492ce12ffec85ab21"
+        "@id": "_:fa4aeefa306f24ada9a4b2792423fcebdb22"
       },
       {
         "@id": "https://w3id.org/akn/ontology/allot/Concept"
       },
       {
-        "@id": "_:fa7b28e9a37474b6fba492ce12ffec85ab24"
-      },
-      {
-        "@id": "_:fa7b28e9a37474b6fba492ce12ffec85ab23"
-      },
-      {
         "@id": "http://purl.org/spar/pwo/Step"
       },
       {
-        "@id": "_:fa7b28e9a37474b6fba492ce12ffec85ab22"
+        "@id": "_:fa4aeefa306f24ada9a4b2792423fcebdb21"
+      },
+      {
+        "@id": "_:fa4aeefa306f24ada9a4b2792423fcebdb23"
+      },
+      {
+        "@id": "_:fa4aeefa306f24ada9a4b2792423fcebdb24"
       }
     ]
   },
@@ -92,16 +116,16 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
+        "@id": "_:fa4aeefa306f24ada9a4b2792423fcebdb18"
+      },
+      {
         "@id": "https://w3id.org/akn/ontology/allot/Concept"
       },
       {
-        "@id": "_:fa7b28e9a37474b6fba492ce12ffec85ab18"
+        "@id": "_:fa4aeefa306f24ada9a4b2792423fcebdb20"
       },
       {
-        "@id": "_:fa7b28e9a37474b6fba492ce12ffec85ab19"
-      },
-      {
-        "@id": "_:fa7b28e9a37474b6fba492ce12ffec85ab20"
+        "@id": "_:fa4aeefa306f24ada9a4b2792423fcebdb19"
       }
     ]
   },
@@ -114,10 +138,10 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://w3id.org/un/ontology/undo/Agent"
+        "@id": "http://www.estrellaproject.org/lkif-core/action.owl#Person"
       },
       {
-        "@id": "http://www.estrellaproject.org/lkif-core/action.owl#Person"
+        "@id": "https://w3id.org/un/ontology/undo/Agent"
       },
       {
         "@id": "http://xmlns.com/foaf/0.1/Person"
@@ -125,38 +149,10 @@
     ]
   },
   {
-    "@id": "https://w3id.org/un/ontology/undo/OfficialLetter",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Official written correspondence; communications or notes verbale concerning issues under the authority of the organisation to provide information, requiring specific action by the addressees or stating a position."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/un/ontology/undo"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "official letter"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/un/ontology/undo/Communication"
-      }
-    ]
-  },
-  {
     "@id": "http://id.loc.gov/vocabulary/iso639-1/zh",
     "@type": [
-      "https://w3id.org/un/ontology/undo/Language",
-      "http://www.w3.org/2002/07/owl#NamedIndividual"
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://w3id.org/un/ontology/undo/Language"
     ],
     "http://purl.org/dc/elements/1.1/description": [
       {
@@ -194,10 +190,10 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://w3id.org/un/ontology/undo/Agent"
+        "@id": "http://xmlns.com/foaf/0.1/Organization"
       },
       {
-        "@id": "http://xmlns.com/foaf/0.1/Organization"
+        "@id": "https://w3id.org/un/ontology/undo/Agent"
       },
       {
         "@id": "http://www.estrellaproject.org/lkif-core/action.owl#Organisation"
@@ -263,8 +259,8 @@
   {
     "@id": "http://id.loc.gov/vocabulary/iso639-1/ru",
     "@type": [
-      "http://www.w3.org/2002/07/owl#NamedIndividual",
-      "https://w3id.org/un/ontology/undo/Language"
+      "https://w3id.org/un/ontology/undo/Language",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
     ],
     "http://purl.org/dc/elements/1.1/description": [
       {
@@ -368,54 +364,6 @@
     ]
   },
   {
-    "@id": "_:fa7b28e9a37474b6fba492ce12ffec85ab32",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#allValuesFrom": [
-      {
-        "@id": "https://w3id.org/un/ontology/undo/Action"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://purl.org/spar/pwo/involvesAction"
-      }
-    ]
-  },
-  {
-    "@id": "_:fa7b28e9a37474b6fba492ce12ffec85ab31",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#allValuesFrom": [
-      {
-        "@id": "https://w3id.org/un/ontology/undo/Workflow"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://purl.org/spar/pwo/executes"
-      }
-    ]
-  },
-  {
-    "@id": "_:fa7b28e9a37474b6fba492ce12ffec85ab30",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#allValuesFrom": [
-      {
-        "@id": "https://w3id.org/un/ontology/undo/Step"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://purl.org/spar/pwo/hasStep"
-      }
-    ]
-  },
-  {
     "@id": "https://w3id.org/un/ontology/undo/hasReceiver",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
@@ -454,6 +402,34 @@
     ]
   },
   {
+    "@id": "https://w3id.org/un/ontology/undo/CodeOfConduct",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A document listing rules outlining the responsibilities of, or proper practices for, individuals, parties, organizations, or countries on specific issues."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/un/ontology/undo"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "code of conduct"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/un/ontology/undo/NormativeDocument"
+      }
+    ]
+  },
+  {
     "@id": "https://w3id.org/akn/ontology/allot/hasExemplar",
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
@@ -478,21 +454,25 @@
     ]
   },
   {
-    "@id": "https://w3id.org/akn/ontology/allot/FRBRExpression",
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+    "@id": "http://purl.org/dc/terms/language",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
-        "@id": "https://w3id.org/akn/ontology/allot"
+        "@language": "en",
+        "@value": "This property enables one to specify the language associated to a particular document version."
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
-        "@id": "http://purl.org/spar/fabio/Expression"
-      },
+        "@id": "http://purl.org/dc/terms"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@id": "http://purl.org/vocab/frbr/core#Expression"
-      },
-      {
-        "@id": "_:fa7b28e9a37474b6fba492ce12ffec85ab1"
+        "@language": "en",
+        "@value": "has language"
       }
     ]
   },
@@ -535,10 +515,10 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://purl.org/vocab/frbr/core#Manifestation"
+        "@id": "http://purl.org/spar/fabio/Manifestation"
       },
       {
-        "@id": "http://purl.org/spar/fabio/Manifestation"
+        "@id": "http://purl.org/vocab/frbr/core#Manifestation"
       }
     ]
   },
@@ -547,9 +527,21 @@
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A description of a sequence of connected steps, representing a sequence of publishing operations undertaken by agents."
+      }
+    ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
         "@id": "https://w3id.org/un/ontology/undo"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "workflow"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
@@ -560,7 +552,7 @@
         "@id": "https://w3id.org/akn/ontology/allot/Concept"
       },
       {
-        "@id": "_:fa7b28e9a37474b6fba492ce12ffec85ab30"
+        "@id": "_:fa4aeefa306f24ada9a4b2792423fcebdb30"
       }
     ]
   },
@@ -571,14 +563,14 @@
     ]
   },
   {
-    "@id": "https://w3id.org/un/ontology/undo/DeliberativeDocument",
+    "@id": "https://w3id.org/un/ontology/undo/ModificatoryInstruction",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Formal expressions of the opinion or will of a principal or subsidiary organ or other empowered bodies. Usually they are open structure documents, sometimes articulated in hierarchical structures in which the text is subdivided into higher and lower subdivisions, generally including a preamble and operative paragraphs."
+        "@value": "A document containing formal proposals for modifications, as single instruction or as a collection of instructions, of previously issued documents issued by the same body that approved the original document. Its structures vary widely across organizations and traditions."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -589,7 +581,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "deliberative document"
+        "@value": "modificatory instruction"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
@@ -599,25 +591,21 @@
     ]
   },
   {
-    "@id": "http://purl.org/dc/terms/language",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "This property enables one to specify the language associated to a particular document version."
-      }
-    ],
+    "@id": "https://w3id.org/akn/ontology/allot/FRBRExpression",
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
-        "@id": "http://purl.org/dc/terms"
+        "@id": "https://w3id.org/akn/ontology/allot"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@language": "en",
-        "@value": "has language"
+        "@id": "_:fa4aeefa306f24ada9a4b2792423fcebdb1"
+      },
+      {
+        "@id": "http://purl.org/vocab/frbr/core#Expression"
+      },
+      {
+        "@id": "http://purl.org/spar/fabio/Expression"
       }
     ]
   },
@@ -734,13 +722,13 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://www.estrellaproject.org/lkif-core/action.owl#Agent"
+        "@id": "https://w3id.org/akn/ontology/allot/Reference"
       },
       {
         "@id": "http://xmlns.com/foaf/0.1/Agent"
       },
       {
-        "@id": "https://w3id.org/akn/ontology/allot/Reference"
+        "@id": "http://www.estrellaproject.org/lkif-core/action.owl#Agent"
       }
     ]
   },
@@ -763,6 +751,22 @@
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
         "@id": "http://purl.org/vocab/frbr/core"
+      }
+    ]
+  },
+  {
+    "@id": "_:fa4aeefa306f24ada9a4b2792423fcebdb27",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
+      {
+        "@id": "https://w3id.org/akn/ontology/allot/Reference"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://www.essepuntato.it/2012/04/tvc/withinContext"
       }
     ]
   },
@@ -799,6 +803,12 @@
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "This property describes documents that are intended to be reconfigured somehow in another original document in a sufficient degree to warrant their being considered as new works, rather than simply different versions of the same document."
+      }
+    ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
         "@id": "https://w3id.org/un/ontology/undo/Document"
@@ -809,6 +819,12 @@
         "@id": "https://w3id.org/un/ontology/undo"
       }
     ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has reconfiguration"
+      }
+    ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
         "@id": "https://w3id.org/un/ontology/undo/Document"
@@ -816,10 +832,10 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
-        "@id": "https://w3id.org/akn/ontology/allot/hasRelatedReference"
+        "@id": "http://purl.org/vocab/frbr/core#transformation"
       },
       {
-        "@id": "http://purl.org/vocab/frbr/core#transformation"
+        "@id": "https://w3id.org/akn/ontology/allot/hasRelatedReference"
       }
     ]
   },
@@ -875,16 +891,27 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
+        "@id": "_:fa4aeefa306f24ada9a4b2792423fcebdb6"
+      },
+      {
         "@id": "https://w3id.org/akn/ontology/allot/Concept"
       },
       {
+        "@id": "_:fa4aeefa306f24ada9a4b2792423fcebdb5"
+      },
+      {
         "@id": "http://www.w3.org/ns/oa#Annotation"
-      },
+      }
+    ]
+  },
+  {
+    "@id": "http://xmlns.com/foaf/0.1/Agent",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
-        "@id": "_:fa7b28e9a37474b6fba492ce12ffec85ab6"
-      },
-      {
-        "@id": "_:fa7b28e9a37474b6fba492ce12ffec85ab5"
+        "@id": "http://xmlns.com/foaf/0.1/"
       }
     ]
   },
@@ -1089,14 +1116,14 @@
     ]
   },
   {
-    "@id": "https://w3id.org/un/ontology/undo/ModificatoryInstruction",
+    "@id": "https://w3id.org/un/ontology/undo/DeliberativeDocument",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "A document containing formal proposals for modifications, as single instruction or as a collection of instructions, of previously issued documents issued by the same body that approved the original document. Its structures vary widely across organizations and traditions."
+        "@value": "Formal expressions of the opinion or will of a principal or subsidiary organ or other empowered bodies. Usually they are open structure documents, sometimes articulated in hierarchical structures in which the text is subdivided into higher and lower subdivisions, generally including a preamble and operative paragraphs."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -1107,7 +1134,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "modificatory instruction"
+        "@value": "deliberative document"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
@@ -1336,10 +1363,10 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://w3id.org/un/ontology/undo/Value"
+        "@id": "http://purl.org/spar/pso/Status"
       },
       {
-        "@id": "http://purl.org/spar/pso/Status"
+        "@id": "https://w3id.org/un/ontology/undo/Value"
       }
     ]
   },
@@ -1383,10 +1410,30 @@
     ]
   },
   {
-    "@id": "https://w3id.org/akn/ontology/allot/hasEmbodiment",
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+    "@id": "https://w3id.org/un/ontology/undo/Value",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
-        "@id": "http://purl.org/vocab/frbr/core#embodiment"
+        "@language": "en",
+        "@value": "Something that can be held by an entity (e.g. a particular role or status)."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/un/ontology/undo"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "value"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/akn/ontology/allot/Reference"
       }
     ]
   },
@@ -1406,23 +1453,35 @@
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A collection of actions that address all the step defined in a workflow."
+      }
+    ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
         "@id": "https://w3id.org/un/ontology/undo"
       }
     ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "workflow execution"
+      }
+    ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "_:fa7b28e9a37474b6fba492ce12ffec85ab32"
+        "@id": "https://w3id.org/akn/ontology/allot/Event"
       },
       {
         "@id": "http://purl.org/spar/pwo/WorkflowExecution"
       },
       {
-        "@id": "https://w3id.org/akn/ontology/allot/Event"
+        "@id": "_:fa4aeefa306f24ada9a4b2792423fcebdb32"
       },
       {
-        "@id": "_:fa7b28e9a37474b6fba492ce12ffec85ab31"
+        "@id": "_:fa4aeefa306f24ada9a4b2792423fcebdb31"
       }
     ]
   },
@@ -1478,13 +1537,13 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
+        "@id": "_:fa4aeefa306f24ada9a4b2792423fcebdb13"
+      },
+      {
+        "@id": "_:fa4aeefa306f24ada9a4b2792423fcebdb15"
+      },
+      {
         "@id": "https://w3id.org/akn/ontology/allot/FRBRExpression"
-      },
-      {
-        "@id": "_:fa7b28e9a37474b6fba492ce12ffec85ab13"
-      },
-      {
-        "@id": "_:fa7b28e9a37474b6fba492ce12ffec85ab15"
       }
     ]
   },
@@ -1519,8 +1578,8 @@
   {
     "@id": "http://id.loc.gov/vocabulary/iso639-1/en",
     "@type": [
-      "http://www.w3.org/2002/07/owl#NamedIndividual",
-      "https://w3id.org/un/ontology/undo/Language"
+      "https://w3id.org/un/ontology/undo/Language",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
     ],
     "http://purl.org/dc/elements/1.1/description": [
       {
@@ -1711,41 +1770,122 @@
     ]
   },
   {
-    "@id": "https://w3id.org/un/ontology/undo/CodeOfConduct",
+    "@id": "_:fa4aeefa306f24ada9a4b2792423fcebdb13",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
+      "http://www.w3.org/2002/07/owl#Restriction"
     ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
       {
-        "@language": "en",
-        "@value": "A document listing rules outlining the responsibilities of, or proper practices for, individuals, parties, organizations, or countries on specific issues."
+        "@id": "https://w3id.org/un/ontology/undo/Document"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+    "http://www.w3.org/2002/07/owl#onProperty": [
       {
-        "@id": "https://w3id.org/un/ontology/undo"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "code of conduct"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/un/ontology/undo/NormativeDocument"
+        "@id": "_:fa4aeefa306f24ada9a4b2792423fcebdb14"
       }
     ]
   },
   {
-    "@id": "http://www.essepuntato.it/2012/04/tvc/withinContext",
+    "@id": "_:fa4aeefa306f24ada9a4b2792423fcebdb12",
     "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
+      "http://www.w3.org/2002/07/owl#Restriction"
     ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+    "http://www.w3.org/2002/07/owl#onProperty": [
       {
-        "@id": "http://www.essepuntato.it/2012/04/tvc"
+        "@id": "https://w3id.org/akn/ontology/allot/hasRealization"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "https://w3id.org/un/ontology/undo/DocumentVersion"
+      }
+    ]
+  },
+  {
+    "@id": "_:fa4aeefa306f24ada9a4b2792423fcebdb15",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onClass": [
+      {
+        "@id": "https://w3id.org/un/ontology/undo/Language"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://purl.org/dc/terms/language"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#qualifiedCardinality": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+        "@value": "1"
+      }
+    ]
+  },
+  {
+    "@id": "_:fa4aeefa306f24ada9a4b2792423fcebdb14",
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "https://w3id.org/akn/ontology/allot/hasRealization"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/akn/ontology/allot/hasEmbodiment",
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://purl.org/vocab/frbr/core#embodiment"
+      }
+    ]
+  },
+  {
+    "@id": "_:fa4aeefa306f24ada9a4b2792423fcebdb16",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#dateTime"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#hasIntervalEndDate"
+      }
+    ]
+  },
+  {
+    "@id": "_:fa4aeefa306f24ada9a4b2792423fcebdb19",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#cardinality": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+        "@value": "1"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "https://w3id.org/un/ontology/undo/hasReceiver"
+      }
+    ]
+  },
+  {
+    "@id": "_:fa4aeefa306f24ada9a4b2792423fcebdb18",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#cardinality": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+        "@value": "1"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "https://w3id.org/un/ontology/undo/hasProponent"
       }
     ]
   },
@@ -1753,6 +1893,12 @@
     "@id": "https://w3id.org/un/ontology/undo/hasRevision",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "It links a document version with another altered or updated version of it."
+      }
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
@@ -1764,6 +1910,12 @@
         "@id": "https://w3id.org/un/ontology/undo"
       }
     ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has revision"
+      }
+    ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
         "@id": "https://w3id.org/un/ontology/undo/DocumentVersion"
@@ -1771,10 +1923,10 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
-        "@id": "https://w3id.org/akn/ontology/allot/hasRelatedReference"
+        "@id": "http://purl.org/vocab/frbr/core#revision"
       },
       {
-        "@id": "http://purl.org/vocab/frbr/core#revision"
+        "@id": "https://w3id.org/akn/ontology/allot/hasRelatedReference"
       }
     ]
   },
@@ -1830,10 +1982,21 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://w3id.org/akn/ontology/allot/Concept"
+        "@id": "http://purl.org/dc/terms/LinguisticSystem"
       },
       {
-        "@id": "http://purl.org/dc/terms/LinguisticSystem"
+        "@id": "https://w3id.org/akn/ontology/allot/Concept"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/fabio/Manifestation",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/fabio"
       }
     ]
   },
@@ -1905,34 +2068,6 @@
     ]
   },
   {
-    "@id": "https://w3id.org/un/ontology/undo/MeetingAgenda",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Documents listing agenda items of a meeting or a series of meetings, at times with brief description of agenda items, citation of related documents, and other announcements, such as consultations, informal meetings or side events, as well as summaries of the previous day's meetings. Their structures vary widely across organizations and traditions."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/un/ontology/undo"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "meeting agenda"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/un/ontology/undo/Document"
-      }
-    ]
-  },
-  {
     "@id": "http://purl.org/spar/fabio/Item",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
@@ -1944,30 +2079,16 @@
     ]
   },
   {
-    "@id": "https://w3id.org/un/ontology/undo/Value",
+    "@id": "https://w3id.org/akn/ontology/allot/Reference",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "Something that can be held by an entity (e.g. a particular role or status)."
-      }
-    ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
+        "@id": "https://w3id.org/akn/ontology/allot"
+      },
+      {
         "@id": "https://w3id.org/un/ontology/undo"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "value"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/akn/ontology/allot/Reference"
       }
     ]
   },
@@ -2041,8 +2162,8 @@
   {
     "@id": "http://id.loc.gov/vocabulary/iso639-1/fr",
     "@type": [
-      "https://w3id.org/un/ontology/undo/Language",
-      "http://www.w3.org/2002/07/owl#NamedIndividual"
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://w3id.org/un/ontology/undo/Language"
     ],
     "http://purl.org/dc/elements/1.1/description": [
       {
@@ -2069,18 +2190,48 @@
     ]
   },
   {
-    "@id": "_:fa7b28e9a37474b6fba492ce12ffec85ab25",
+    "@id": "https://w3id.org/akn/ontology/allot/hasRealization",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://purl.org/vocab/frbr/core#realization"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.essepuntato.it/2012/04/tvc/withinContext",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.essepuntato.it/2012/04/tvc"
+      }
+    ]
+  },
+  {
+    "@id": "_:fa4aeefa306f24ada9a4b2792423fcebdb28",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],
     "http://www.w3.org/2002/07/owl#allValuesFrom": [
       {
-        "@id": "https://w3id.org/un/ontology/undo/Interval"
+        "@id": "https://w3id.org/akn/ontology/allot/Reference"
       }
     ],
     "http://www.w3.org/2002/07/owl#onProperty": [
       {
-        "@id": "http://www.essepuntato.it/2012/04/tvc/atTime"
+        "@id": "_:fa4aeefa306f24ada9a4b2792423fcebdb29"
+      }
+    ]
+  },
+  {
+    "@id": "_:fa4aeefa306f24ada9a4b2792423fcebdb29",
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "http://www.essepuntato.it/2012/04/tvc/hasValue"
       }
     ]
   },
@@ -2096,18 +2247,18 @@
     ]
   },
   {
-    "@id": "_:fa7b28e9a37474b6fba492ce12ffec85ab27",
+    "@id": "_:fa4aeefa306f24ada9a4b2792423fcebdb24",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],
     "http://www.w3.org/2002/07/owl#allValuesFrom": [
       {
-        "@id": "https://w3id.org/akn/ontology/allot/Reference"
+        "@id": "https://w3id.org/un/ontology/undo/Action"
       }
     ],
     "http://www.w3.org/2002/07/owl#onProperty": [
       {
-        "@id": "http://www.essepuntato.it/2012/04/tvc/withinContext"
+        "@id": "http://www.ontologydesignpatterns.org/cp/owl/taskexecution.owl#isExecutedIn"
       }
     ]
   },
@@ -2123,24 +2274,111 @@
     ]
   },
   {
-    "@id": "http://www.estrellaproject.org/lkif-core/role.owl#Role",
+    "@id": "_:fa4aeefa306f24ada9a4b2792423fcebdb26",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
+      "http://www.w3.org/2002/07/owl#Restriction"
     ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
       {
-        "@id": "http://www.estrellaproject.org/lkif-core/role.owl"
+        "@id": "https://w3id.org/un/ontology/undo/Value"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://www.essepuntato.it/2012/04/tvc/withValue"
       }
     ]
   },
   {
-    "@id": "http://xmlns.com/foaf/0.1/Agent",
+    "@id": "https://w3id.org/un/ontology/undo/NormativeDocument",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Formal provision concerning commands, recommendations, opinions or expressions of will issued or entered into by a principal or a subsidiary organ or other empowered bodies. Usually, it is articulated in hierarchical structures, in which the text is subdivided into higher and lower subdivisions."
+      }
+    ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
-        "@id": "http://xmlns.com/foaf/0.1/"
+        "@id": "https://w3id.org/un/ontology/undo"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "normative document"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/un/ontology/undo/Document"
+      }
+    ]
+  },
+  {
+    "@id": "_:fa4aeefa306f24ada9a4b2792423fcebdb20",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#cardinality": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+        "@value": "1"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "https://w3id.org/un/ontology/undo/hasSemantics"
+      }
+    ]
+  },
+  {
+    "@id": "_:fa4aeefa306f24ada9a4b2792423fcebdb21",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
+      {
+        "@id": "https://w3id.org/un/ontology/undo/Step"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://purl.org/spar/pwo/hasNextStep"
+      }
+    ]
+  },
+  {
+    "@id": "_:fa4aeefa306f24ada9a4b2792423fcebdb22",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
+      {
+        "@id": "https://w3id.org/akn/ontology/allot/Reference"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://purl.org/spar/pwo/needs"
+      }
+    ]
+  },
+  {
+    "@id": "_:fa4aeefa306f24ada9a4b2792423fcebdb23",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
+      {
+        "@id": "https://w3id.org/akn/ontology/allot/Reference"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://purl.org/spar/pwo/produces"
       }
     ]
   },
@@ -2176,14 +2414,6 @@
     "@id": "http://purl.org/vocab/frbr/core#Expression",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
-    ]
-  },
-  {
-    "@id": "_:fa7b28e9a37474b6fba492ce12ffec85ab29",
-    "http://www.w3.org/2002/07/owl#inverseOf": [
-      {
-        "@id": "http://www.essepuntato.it/2012/04/tvc/hasValue"
-      }
     ]
   },
   {
@@ -2356,108 +2586,44 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "_:fa7b28e9a37474b6fba492ce12ffec85ab16"
+        "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval"
       },
       {
-        "@id": "_:fa7b28e9a37474b6fba492ce12ffec85ab17"
+        "@id": "_:fa4aeefa306f24ada9a4b2792423fcebdb17"
       },
       {
         "@id": "https://w3id.org/akn/ontology/allot/Concept"
       },
       {
-        "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval"
+        "@id": "_:fa4aeefa306f24ada9a4b2792423fcebdb16"
       }
     ]
   },
   {
-    "@id": "https://w3id.org/akn/ontology/allot/Reference",
+    "@id": "https://w3id.org/un/ontology/undo/Decision",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
-        "@id": "https://w3id.org/akn/ontology/allot"
-      },
+        "@language": "en",
+        "@value": "A document describing a formal action regarding administrative and procedural matters of principal or subsidiary organ or other empowered bodies. This kind of documents is sometimes also used to record the adoption of a text representing the consensus of the members of a given organ."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
         "@id": "https://w3id.org/un/ontology/undo"
       }
-    ]
-  },
-  {
-    "@id": "_:fa7b28e9a37474b6fba492ce12ffec85ab15",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
     ],
-    "http://www.w3.org/2002/07/owl#onClass": [
+    "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@id": "https://w3id.org/un/ontology/undo/Language"
+        "@language": "en",
+        "@value": "decision"
       }
     ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://purl.org/dc/terms/language"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#qualifiedCardinality": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-        "@value": "1"
-      }
-    ]
-  },
-  {
-    "@id": "_:fa7b28e9a37474b6fba492ce12ffec85ab14",
-    "http://www.w3.org/2002/07/owl#inverseOf": [
-      {
-        "@id": "https://w3id.org/akn/ontology/allot/hasRealization"
-      }
-    ]
-  },
-  {
-    "@id": "_:fa7b28e9a37474b6fba492ce12ffec85ab17",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#allValuesFrom": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#dateTime"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#hasIntervalStartDate"
-      }
-    ]
-  },
-  {
-    "@id": "_:fa7b28e9a37474b6fba492ce12ffec85ab16",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#allValuesFrom": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#dateTime"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#hasIntervalEndDate"
-      }
-    ]
-  },
-  {
-    "@id": "_:fa7b28e9a37474b6fba492ce12ffec85ab13",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#allValuesFrom": [
-      {
-        "@id": "https://w3id.org/un/ontology/undo/Document"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "_:fa7b28e9a37474b6fba492ce12ffec85ab14"
+        "@id": "https://w3id.org/un/ontology/undo/DeliberativeDocument"
       }
     ]
   },
@@ -2500,36 +2666,78 @@
     ]
   },
   {
-    "@id": "_:fa7b28e9a37474b6fba492ce12ffec85ab19",
+    "@id": "_:fa4aeefa306f24ada9a4b2792423fcebdb32",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],
-    "http://www.w3.org/2002/07/owl#cardinality": [
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
       {
-        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-        "@value": "1"
+        "@id": "https://w3id.org/un/ontology/undo/Action"
       }
     ],
     "http://www.w3.org/2002/07/owl#onProperty": [
       {
-        "@id": "https://w3id.org/un/ontology/undo/hasReceiver"
+        "@id": "http://purl.org/spar/pwo/involvesAction"
       }
     ]
   },
   {
-    "@id": "_:fa7b28e9a37474b6fba492ce12ffec85ab18",
+    "@id": "_:fa4aeefa306f24ada9a4b2792423fcebdb31",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],
-    "http://www.w3.org/2002/07/owl#cardinality": [
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
       {
-        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-        "@value": "1"
+        "@id": "https://w3id.org/un/ontology/undo/Workflow"
       }
     ],
     "http://www.w3.org/2002/07/owl#onProperty": [
       {
-        "@id": "https://w3id.org/un/ontology/undo/hasProponent"
+        "@id": "http://purl.org/spar/pwo/executes"
+      }
+    ]
+  },
+  {
+    "@id": "_:fa4aeefa306f24ada9a4b2792423fcebdb30",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
+      {
+        "@id": "https://w3id.org/un/ontology/undo/Step"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://purl.org/spar/pwo/hasStep"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/un/ontology/undo/OfficialLetter",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Official written correspondence; communications or notes verbale concerning issues under the authority of the organisation to provide information, requiring specific action by the addressees or stating a position."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/un/ontology/undo"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "official letter"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/un/ontology/undo/Communication"
       }
     ]
   },
@@ -2545,30 +2753,58 @@
     ]
   },
   {
+    "@id": "_:fa4aeefa306f24ada9a4b2792423fcebdb25",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
+      {
+        "@id": "https://w3id.org/un/ontology/undo/Interval"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://www.essepuntato.it/2012/04/tvc/atTime"
+      }
+    ]
+  },
+  {
     "@id": "https://w3id.org/un/ontology/undo/Action",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "An event with at least one agent that is participant in it and that is linked to a workflow execution and to a step of a workflow description."
+      }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
         "@id": "https://w3id.org/un/ontology/undo"
       }
     ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "action"
+      }
+    ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "_:fa7b28e9a37474b6fba492ce12ffec85ab2"
+        "@id": "https://w3id.org/akn/ontology/allot/Event"
       },
       {
-        "@id": "_:fa7b28e9a37474b6fba492ce12ffec85ab4"
+        "@id": "_:fa4aeefa306f24ada9a4b2792423fcebdb3"
       },
       {
-        "@id": "_:fa7b28e9a37474b6fba492ce12ffec85ab3"
+        "@id": "_:fa4aeefa306f24ada9a4b2792423fcebdb2"
+      },
+      {
+        "@id": "_:fa4aeefa306f24ada9a4b2792423fcebdb4"
       },
       {
         "@id": "http://purl.org/spar/pwo/Action"
-      },
-      {
-        "@id": "https://w3id.org/akn/ontology/allot/Event"
       }
     ]
   },
@@ -2584,10 +2820,10 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://purl.org/spar/pro/Role"
+        "@id": "http://www.estrellaproject.org/lkif-core/role.owl#Role"
       },
       {
-        "@id": "http://www.estrellaproject.org/lkif-core/role.owl#Role"
+        "@id": "http://purl.org/spar/pro/Role"
       },
       {
         "@id": "https://w3id.org/un/ontology/undo/Value"
@@ -2700,10 +2936,10 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "_:fa7b28e9a37474b6fba492ce12ffec85ab12"
+        "@id": "https://w3id.org/akn/ontology/allot/FRBRWork"
       },
       {
-        "@id": "https://w3id.org/akn/ontology/allot/FRBRWork"
+        "@id": "_:fa4aeefa306f24ada9a4b2792423fcebdb12"
       }
     ]
   },
@@ -2796,34 +3032,6 @@
     ]
   },
   {
-    "@id": "https://w3id.org/un/ontology/undo/Decision",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "A document describing a formal action regarding administrative and procedural matters of principal or subsidiary organ or other empowered bodies. This kind of documents is sometimes also used to record the adoption of a text representing the consensus of the members of a given organ."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/un/ontology/undo"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "decision"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/un/ontology/undo/DeliberativeDocument"
-      }
-    ]
-  },
-  {
     "@id": "http://www.estrellaproject.org/lkif-core/action.owl#Organisation",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
@@ -2880,7 +3088,7 @@
     ],
     "http://www.w3.org/2002/07/owl#imports": [
       {
-        "@id": "https://w3id.org/akn/ontology/allot/2017-01-31"
+        "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl"
       },
       {
         "@id": "http://purl.org/spar/pwo"
@@ -2889,7 +3097,7 @@
         "@id": "http://www.essepuntato.it/2012/04/tvc"
       },
       {
-        "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl"
+        "@id": "https://w3id.org/akn/ontology/allot/2017-01-31"
       },
       {
         "@id": "http://www.w3.org/ns/oa#"
@@ -2913,35 +3121,29 @@
     ]
   },
   {
-    "@id": "http://purl.org/spar/fabio/Manifestation",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.org/spar/fabio"
-      }
-    ]
-  },
-  {
-    "@id": "_:fa7b28e9a37474b6fba492ce12ffec85ab20",
+    "@id": "_:fa4aeefa306f24ada9a4b2792423fcebdb1",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],
-    "http://www.w3.org/2002/07/owl#cardinality": [
+    "http://www.w3.org/2002/07/owl#onClass": [
       {
-        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-        "@value": "1"
+        "@id": "https://w3id.org/un/ontology/undo/Language"
       }
     ],
     "http://www.w3.org/2002/07/owl#onProperty": [
       {
-        "@id": "https://w3id.org/un/ontology/undo/hasSemantics"
+        "@id": "http://purl.org/dc/terms/language"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#qualifiedCardinality": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+        "@value": "1"
       }
     ]
   },
   {
-    "@id": "_:fa7b28e9a37474b6fba492ce12ffec85ab21",
+    "@id": "_:fa4aeefa306f24ada9a4b2792423fcebdb3",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],
@@ -2952,12 +3154,12 @@
     ],
     "http://www.w3.org/2002/07/owl#onProperty": [
       {
-        "@id": "http://purl.org/spar/pwo/hasNextStep"
+        "@id": "http://www.ontologydesignpatterns.org/cp/owl/taskexecution.owl#executesTask"
       }
     ]
   },
   {
-    "@id": "_:fa7b28e9a37474b6fba492ce12ffec85ab22",
+    "@id": "_:fa4aeefa306f24ada9a4b2792423fcebdb2",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],
@@ -2968,12 +3170,12 @@
     ],
     "http://www.w3.org/2002/07/owl#onProperty": [
       {
-        "@id": "http://purl.org/spar/pwo/needs"
+        "@id": "http://www.ontologydesignpatterns.org/cp/owl/participation.owl#hasParticipant"
       }
     ]
   },
   {
-    "@id": "_:fa7b28e9a37474b6fba492ce12ffec85ab23",
+    "@id": "_:fa4aeefa306f24ada9a4b2792423fcebdb5",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],
@@ -2984,62 +3186,75 @@
     ],
     "http://www.w3.org/2002/07/owl#onProperty": [
       {
-        "@id": "http://purl.org/spar/pwo/produces"
+        "@id": "http://www.w3.org/ns/oa#hasBody"
       }
     ]
   },
   {
-    "@id": "_:fa7b28e9a37474b6fba492ce12ffec85ab24",
+    "@id": "_:fa4aeefa306f24ada9a4b2792423fcebdb4",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],
     "http://www.w3.org/2002/07/owl#allValuesFrom": [
       {
-        "@id": "https://w3id.org/un/ontology/undo/Action"
+        "@id": "https://w3id.org/un/ontology/undo/Interval"
       }
     ],
     "http://www.w3.org/2002/07/owl#onProperty": [
       {
-        "@id": "http://www.ontologydesignpatterns.org/cp/owl/taskexecution.owl#isExecutedIn"
+        "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#atTime"
       }
     ]
   },
   {
-    "@id": "https://w3id.org/akn/ontology/allot/hasRealization",
+    "@id": "_:fa4aeefa306f24ada9a4b2792423fcebdb7",
     "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
+      "http://www.w3.org/2002/07/owl#Class"
     ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+    "http://www.w3.org/2002/07/owl#unionOf": [
       {
-        "@id": "http://purl.org/vocab/frbr/core#realization"
+        "@list": [
+          {
+            "@id": "https://w3id.org/akn/ontology/allot/FRBRExpression"
+          },
+          {
+            "@id": "https://w3id.org/akn/ontology/allot/FRBRItem"
+          },
+          {
+            "@id": "https://w3id.org/akn/ontology/allot/FRBRManifestation"
+          },
+          {
+            "@id": "https://w3id.org/akn/ontology/allot/FRBRWork"
+          }
+        ]
       }
     ]
   },
   {
-    "@id": "_:fa7b28e9a37474b6fba492ce12ffec85ab26",
+    "@id": "_:fa4aeefa306f24ada9a4b2792423fcebdb6",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],
     "http://www.w3.org/2002/07/owl#allValuesFrom": [
       {
-        "@id": "https://w3id.org/un/ontology/undo/Value"
+        "@id": "_:fa4aeefa306f24ada9a4b2792423fcebdb7"
       }
     ],
     "http://www.w3.org/2002/07/owl#onProperty": [
       {
-        "@id": "http://www.essepuntato.it/2012/04/tvc/withValue"
+        "@id": "http://www.w3.org/ns/oa#hasTarget"
       }
     ]
   },
   {
-    "@id": "https://w3id.org/un/ontology/undo/NormativeDocument",
+    "@id": "https://w3id.org/un/ontology/undo/MeetingAgenda",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Formal provision concerning commands, recommendations, opinions or expressions of will issued or entered into by a principal or a subsidiary organ or other empowered bodies. Usually, it is articulated in hierarchical structures, in which the text is subdivided into higher and lower subdivisions."
+        "@value": "Documents listing agenda items of a meeting or a series of meetings, at times with brief description of agenda items, citation of related documents, and other announcements, such as consultations, informal meetings or side events, as well as summaries of the previous day's meetings. Their structures vary widely across organizations and traditions."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -3050,7 +3265,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "normative document"
+        "@value": "meeting agenda"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
@@ -3060,18 +3275,29 @@
     ]
   },
   {
-    "@id": "_:fa7b28e9a37474b6fba492ce12ffec85ab28",
+    "@id": "_:fa4aeefa306f24ada9a4b2792423fcebdb17",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],
     "http://www.w3.org/2002/07/owl#allValuesFrom": [
       {
-        "@id": "https://w3id.org/akn/ontology/allot/Reference"
+        "@id": "http://www.w3.org/2001/XMLSchema#dateTime"
       }
     ],
     "http://www.w3.org/2002/07/owl#onProperty": [
       {
-        "@id": "_:fa7b28e9a37474b6fba492ce12ffec85ab29"
+        "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#hasIntervalStartDate"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.estrellaproject.org/lkif-core/role.owl#Role",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.estrellaproject.org/lkif-core/role.owl"
       }
     ]
   },
@@ -3104,22 +3330,6 @@
     ]
   },
   {
-    "@id": "_:fa7b28e9a37474b6fba492ce12ffec85ab12",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "https://w3id.org/akn/ontology/allot/hasRealization"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#someValuesFrom": [
-      {
-        "@id": "https://w3id.org/un/ontology/undo/DocumentVersion"
-      }
-    ]
-  },
-  {
     "@id": "https://w3id.org/un/ontology/undo/AdministrativeCircular",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
@@ -3144,132 +3354,6 @@
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
         "@id": "https://w3id.org/un/ontology/undo/AdministrativeIssuance"
-      }
-    ]
-  },
-  {
-    "@id": "_:fa7b28e9a37474b6fba492ce12ffec85ab5",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#allValuesFrom": [
-      {
-        "@id": "https://w3id.org/akn/ontology/allot/Reference"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://www.w3.org/ns/oa#hasBody"
-      }
-    ]
-  },
-  {
-    "@id": "_:fa7b28e9a37474b6fba492ce12ffec85ab4",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#allValuesFrom": [
-      {
-        "@id": "https://w3id.org/un/ontology/undo/Interval"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#atTime"
-      }
-    ]
-  },
-  {
-    "@id": "_:fa7b28e9a37474b6fba492ce12ffec85ab7",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2002/07/owl#unionOf": [
-      {
-        "@list": [
-          {
-            "@id": "https://w3id.org/akn/ontology/allot/FRBRExpression"
-          },
-          {
-            "@id": "https://w3id.org/akn/ontology/allot/FRBRItem"
-          },
-          {
-            "@id": "https://w3id.org/akn/ontology/allot/FRBRManifestation"
-          },
-          {
-            "@id": "https://w3id.org/akn/ontology/allot/FRBRWork"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "@id": "_:fa7b28e9a37474b6fba492ce12ffec85ab6",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#allValuesFrom": [
-      {
-        "@id": "_:fa7b28e9a37474b6fba492ce12ffec85ab7"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://www.w3.org/ns/oa#hasTarget"
-      }
-    ]
-  },
-  {
-    "@id": "_:fa7b28e9a37474b6fba492ce12ffec85ab1",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onClass": [
-      {
-        "@id": "https://w3id.org/un/ontology/undo/Language"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://purl.org/dc/terms/language"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#qualifiedCardinality": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-        "@value": "1"
-      }
-    ]
-  },
-  {
-    "@id": "_:fa7b28e9a37474b6fba492ce12ffec85ab3",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#allValuesFrom": [
-      {
-        "@id": "https://w3id.org/un/ontology/undo/Step"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://www.ontologydesignpatterns.org/cp/owl/taskexecution.owl#executesTask"
-      }
-    ]
-  },
-  {
-    "@id": "_:fa7b28e9a37474b6fba492ce12ffec85ab2",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#allValuesFrom": [
-      {
-        "@id": "https://w3id.org/akn/ontology/allot/Reference"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://www.ontologydesignpatterns.org/cp/owl/participation.owl#hasParticipant"
       }
     ]
   },
@@ -3303,22 +3387,22 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "_:fa7b28e9a37474b6fba492ce12ffec85ab28"
+        "@id": "https://w3id.org/akn/ontology/allot/Concept"
       },
       {
-        "@id": "_:fa7b28e9a37474b6fba492ce12ffec85ab26"
-      },
-      {
-        "@id": "_:fa7b28e9a37474b6fba492ce12ffec85ab25"
+        "@id": "_:fa4aeefa306f24ada9a4b2792423fcebdb26"
       },
       {
         "@id": "http://www.essepuntato.it/2012/04/tvc/ValueInTime"
       },
       {
-        "@id": "https://w3id.org/akn/ontology/allot/Concept"
+        "@id": "_:fa4aeefa306f24ada9a4b2792423fcebdb28"
       },
       {
-        "@id": "_:fa7b28e9a37474b6fba492ce12ffec85ab27"
+        "@id": "_:fa4aeefa306f24ada9a4b2792423fcebdb25"
+      },
+      {
+        "@id": "_:fa4aeefa306f24ada9a4b2792423fcebdb27"
       }
     ]
   },

@@ -375,6 +375,8 @@ Peroni, S., Shotton, D., Vitali, F. (2012). Scholarly publishing and the Linked 
         <https://w3id.org/akn/ontology/allot/Concept> .
 
 :WorkflowExecution a owl:Class ;
+    rdfs:label "workflow execution"@en ;
+    rdfs:comment "A collection of actions that address all the step defined in a workflow."@en ;
     rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:allValuesFrom :Workflow ;
@@ -386,6 +388,8 @@ Peroni, S., Shotton, D., Vitali, F. (2012). Scholarly publishing and the Linked 
         <https://w3id.org/akn/ontology/allot/Event> .
 
 :hasReconfiguration a owl:ObjectProperty ;
+    rdfs:label "has reconfiguration"@en ;
+    rdfs:comment "This property describes documents that are intended to be reconfigured somehow in another original document in a sufficient degree to warrant their being considered as new works, rather than simply different versions of the same document."@en ;
     rdfs:domain :Document ;
     rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> ;
     rdfs:range :Document ;
@@ -401,6 +405,8 @@ Peroni, S., Shotton, D., Vitali, F. (2012). Scholarly publishing and the Linked 
     rdfs:subPropertyOf <https://w3id.org/akn/ontology/allot/hasRelatedReference> .
 
 :hasRevision a owl:ObjectProperty ;
+    rdfs:label "has revision"@en ;
+    rdfs:comment "It links a document version with another altered or updated version of it."@en ;
     rdfs:domain :DocumentVersion ;
     rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> ;
     rdfs:range :DocumentVersion ;
@@ -520,10 +526,14 @@ oa:hasTarget a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://w3id.org/akn/ontology/allot> .
 
 :StepType a owl:Class ;
+    rdfs:label "step type"@en ;
+    rdfs:comment "The class of all the types for categorising the steps in workflow descriptions."@en ;
     rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> ;
     rdfs:subClassOf <https://w3id.org/akn/ontology/allot/Concept> .
 
 :Workflow a owl:Class ;
+    rdfs:label "workflow"@en ;
+    rdfs:comment "A description of a sequence of connected steps, representing a sequence of publishing operations undertaken by agents."@en ;
     rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:allValuesFrom :Step ;
@@ -579,6 +589,8 @@ oa:hasTarget a owl:ObjectProperty ;
     rdfs:subPropertyOf frbr:realization .
 
 :Action a owl:Class ;
+    rdfs:label "action"@en ;
+    rdfs:comment "An event with at least one agent that is participant in it and that is linked to a workflow execution and to a step of a workflow description."@en ;
     rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:allValuesFrom <https://w3id.org/akn/ontology/allot/Reference> ;
@@ -696,6 +708,8 @@ oa:hasTarget a owl:ObjectProperty ;
     rdfs:subClassOf <https://w3id.org/akn/ontology/allot/Reference> .
 
 :Step a owl:Class ;
+    rdfs:label "step"@en ;
+    rdfs:comment "An atomic unit of a workflow that involves some input entity needed to complete the step, and produces some outcomes, such as a document."@en ;
     rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:allValuesFrom :Step ;

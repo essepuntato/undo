@@ -6,208 +6,172 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
 >
-  <rdf:Description rdf:about="https://w3id.org/akn/ontology/allot/FRBRManifestation">
-    <rdfs:subClassOf rdf:resource="http://purl.org/vocab/frbr/core#Manifestation"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/akn/ontology/allot"/>
-    <rdfs:subClassOf rdf:resource="http://purl.org/spar/fabio/Manifestation"/>
+  <rdf:Description rdf:nodeID="fa4aeefa306f24ada9a4b2792423fcebdb8">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+    <rdf:rest rdf:nodeID="fa4aeefa306f24ada9a4b2792423fcebdb9"/>
+    <rdf:first rdf:resource="https://w3id.org/akn/ontology/allot/FRBRExpression"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.essepuntato.it/2012/04/tvc/withValue">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:isDefinedBy rdf:resource="http://www.essepuntato.it/2012/04/tvc"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/DocumentVersion">
-    <rdfs:subClassOf rdf:resource="https://w3id.org/akn/ontology/allot/FRBRExpression"/>
-    <rdfs:subClassOf rdf:nodeID="fa7b28e9a37474b6fba492ce12ffec85ab13"/>
-    <rdfs:subClassOf rdf:nodeID="fa7b28e9a37474b6fba492ce12ffec85ab15"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">document version</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
-    <rdfs:comment xml:lang="en">A particular version of a document written according to a certain language.</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/dc/terms/language">
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms"/>
-    <rdfs:comment xml:lang="en">This property enables one to specify the language associated to a particular document version.</rdfs:comment>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:label xml:lang="en">has language</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://id.loc.gov/vocabulary/iso639-1/zh">
-    <rdfs:comment xml:lang="en">The Chinese is one of the languages used for publishing United Nations documents.</rdfs:comment>
-    <rdf:type rdf:resource="https://w3id.org/un/ontology/undo/Language"/>
-    <rdfs:isDefinedBy rdf:resource="http://id.loc.gov/vocabulary/iso639-1"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdfs:label xml:lang="en">Chinese</rdfs:label>
-    <dc:description xml:lang="en">This entity representing the Chinise language has been originally defined in the Library of Congress concept scheme (skos:ConceptScheme) available at http://id.loc.gov/vocabulary/iso639-1, which maps all the two-letters codes for languages introduced in the specification ISO 639-1 as Linked Open Data.</dc:description>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/Charter">
-    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/NormativeDocument"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:comment xml:lang="en">Foundational treaty outlining the conditions under which a body is organised, and defining its rights and privileges.</rdfs:comment>
-    <rdfs:label xml:lang="en">charter</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/hasRelatedConcept">
-    <rdfs:label xml:lang="en">has related concept</rdfs:label>
-    <rdfs:comment xml:lang="en">A concept that is related somehow to a term (e.g. because it represents the meaning of a particular term).</rdfs:comment>
-    <rdfs:subPropertyOf rdf:resource="https://w3id.org/akn/ontology/allot/hasRelatedReference"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
+  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/hasSemantics">
+    <rdfs:label xml:lang="en">has semantics</rdfs:label>
     <rdfs:range rdf:resource="https://w3id.org/akn/ontology/allot/Concept"/>
-    <rdfs:domain rdf:resource="https://w3id.org/akn/ontology/allot/Term"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/MeetingReport">
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/akn/ontology/allot/hasRelatedReference"/>
+    <rdfs:domain rdf:resource="https://w3id.org/un/ontology/undo/Relation"/>
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/Document"/>
-    <rdfs:comment xml:lang="en">Documents containing summarized accounts of meetings. Their structures vary widely across organizations and traditions.</rdfs:comment>
-    <rdfs:label xml:lang="en">meeting report</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:isDefinedBy rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/akn/ontology/allot/hasRealization">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://purl.org/vocab/frbr/core#realization"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/akn/ontology/allot/FRBRExpression">
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/akn/ontology/allot"/>
-    <rdfs:subClassOf rdf:resource="http://purl.org/spar/fabio/Expression"/>
-    <rdfs:subClassOf rdf:resource="http://purl.org/vocab/frbr/core#Expression"/>
-    <rdfs:subClassOf rdf:nodeID="fa7b28e9a37474b6fba492ce12ffec85ab1"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://id.loc.gov/vocabulary/iso639-1/ru">
-    <rdfs:isDefinedBy rdf:resource="http://id.loc.gov/vocabulary/iso639-1"/>
-    <rdfs:label xml:lang="en">Russian</rdfs:label>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdfs:comment xml:lang="en">The Russian is one of the languages used for publishing United Nations documents.</rdfs:comment>
-    <dc:description xml:lang="en">This entity representing the Russian language has been originally defined in the Library of Congress concept scheme (skos:ConceptScheme) available at http://id.loc.gov/vocabulary/iso639-1, which maps all the two-letters codes for languages introduced in the specification ISO 639-1 as Linked Open Data.</dc:description>
-    <rdf:type rdf:resource="https://w3id.org/un/ontology/undo/Language"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.w3.org/ns/oa#hasTarget">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/oa#"/>
+    <rdfs:comment xml:lang="en">The semantics of a relation.</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/hasRevision">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:subPropertyOf rdf:resource="https://w3id.org/akn/ontology/allot/hasRelatedReference"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
-    <rdfs:domain rdf:resource="https://w3id.org/un/ontology/undo/DocumentVersion"/>
     <rdfs:subPropertyOf rdf:resource="http://purl.org/vocab/frbr/core#revision"/>
     <rdfs:range rdf:resource="https://w3id.org/un/ontology/undo/DocumentVersion"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="fa7b28e9a37474b6fba492ce12ffec85ab25">
-    <owl:allValuesFrom rdf:resource="https://w3id.org/un/ontology/undo/Interval"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="http://www.essepuntato.it/2012/04/tvc/atTime"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/hasReconfiguration">
-    <rdfs:range rdf:resource="https://w3id.org/un/ontology/undo/Document"/>
-    <rdfs:subPropertyOf rdf:resource="https://w3id.org/akn/ontology/allot/hasRelatedReference"/>
+    <rdfs:label xml:lang="en">has revision</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/un/ontology/undo/Document"/>
-    <rdfs:subPropertyOf rdf:resource="http://purl.org/vocab/frbr/core#transformation"/>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/akn/ontology/allot/hasRelatedReference"/>
+    <rdfs:comment xml:lang="en">It links a document version with another altered or updated version of it.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/un/ontology/undo/DocumentVersion"/>
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/Communication">
+  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/AmendmentList">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:comment xml:lang="en">A document containing an official communication used to formally inform the UN community of events and of the outcome of non-UN meetings, to transmit reports or communications, and for a variety of other purposes. Its structures vary widely across organizations and traditions but generally assume the format of a formal communication with title and content in unnumbered paragraphs.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/Document"/>
+    <rdfs:comment xml:lang="en">A document listing proposals for modifications submitted to official deliberative bodies for discussion. It provides modifications to other normative documents.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/ModificatoryInstruction"/>
+    <rdfs:label xml:lang="en">amendment list</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
-    <rdfs:label xml:lang="en">communication</rdfs:label>
   </rdf:Description>
-  <rdf:Description rdf:about="http://id.loc.gov/vocabulary/iso639-1/en">
-    <rdfs:isDefinedBy rdf:resource="http://id.loc.gov/vocabulary/iso639-1"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdfs:label xml:lang="en">English</rdfs:label>
-    <dc:description xml:lang="en">This entity representing the English language has been originally defined in the Library of Congress concept scheme (skos:ConceptScheme) available at http://id.loc.gov/vocabulary/iso639-1, which maps all the two-letters codes for languages introduced in the specification ISO 639-1 as Linked Open Data.</dc:description>
-    <rdfs:comment xml:lang="en">The English is one of the languages used for publishing United Nations documents.</rdfs:comment>
-    <rdf:type rdf:resource="https://w3id.org/un/ontology/undo/Language"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="fa7b28e9a37474b6fba492ce12ffec85ab32">
-    <owl:allValuesFrom rdf:resource="https://w3id.org/un/ontology/undo/Action"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="http://purl.org/spar/pwo/involvesAction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="fa7b28e9a37474b6fba492ce12ffec85ab23">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:allValuesFrom rdf:resource="https://w3id.org/akn/ontology/allot/Reference"/>
-    <owl:onProperty rdf:resource="http://purl.org/spar/pwo/produces"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.estrellaproject.org/lkif-core/action.owl#Person">
-    <rdfs:isDefinedBy rdf:resource="http://www.estrellaproject.org/lkif-core/action.owl"/>
+  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/OfficialStatement">
+    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/Communication"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
+    <rdfs:comment xml:lang="en">A document introducing a pronunciation of officers in their official capacity.</rdfs:comment>
+    <rdfs:label xml:lang="en">official statement</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/akn/ontology/allot/Term">
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/akn/ontology/allot"/>
+  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/Circular">
+    <rdfs:comment xml:lang="en">A document containing specialized information of specific interests.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/Communication"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">circular</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/Treaty">
+    <rdfs:comment xml:lang="en">An international agreement concluded between States, and bilateral or multilateral agreements governed by international law to which international organizations are parties.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/NormativeDocument"/>
+    <rdfs:label xml:lang="en">treaty</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/PressRelease">
+    <rdfs:comment xml:lang="en">A written communication to the public that serves information purposes only. It is not considered an official document.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/Communication"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
+    <rdfs:label xml:lang="en">press release</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/AdvisoryOpinion">
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
+    <rdfs:comment xml:lang="en">A document introducing an opinion rendered by a court or adjudicating body upon request.</rdfs:comment>
+    <rdfs:label xml:lang="en">advisory opinion</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/CourtDecision"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/Interval">
+    <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval"/>
+    <rdfs:subClassOf rdf:nodeID="fa4aeefa306f24ada9a4b2792423fcebdb17"/>
+    <rdfs:label xml:lang="en">interval</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/akn/ontology/allot/Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
+    <rdfs:comment xml:lang="en">A particular time period characterised by a starting date (specified by means of the property ti:hasIntervalStartDate) and an ending date (specified by means of the property ti:hasIntervalEndDate).</rdfs:comment>
+    <rdfs:subClassOf rdf:nodeID="fa4aeefa306f24ada9a4b2792423fcebdb16"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/Relation">
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
+    <rdfs:subClassOf rdf:nodeID="fa4aeefa306f24ada9a4b2792423fcebdb18"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/akn/ontology/allot/Concept"/>
+    <rdfs:subClassOf rdf:nodeID="fa4aeefa306f24ada9a4b2792423fcebdb20"/>
     <rdfs:label xml:lang="en">relation</rdfs:label>
     <rdfs:comment xml:lang="en">Something that allows one to link a proponent entity to a receiver entity according to a specific semantics - e.g. saying that a document (proponent) cites (semantics) another document (receiver), or that an organization (proponent) approves (semantics) a certain document (receiver), etc.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/akn/ontology/allot/Concept"/>
-    <rdfs:subClassOf rdf:nodeID="fa7b28e9a37474b6fba492ce12ffec85ab18"/>
-    <rdfs:subClassOf rdf:nodeID="fa7b28e9a37474b6fba492ce12ffec85ab19"/>
-    <rdfs:subClassOf rdf:nodeID="fa7b28e9a37474b6fba492ce12ffec85ab20"/>
+    <rdfs:subClassOf rdf:nodeID="fa4aeefa306f24ada9a4b2792423fcebdb19"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/Action">
+    <rdfs:subClassOf rdf:resource="https://w3id.org/akn/ontology/allot/Event"/>
+    <rdfs:subClassOf rdf:nodeID="fa4aeefa306f24ada9a4b2792423fcebdb3"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">An event with at least one agent that is participant in it and that is linked to a workflow execution and to a step of a workflow description.</rdfs:comment>
+    <rdfs:subClassOf rdf:nodeID="fa4aeefa306f24ada9a4b2792423fcebdb2"/>
+    <rdfs:subClassOf rdf:nodeID="fa4aeefa306f24ada9a4b2792423fcebdb4"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
+    <rdfs:label xml:lang="en">action</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://purl.org/spar/pwo/Action"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/OfficialCompilation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
+    <rdfs:comment xml:lang="en">An authoritative compilation of official documents.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/Publication"/>
+    <rdfs:label xml:lang="en">official compilation</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="fa4aeefa306f24ada9a4b2792423fcebdb29">
+    <owl:inverseOf rdf:resource="http://www.essepuntato.it/2012/04/tvc/hasValue"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/hasReceiver">
+    <rdfs:comment xml:lang="en">The receiver entity of a relation.</rdfs:comment>
+    <rdfs:range rdf:resource="https://w3id.org/akn/ontology/allot/Reference"/>
+    <rdfs:label xml:lang="en">has receiver</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
+    <rdfs:domain rdf:resource="https://w3id.org/un/ontology/undo/Relation"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/akn/ontology/allot/hasRelatedReference"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/MeetingMinute">
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
+    <rdfs:comment xml:lang="en">A document providing a third-person accounts of meetings.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/MeetingReport"/>
+    <rdfs:label xml:lang="en">meeting minute</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/AgendaListing">
+    <rdfs:label xml:lang="en">agenda listing</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">A document listing agenda items to be considered at a specific meeting/s or session/s. It may report time, location, etc.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/MeetingAgenda"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/spar/fabio/Work">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/fabio"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/Value">
+    <rdfs:subClassOf rdf:resource="https://w3id.org/akn/ontology/allot/Reference"/>
+    <rdfs:comment xml:lang="en">Something that can be held by an entity (e.g. a particular role or status).</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">value</rdfs:label>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.essepuntato.it/2012/04/tvc/withinContext">
-    <rdfs:isDefinedBy rdf:resource="http://www.essepuntato.it/2012/04/tvc"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/vocab/frbr/core#revision">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/frbr/core"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/Step">
-    <rdfs:subClassOf rdf:nodeID="fa7b28e9a37474b6fba492ce12ffec85ab21"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/akn/ontology/allot/Concept"/>
-    <rdfs:subClassOf rdf:nodeID="fa7b28e9a37474b6fba492ce12ffec85ab24"/>
-    <rdfs:subClassOf rdf:nodeID="fa7b28e9a37474b6fba492ce12ffec85ab23"/>
-    <rdfs:subClassOf rdf:resource="http://purl.org/spar/pwo/Step"/>
-    <rdfs:subClassOf rdf:nodeID="fa7b28e9a37474b6fba492ce12ffec85ab22"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/Publication">
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/Document"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:comment xml:lang="en">The documentary output of the process meant to share information in any form or medium.</rdfs:comment>
-    <rdfs:label xml:lang="en">publication</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/akn/ontology/allot/Role">
-    <rdfs:subClassOf rdf:resource="http://purl.org/spar/pro/Role"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/akn/ontology/allot"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="http://www.estrellaproject.org/lkif-core/role.owl#Role"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/Value"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/vocab/frbr/core#transformation">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/frbr/core"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/CodeOfPractice">
+  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/Recommendation">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/NormativeDocument"/>
-    <rdfs:comment xml:lang="en">A document that defines correct procedures on how to implement principles and/or standards.</rdfs:comment>
-    <rdfs:label xml:lang="en">code of practice</rdfs:label>
+    <rdfs:label xml:lang="en">recommendation</rdfs:label>
+    <rdfs:comment xml:lang="en">A document that provides guidance and may create reporting obligations for parties.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
   </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/frbr/core#Expression">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/un/ontology/undo">
-    <owl:imports rdf:resource="https://w3id.org/akn/ontology/allot/2017-01-31"/>
-    <ns1:preferredNamespaceUri>https://w3id.org/un/ontology/undo/</ns1:preferredNamespaceUri>
-    <ns1:preferredNamespacePrefix>undo</ns1:preferredNamespacePrefix>
-    <rdfs:comment xml:lang="en">The United Nations Document Ontology (UNDO) is an OWL 2 DL ontology that aims at providing a framework for the description of all entities and the relations that are explicitly or implicitly introduced within United Nations documents (normative documents, legal documents, etc.).</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
     <rdfs:label xml:lang="en">UNDO</rdfs:label>
-    <owl:imports rdf:resource="http://purl.org/spar/pwo"/>
     <owl:priorVersion rdf:resource="https://w3id.org/un/ontology/undo/2017-03-08"/>
+    <rdfs:comment xml:lang="en">The United Nations Document Ontology (UNDO) is an OWL 2 DL ontology that aims at providing a framework for the description of all entities and the relations that are explicitly or implicitly introduced within United Nations documents (normative documents, legal documents, etc.).</rdfs:comment>
+    <dc:creator>Silvio Peroni (http://orcid.org/0000-0003-0530-4305)</dc:creator>
+    <owl:imports rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl"/>
+    <ns1:preferredNamespaceUri>https://w3id.org/un/ontology/undo/</ns1:preferredNamespaceUri>
+    <owl:imports rdf:resource="http://purl.org/spar/pwo"/>
+    <owl:versionInfo xml:lang="en">April 14, 2017</owl:versionInfo>
+    <owl:versionIRI rdf:resource="https://w3id.org/un/ontology/undo/2017-04-14"/>
     <owl:imports rdf:resource="http://www.essepuntato.it/2012/04/tvc"/>
+    <owl:imports rdf:resource="https://w3id.org/akn/ontology/allot/2017-01-31"/>
+    <owl:imports rdf:resource="http://www.w3.org/ns/oa#"/>
+    <ns1:preferredNamespacePrefix>undo</ns1:preferredNamespacePrefix>
     <dc:description xml:lang="en">The parliamentary, normative and legal documents published by the United Nations system (hereafter "UN documents"), contain many references to real-world objects and concepts, such as: other documents, people, organisations, legal terms, and roles. These objects and concepts, called in general terms “entities”, are related with the actual content of the document, even by means of different terms being the UN documents often issued in several official languages.
 
 The United Nations System Document Ontology (UNDO, GitHub repository available at https://github.com/essepuntato/undo) is an OWL 2 DL ontology that aims at providing a framework for the description of all these entities and the relations that can exists among them in UN documents. The rationale behind the development of this model is to provide a common framework to be used by the various United Nations organisations for sharing data about documents and their content in RDF format.
@@ -1000,770 +964,820 @@ What was the last entities produced by all the workflow executions?
             ?step pwo:hasNextStep ?another_step .
         }
     }</dc:description>
-    <owl:versionInfo xml:lang="en">April 14, 2017</owl:versionInfo>
-    <owl:imports rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl"/>
-    <owl:versionIRI rdf:resource="https://w3id.org/un/ontology/undo/2017-04-14"/>
     <dc:title xml:lang="en">The United Nations System Document Ontology (UNDO)</dc:title>
-    <owl:imports rdf:resource="http://www.w3.org/ns/oa#"/>
-    <dc:creator>Silvio Peroni (http://orcid.org/0000-0003-0530-4305)</dc:creator>
   </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Agent">
+  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/Convention">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/NormativeDocument"/>
+    <rdfs:comment xml:lang="en">Mandatory regulations subject to ratification. Instruments usually negotiated under the auspices of an international organization.</rdfs:comment>
+    <rdfs:label xml:lang="en">convention</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://id.loc.gov/vocabulary/iso639-1/ar">
-    <dc:description xml:lang="en">This entity representing the Arabic language has been originally defined in the Library of Congress concept scheme (skos:ConceptScheme) available at http://id.loc.gov/vocabulary/iso639-1, which maps all the two-letters codes for languages introduced in the specification ISO 639-1 as Linked Open Data.</dc:description>
-    <rdf:type rdf:resource="https://w3id.org/un/ontology/undo/Language"/>
-    <rdfs:comment xml:lang="en">The Arabic is one of the languages used for publishing United Nations documents.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://id.loc.gov/vocabulary/iso639-1"/>
-    <rdfs:label xml:lang="en">Arabic</rdfs:label>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/Paper">
+    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/Document"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
+    <rdfs:comment xml:lang="en">An official document that provides information about a particular subject or a detailed account of issues, policies or outcomes of, for example, inquiries or scientific investigations. Its structures vary widely across organizations and traditions.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">paper</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/hasRelatedConcept">
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en">A concept that is related somehow to a term (e.g. because it represents the meaning of a particular term).</rdfs:comment>
+    <rdfs:label xml:lang="en">has related concept</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/akn/ontology/allot/Term"/>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/akn/ontology/allot/hasRelatedReference"/>
+    <rdfs:range rdf:resource="https://w3id.org/akn/ontology/allot/Concept"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/WorkflowExecution">
-    <rdfs:subClassOf rdf:nodeID="fa7b28e9a37474b6fba492ce12ffec85ab32"/>
-    <rdfs:subClassOf rdf:resource="http://purl.org/spar/pwo/WorkflowExecution"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
     <rdfs:subClassOf rdf:resource="https://w3id.org/akn/ontology/allot/Event"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:nodeID="fa7b28e9a37474b6fba492ce12ffec85ab31"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/Document">
+    <rdfs:subClassOf rdf:resource="http://purl.org/spar/pwo/WorkflowExecution"/>
+    <rdfs:label xml:lang="en">workflow execution</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
-    <rdfs:label xml:lang="en">document</rdfs:label>
-    <rdfs:subClassOf rdf:nodeID="fa7b28e9a37474b6fba492ce12ffec85ab12"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/akn/ontology/allot/FRBRWork"/>
-    <rdfs:comment xml:lang="en">A document of a specific kind (e.g. normative documents, legal documents, etc.) published by someone for certain reasons.</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="fa4aeefa306f24ada9a4b2792423fcebdb32"/>
+    <rdfs:comment xml:lang="en">A collection of actions that address all the step defined in a workflow.</rdfs:comment>
+    <rdfs:subClassOf rdf:nodeID="fa4aeefa306f24ada9a4b2792423fcebdb31"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/AdministrativeIssuance">
-    <rdfs:comment xml:lang="en">Document concerning administrative instructions and circulars. Their structures vary widely across organizations and traditions but may have the format of a formal communication with a title and content in unnumbered or numbered paragraphs or be divided into sections.</rdfs:comment>
-    <rdfs:label xml:lang="en">administrative issuance</rdfs:label>
+  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/Language">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/Document"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/Memoranda">
-    <rdfs:comment xml:lang="en">An official written communication issued to disseminate information.</rdfs:comment>
-    <rdfs:label xml:lang="en">memoranda</rdfs:label>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/Communication"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/hasProponent">
-    <rdfs:subPropertyOf rdf:resource="https://w3id.org/akn/ontology/allot/hasRelatedReference"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
-    <rdfs:comment xml:lang="en">The proponent entity of a relation.</rdfs:comment>
-    <rdfs:range rdf:resource="https://w3id.org/akn/ontology/allot/Reference"/>
-    <rdfs:label xml:lang="en">has proponent</rdfs:label>
-    <rdfs:domain rdf:resource="https://w3id.org/un/ontology/undo/Relation"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.estrellaproject.org/lkif-core/role.owl#Role">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:isDefinedBy rdf:resource="http://www.estrellaproject.org/lkif-core/role.owl"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/ConferenceReport">
-    <rdfs:comment xml:lang="en">A document summarising discussions held during a conference. It may also contain full text of resolutions or decisions, either proposed or adopted; recommended actions to be taken by other organs, etc., in the body of the document or as annexes.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
-    <rdfs:label xml:lang="en">conference report</rdfs:label>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/MeetingReport"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/Interval">
-    <rdfs:comment xml:lang="en">A particular time period characterised by a starting date (specified by means of the property ti:hasIntervalStartDate) and an ending date (specified by means of the property ti:hasIntervalEndDate).</rdfs:comment>
-    <rdfs:subClassOf rdf:nodeID="fa7b28e9a37474b6fba492ce12ffec85ab16"/>
-    <rdfs:label xml:lang="en">interval</rdfs:label>
-    <rdfs:subClassOf rdf:nodeID="fa7b28e9a37474b6fba492ce12ffec85ab17"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">A particular language adopted by the United Nation for publishing their documents (e.g. Arabic, Chinese, English, French, Russian, Spanish).</rdfs:comment>
+    <rdfs:label xml:lang="en">language</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://purl.org/dc/terms/LinguisticSystem"/>
     <rdfs:subClassOf rdf:resource="https://w3id.org/akn/ontology/allot/Concept"/>
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
-    <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/Annotation">
-    <rdfs:subClassOf rdf:resource="https://w3id.org/akn/ontology/allot/Concept"/>
-    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/oa#Annotation"/>
-    <rdfs:subClassOf rdf:nodeID="fa7b28e9a37474b6fba492ce12ffec85ab6"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
-    <rdfs:comment xml:lang="en">A mechanism that allows someone to link a specific entity (e.g. a relation) to a target document (or its parts), with the intent of specifying from where that entity has been actually derived from.</rdfs:comment>
-    <rdfs:label xml:lang="en">annotation</rdfs:label>
-    <rdfs:subClassOf rdf:nodeID="fa7b28e9a37474b6fba492ce12ffec85ab5"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  <rdf:Description rdf:about="http://id.loc.gov/vocabulary/iso639-1/en">
+    <rdfs:comment xml:lang="en">The English is one of the languages used for publishing United Nations documents.</rdfs:comment>
+    <rdfs:label xml:lang="en">English</rdfs:label>
+    <dc:description xml:lang="en">This entity representing the English language has been originally defined in the Library of Congress concept scheme (skos:ConceptScheme) available at http://id.loc.gov/vocabulary/iso639-1, which maps all the two-letters codes for languages introduced in the specification ISO 639-1 as Linked Open Data.</dc:description>
+    <rdfs:isDefinedBy rdf:resource="http://id.loc.gov/vocabulary/iso639-1"/>
+    <rdf:type rdf:resource="https://w3id.org/un/ontology/undo/Language"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/OfficialCompilation">
-    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/Publication"/>
-    <rdfs:comment xml:lang="en">An authoritative compilation of official documents.</rdfs:comment>
-    <rdfs:label xml:lang="en">official compilation</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/ValueInTimeAndContext">
-    <rdfs:subClassOf rdf:nodeID="fa7b28e9a37474b6fba492ce12ffec85ab28"/>
-    <rdfs:subClassOf rdf:nodeID="fa7b28e9a37474b6fba492ce12ffec85ab26"/>
-    <rdfs:comment xml:lang="en">The situation that involves an entity (with the object property tvc:hasValue) having a particular value (tvc:withValue) associated during a certain time interval (tvc:atTime) and within a specific context (tvc:withinContext).</rdfs:comment>
-    <rdfs:label xml:lang="en">value in time and context</rdfs:label>
-    <rdfs:subClassOf rdf:nodeID="fa7b28e9a37474b6fba492ce12ffec85ab25"/>
-    <dc:description xml:lang="en">This class is based on a particular ontology pattern called Time-indexed Value in Context (http://www.essepuntato.it/2012/04/tvc). It has been used by several ontologies for describing values that can be assigned/held by an entity at different times and according to different contexts. Notable ontologies that are using it are the Publishing Roles Ontology (PRO, http://purl.org/spar/pro) and the Publishing Status Ontology (PSO, http://purl.org/spar/pso).
-
-More information are available at the following paper:
-
-Peroni, S., Shotton, D., Vitali, F. (2012). Scholarly publishing and the Linked Data: describing roles, statuses, temporal and contextual extents. In Sack, H., Pellegrini, T. (Eds.), Proceedings of the 8th International Conference on Semantic Systems (i-Semantics 2012): 9-16. New York, New York, USA: ACM. DOI: http://dx.doi.org/10.1145/2362499.2362502 (Open Access version available at http://speroni.web.cs.unibo.it/publications/peroni-2012-scholarly-publishing-linked.pdf)</dc:description>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
-    <rdfs:subClassOf rdf:resource="http://www.essepuntato.it/2012/04/tvc/ValueInTime"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/akn/ontology/allot/Concept"/>
-    <rdfs:subClassOf rdf:nodeID="fa7b28e9a37474b6fba492ce12ffec85ab27"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/Workflow">
-    <rdfs:subClassOf rdf:resource="http://purl.org/spar/pwo/Workflow"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/akn/ontology/allot/Concept"/>
-    <rdfs:subClassOf rdf:nodeID="fa7b28e9a37474b6fba492ce12ffec85ab30"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/StepType">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/akn/ontology/allot/Concept"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="fa7b28e9a37474b6fba492ce12ffec85ab31">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="http://purl.org/spar/pwo/executes"/>
-    <owl:allValuesFrom rdf:resource="https://w3id.org/un/ontology/undo/Workflow"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/AdministrativeInstruction">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/AdministrativeIssuance"/>
-    <rdfs:comment xml:lang="en">A document that prescribes instructions and procedures for the implementation of rules and regulations, as well as formally communicate decisions on, for example, appointment, promotion, transfer and change of duty station.</rdfs:comment>
-    <rdfs:label xml:lang="en">administrative instruction</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/akn/ontology/allot/hasEmbodiment">
-    <rdfs:subPropertyOf rdf:resource="http://purl.org/vocab/frbr/core#embodiment"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/CourtDecision">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:comment xml:lang="en">A document introducing a court of law or adjudicating authority formal decision or specific determination following a legal proceedings. The typical narrative of judgments is often divided in background, introduction, motivation and decision.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/Document"/>
-    <rdfs:label xml:lang="en">court decision</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/DeliberativeDocument">
-    <rdfs:comment xml:lang="en">Formal expressions of the opinion or will of a principal or subsidiary organ or other empowered bodies. Usually they are open structure documents, sometimes articulated in hierarchical structures in which the text is subdivided into higher and lower subdivisions, generally including a preamble and operative paragraphs.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/Document"/>
-    <rdfs:label xml:lang="en">deliberative document</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="fa7b28e9a37474b6fba492ce12ffec85ab15">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="http://purl.org/dc/terms/language"/>
-    <owl:onClass rdf:resource="https://w3id.org/un/ontology/undo/Language"/>
-    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/akn/ontology/allot/mentions">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/Note">
-    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/Communication"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:comment xml:lang="en">A written communication to transmit comments or reports.</rdfs:comment>
-    <rdfs:label xml:lang="en">note</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="fa7b28e9a37474b6fba492ce12ffec85ab2">
-    <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/participation.owl#hasParticipant"/>
-    <owl:allValuesFrom rdf:resource="https://w3id.org/akn/ontology/allot/Reference"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  <rdf:Description rdf:about="https://w3id.org/akn/ontology/allot/FRBRManifestation">
+    <rdfs:subClassOf rdf:resource="http://purl.org/spar/fabio/Manifestation"/>
+    <rdfs:subClassOf rdf:resource="http://purl.org/vocab/frbr/core#Manifestation"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/akn/ontology/allot"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/MeetingAgenda">
     <rdfs:comment xml:lang="en">Documents listing agenda items of a meeting or a series of meetings, at times with brief description of agenda items, citation of related documents, and other announcements, such as consultations, informal meetings or side events, as well as summaries of the previous day's meetings. Their structures vary widely across organizations and traditions.</rdfs:comment>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/Document"/>
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
     <rdfs:label xml:lang="en">meeting agenda</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/Document"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#hasIntervalEndDate">
-    <rdfs:comment rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/AdministrativeInstruction">
+    <rdfs:comment xml:lang="en">A document that prescribes instructions and procedures for the implementation of rules and regulations, as well as formally communicate decisions on, for example, appointment, promotion, transfer and change of duty station.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/AdministrativeIssuance"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
+    <rdfs:label xml:lang="en">administrative instruction</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="fa4aeefa306f24ada9a4b2792423fcebdb1">
+    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+    <owl:onProperty rdf:resource="http://purl.org/dc/terms/language"/>
+    <owl:onClass rdf:resource="https://w3id.org/un/ontology/undo/Language"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/akn/ontology/allot/Term">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/akn/ontology/allot"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/frbr/core#Manifestation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/Constitution">
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
+    <rdfs:label xml:lang="en">constitution</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/NormativeDocument"/>
+    <rdfs:comment xml:lang="en">A document describing a set of fundamental principles or established precedents according to which a body is acknowledged to be governed.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/MeetingRecord">
+    <rdfs:comment xml:lang="en">Documents containing full first-person records of a meeting (verbatim). Their structure reflects the different section of the debates and/or alternation of questions and answers that take place during meetings discussions.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/Document"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">meeting record</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/AnnotatedAgenda">
-    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/MeetingAgenda"/>
-    <rdfs:label xml:lang="en">annotated agenda</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:comment xml:lang="en">An agenda with a brief description of agenda items, citation of related documents as well as information and other announcements.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/MeetingAgenda"/>
+    <rdfs:label xml:lang="en">annotated agenda</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/Agent">
-    <rdfs:label xml:lang="en">agent</rdfs:label>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="http://www.estrellaproject.org/lkif-core/action.owl#Agent"/>
-    <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/akn/ontology/allot/Reference"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
-    <rdfs:comment xml:lang="en">An actor (e.g. a person, an organisation) that can perform some actions.</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/Language">
-    <rdfs:comment xml:lang="en">A particular language adopted by the United Nation for publishing their documents (e.g. Arabic, Chinese, English, French, Russian, Spanish).</rdfs:comment>
-    <rdfs:label xml:lang="en">language</rdfs:label>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/akn/ontology/allot/Concept"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
-    <rdfs:subClassOf rdf:resource="http://purl.org/dc/terms/LinguisticSystem"/>
+  <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/spar/pro/Role">
+  <rdf:Description rdf:about="http://www.estrellaproject.org/lkif-core/action.owl#Organisation">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/pro"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.estrellaproject.org/lkif-core/action.owl"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/AmendmentList">
+  <rdf:Description rdf:nodeID="fa4aeefa306f24ada9a4b2792423fcebdb6">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:nodeID="fa4aeefa306f24ada9a4b2792423fcebdb7"/>
+    <owl:onProperty rdf:resource="http://www.w3.org/ns/oa#hasTarget"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="fa4aeefa306f24ada9a4b2792423fcebdb2">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:resource="https://w3id.org/akn/ontology/allot/Reference"/>
+    <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/participation.owl#hasParticipant"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.estrellaproject.org/lkif-core/action.owl#Person">
+    <rdfs:isDefinedBy rdf:resource="http://www.estrellaproject.org/lkif-core/action.owl"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:comment xml:lang="en">A document listing proposals for modifications submitted to official deliberative bodies for discussion. It provides modifications to other normative documents.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/ModificatoryInstruction"/>
-    <rdfs:label xml:lang="en">amendment list</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/hasReceiver">
-    <rdfs:comment xml:lang="en">The receiver entity of a relation.</rdfs:comment>
-    <rdfs:domain rdf:resource="https://w3id.org/un/ontology/undo/Relation"/>
+  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/hasStepType">
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:label xml:lang="en">has receiver</rdfs:label>
     <rdfs:subPropertyOf rdf:resource="https://w3id.org/akn/ontology/allot/hasRelatedReference"/>
-    <rdfs:range rdf:resource="https://w3id.org/akn/ontology/allot/Reference"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="fa7b28e9a37474b6fba492ce12ffec85ab24">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:allValuesFrom rdf:resource="https://w3id.org/un/ontology/undo/Action"/>
-    <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/taskexecution.owl#isExecutedIn"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="fa7b28e9a37474b6fba492ce12ffec85ab28">
-    <owl:allValuesFrom rdf:resource="https://w3id.org/akn/ontology/allot/Reference"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:nodeID="fa7b28e9a37474b6fba492ce12ffec85ab29"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/Address">
-    <rdfs:label xml:lang="en">address</rdfs:label>
-    <rdfs:comment xml:lang="en">A document exemplifying keynote speeches and opening addresses and messages.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/Communication"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/akn/ontology/allot/Person">
-    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/Agent"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/akn/ontology/allot"/>
-    <rdfs:subClassOf rdf:resource="http://www.estrellaproject.org/lkif-core/action.owl#Person"/>
-    <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+    <rdfs:range rdf:resource="https://w3id.org/un/ontology/undo/StepType"/>
+    <rdfs:domain rdf:resource="https://w3id.org/un/ontology/undo/Step"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/akn/ontology/allot/Organization">
+    <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/Agent"/>
-    <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
     <rdfs:subClassOf rdf:resource="http://www.estrellaproject.org/lkif-core/action.owl#Organisation"/>
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/akn/ontology/allot"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/spar/pso/Status">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/pso"/>
-  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/AdministrativeCircular">
-    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/AdministrativeIssuance"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:comment xml:lang="en">A document containing general information of administrative nature as well as clarifications of established rules, policies and procedures.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/AdministrativeIssuance"/>
     <rdfs:label xml:lang="en">administrative circular</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/Constitution">
-    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/NormativeDocument"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
-    <rdfs:comment xml:lang="en">A document describing a set of fundamental principles or established precedents according to which a body is acknowledged to be governed.</rdfs:comment>
-    <rdfs:label xml:lang="en">constitution</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/AdvisoryOpinion">
-    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/CourtDecision"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
-    <rdfs:comment xml:lang="en">A document introducing an opinion rendered by a court or adjudicating body upon request.</rdfs:comment>
-    <rdfs:label xml:lang="en">advisory opinion</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/hasSemantics">
-    <rdfs:domain rdf:resource="https://w3id.org/un/ontology/undo/Relation"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
-    <rdfs:label xml:lang="en">has semantics</rdfs:label>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:subPropertyOf rdf:resource="https://w3id.org/akn/ontology/allot/hasRelatedReference"/>
-    <rdfs:range rdf:resource="https://w3id.org/akn/ontology/allot/Concept"/>
-    <rdfs:comment xml:lang="en">The semantics of a relation.</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Organization">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/akn/ontology/allot/Reference">
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/akn/ontology/allot"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/vocab/frbr/core#realization">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/frbr/core"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/ModificatoryInstruction">
-    <rdfs:label xml:lang="en">modificatory instruction</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
-    <rdfs:comment xml:lang="en">A document containing formal proposals for modifications, as single instruction or as a collection of instructions, of previously issued documents issued by the same body that approved the original document. Its structures vary widely across organizations and traditions.</rdfs:comment>
+  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/Communication">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/Document"/>
+    <rdfs:label xml:lang="en">communication</rdfs:label>
+    <rdfs:comment xml:lang="en">A document containing an official communication used to formally inform the UN community of events and of the outcome of non-UN meetings, to transmit reports or communications, and for a variety of other purposes. Its structures vary widely across organizations and traditions but generally assume the format of a formal communication with title and content in unnumbered paragraphs.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="fa4aeefa306f24ada9a4b2792423fcebdb22">
+    <owl:onProperty rdf:resource="http://purl.org/spar/pwo/needs"/>
+    <owl:allValuesFrom rdf:resource="https://w3id.org/akn/ontology/allot/Reference"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/spar/fabio/Manifestation">
     <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/fabio"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="fa7b28e9a37474b6fba492ce12ffec85ab13">
-    <owl:allValuesFrom rdf:resource="https://w3id.org/un/ontology/undo/Document"/>
-    <owl:onProperty rdf:nodeID="fa7b28e9a37474b6fba492ce12ffec85ab14"/>
+  <rdf:Description rdf:nodeID="fa4aeefa306f24ada9a4b2792423fcebdb20">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://w3id.org/un/ontology/undo/hasSemantics"/>
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="fa7b28e9a37474b6fba492ce12ffec85ab6">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="http://www.w3.org/ns/oa#hasTarget"/>
-    <owl:allValuesFrom rdf:nodeID="fa7b28e9a37474b6fba492ce12ffec85ab7"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/MeetingMinute">
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/MeetingReport"/>
-    <rdfs:comment xml:lang="en">A document providing a third-person accounts of meetings.</rdfs:comment>
-    <rdfs:label xml:lang="en">meeting minute</rdfs:label>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/akn/ontology/allot/FRBRWork">
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/akn/ontology/allot"/>
-    <rdfs:subClassOf rdf:resource="http://purl.org/spar/fabio/Work"/>
-    <rdfs:subClassOf rdf:resource="http://purl.org/vocab/frbr/core#Work"/>
+  <rdf:Description rdf:about="https://w3id.org/akn/ontology/allot/hasEmbodiment">
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/vocab/frbr/core#embodiment"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/OfficialLetter">
     <rdfs:label xml:lang="en">official letter</rdfs:label>
-    <rdfs:comment xml:lang="en">Official written correspondence; communications or notes verbale concerning issues under the authority of the organisation to provide information, requiring specific action by the addressees or stating a position.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/Communication"/>
+    <rdfs:comment xml:lang="en">Official written correspondence; communications or notes verbale concerning issues under the authority of the organisation to provide information, requiring specific action by the addressees or stating a position.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/Treaty">
-    <rdfs:comment xml:lang="en">An international agreement concluded between States, and bilateral or multilateral agreements governed by international law to which international organizations are parties.</rdfs:comment>
-    <rdfs:label xml:lang="en">treaty</rdfs:label>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/NormativeDocument"/>
+  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/Policy">
+    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/Paper"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
+    <rdfs:label xml:lang="en">policy</rdfs:label>
+    <rdfs:comment xml:lang="en">A document introducing general course or principle of action adopted or proposed by the official authorities or bodies.</rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://id.loc.gov/vocabulary/iso639-1/fr">
-    <rdf:type rdf:resource="https://w3id.org/un/ontology/undo/Language"/>
-    <dc:description xml:lang="en">This entity representing the French language has been originally defined in the Library of Congress concept scheme (skos:ConceptScheme) available at http://id.loc.gov/vocabulary/iso639-1, which maps all the two-letters codes for languages introduced in the specification ISO 639-1 as Linked Open Data.</dc:description>
-    <rdfs:isDefinedBy rdf:resource="http://id.loc.gov/vocabulary/iso639-1"/>
+  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/Judgment">
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">judgement</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/CourtDecision"/>
+    <rdfs:comment xml:lang="en">A document formalising a decision or specific determination following a legal proceeding. Its structures are highly formalised.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="fa4aeefa306f24ada9a4b2792423fcebdb4">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:resource="https://w3id.org/un/ontology/undo/Interval"/>
+    <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#atTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/Decision">
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
+    <rdfs:comment xml:lang="en">A document describing a formal action regarding administrative and procedural matters of principal or subsidiary organ or other empowered bodies. This kind of documents is sometimes also used to record the adoption of a text representing the consensus of the members of a given organ.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/DeliberativeDocument"/>
+    <rdfs:label xml:lang="en">decision</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/akn/ontology/allot/hasRealization">
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/vocab/frbr/core#realization"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.loc.gov/vocabulary/iso639-1/zh">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdfs:comment xml:lang="en">The French is one of the languages used for publishing United Nations documents.</rdfs:comment>
-    <rdfs:label xml:lang="en">French</rdfs:label>
+    <rdf:type rdf:resource="https://w3id.org/un/ontology/undo/Language"/>
+    <rdfs:isDefinedBy rdf:resource="http://id.loc.gov/vocabulary/iso639-1"/>
+    <rdfs:comment xml:lang="en">The Chinese is one of the languages used for publishing United Nations documents.</rdfs:comment>
+    <dc:description xml:lang="en">This entity representing the Chinise language has been originally defined in the Library of Congress concept scheme (skos:ConceptScheme) available at http://id.loc.gov/vocabulary/iso639-1, which maps all the two-letters codes for languages introduced in the specification ISO 639-1 as Linked Open Data.</dc:description>
+    <rdfs:label xml:lang="en">Chinese</rdfs:label>
   </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/vocab/frbr/core#embodiment">
+  <rdf:Description rdf:about="http://purl.org/vocab/frbr/core#transformation">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
     <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/frbr/core"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/Paper">
+  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/hasProponent">
+    <rdfs:comment xml:lang="en">The proponent entity of a relation.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/un/ontology/undo/Relation"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/akn/ontology/allot/hasRelatedReference"/>
+    <rdfs:range rdf:resource="https://w3id.org/akn/ontology/allot/Reference"/>
+    <rdfs:label xml:lang="en">has proponent</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/MeetingReport">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:comment xml:lang="en">An official document that provides information about a particular subject or a detailed account of issues, policies or outcomes of, for example, inquiries or scientific investigations. Its structures vary widely across organizations and traditions.</rdfs:comment>
+    <rdfs:comment xml:lang="en">Documents containing summarized accounts of meetings. Their structures vary widely across organizations and traditions.</rdfs:comment>
     <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/Document"/>
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
-    <rdfs:label xml:lang="en">paper</rdfs:label>
+    <rdfs:label xml:lang="en">meeting report</rdfs:label>
   </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/spar/fabio/Work">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/fabio"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/Decision">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:comment xml:lang="en">A document describing a formal action regarding administrative and procedural matters of principal or subsidiary organ or other empowered bodies. This kind of documents is sometimes also used to record the adoption of a text representing the consensus of the members of a given organ.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
-    <rdfs:label xml:lang="en">decision</rdfs:label>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/DeliberativeDocument"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/Recommendation">
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">recommendation</rdfs:label>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/NormativeDocument"/>
-    <rdfs:comment xml:lang="en">A document that provides guidance and may create reporting obligations for parties.</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="fa7b28e9a37474b6fba492ce12ffec85ab5">
-    <owl:onProperty rdf:resource="http://www.w3.org/ns/oa#hasBody"/>
-    <owl:allValuesFrom rdf:resource="https://w3id.org/akn/ontology/allot/Reference"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/Policy">
-    <rdfs:comment xml:lang="en">A document introducing general course or principle of action adopted or proposed by the official authorities or bodies.</rdfs:comment>
-    <rdfs:label xml:lang="en">policy</rdfs:label>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/Paper"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/akn/ontology/allot/hasExemplar">
-    <rdfs:subPropertyOf rdf:resource="http://purl.org/vocab/frbr/core#exemplar"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/Protocol">
-    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/NormativeDocument"/>
-    <rdfs:label xml:lang="en">protocol</rdfs:label>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:comment xml:lang="en">International agreement that supplements a previous treaty or international agreement.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="fa7b28e9a37474b6fba492ce12ffec85ab27">
-    <owl:allValuesFrom rdf:resource="https://w3id.org/akn/ontology/allot/Reference"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="http://www.essepuntato.it/2012/04/tvc/withinContext"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/Amendment">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/ModificatoryInstruction"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
-    <rdfs:comment xml:lang="en">A document that provides modifications to other normative documents. The modifications could appear in different structured texts like normative and deliberative documents, debate records, etc.</rdfs:comment>
-    <rdfs:label xml:lang="en">amendment</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/Regulation">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
-    <rdfs:comment xml:lang="en">A set guides to enforce a statutory instrument or regulate activities.</rdfs:comment>
-    <rdfs:label xml:lang="en">regulation</rdfs:label>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/NormativeDocument"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/CouncilReport">
-    <rdfs:comment xml:lang="en">A document summarising discussions held during a council. It may also contain full text of resolutions or decisions, either proposed or adopted; recommended actions to be taken by other organs, etc., in the body of the document or as annexes.</rdfs:comment>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/MeetingReport"/>
-    <rdfs:label xml:lang="en">council report</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
+  <rdf:Description rdf:nodeID="fa4aeefa306f24ada9a4b2792423fcebdb11">
+    <rdf:first rdf:resource="https://w3id.org/akn/ontology/allot/FRBRWork"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://www.essepuntato.it/2012/04/tvc/ValueInTime">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:isDefinedBy rdf:resource="http://www.essepuntato.it/2012/04/tvc"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.w3.org/ns/oa#hasBody">
-    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/oa#"/>
+  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/Document">
+    <rdfs:comment xml:lang="en">A document of a specific kind (e.g. normative documents, legal documents, etc.) published by someone for certain reasons.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/akn/ontology/allot/FRBRWork"/>
+    <rdfs:label xml:lang="en">document</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="fa4aeefa306f24ada9a4b2792423fcebdb12"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.essepuntato.it/2012/04/tvc/hasValue">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.essepuntato.it/2012/04/tvc"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="fa7b28e9a37474b6fba492ce12ffec85ab18">
-    <owl:onProperty rdf:resource="https://w3id.org/un/ontology/undo/hasProponent"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/Circular">
-    <rdfs:label xml:lang="en">circular</rdfs:label>
+  <rdf:Description rdf:about="http://purl.org/spar/pro/Role">
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/pro"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/Communication"/>
-    <rdfs:comment xml:lang="en">A document containing specialized information of specific interests.</rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/Resolution">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
-    <rdfs:label xml:lang="en">resolution</rdfs:label>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/DeliberativeDocument"/>
-    <rdfs:comment xml:lang="en">A particular kind of document that contains a formal expression of the will of a principal or subsidiary organ or other empowered bodies.</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/Action">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
-    <rdfs:subClassOf rdf:nodeID="fa7b28e9a37474b6fba492ce12ffec85ab2"/>
-    <rdfs:subClassOf rdf:nodeID="fa7b28e9a37474b6fba492ce12ffec85ab4"/>
-    <rdfs:subClassOf rdf:nodeID="fa7b28e9a37474b6fba492ce12ffec85ab3"/>
-    <rdfs:subClassOf rdf:resource="http://purl.org/spar/pwo/Action"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/akn/ontology/allot/Event"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="fa7b28e9a37474b6fba492ce12ffec85ab17">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#hasIntervalStartDate"/>
-    <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/akn/ontology/allot/Concept">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/akn/ontology/allot"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/Value">
-    <rdfs:comment xml:lang="en">Something that can be held by an entity (e.g. a particular role or status).</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/akn/ontology/allot/Reference"/>
-    <rdfs:label xml:lang="en">value</rdfs:label>
+  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/StepType">
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">step type</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/akn/ontology/allot/Concept"/>
+    <rdfs:comment xml:lang="en">The class of all the types for categorising the steps in workflow descriptions.</rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="fa7b28e9a37474b6fba492ce12ffec85ab3">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:allValuesFrom rdf:resource="https://w3id.org/un/ontology/undo/Step"/>
-    <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/taskexecution.owl#executesTask"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="fa7b28e9a37474b6fba492ce12ffec85ab14">
-    <owl:inverseOf rdf:resource="https://w3id.org/akn/ontology/allot/hasRealization"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="fa7b28e9a37474b6fba492ce12ffec85ab26">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="http://www.essepuntato.it/2012/04/tvc/withValue"/>
-    <owl:allValuesFrom rdf:resource="https://w3id.org/un/ontology/undo/Value"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="fa7b28e9a37474b6fba492ce12ffec85ab12">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="https://w3id.org/akn/ontology/allot/hasRealization"/>
-    <owl:someValuesFrom rdf:resource="https://w3id.org/un/ontology/undo/DocumentVersion"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/Judgment">
+  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/CodeOfConduct">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:comment xml:lang="en">A document formalising a decision or specific determination following a legal proceeding. Its structures are highly formalised.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
-    <rdfs:label xml:lang="en">judgement</rdfs:label>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/CourtDecision"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/Bulletin">
-    <rdfs:label xml:lang="en">bulletin</rdfs:label>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/Communication"/>
-    <rdfs:comment xml:lang="en">A document containing information not requiring any action by the addressees.</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.estrellaproject.org/lkif-core/action.owl#Agent">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:isDefinedBy rdf:resource="http://www.estrellaproject.org/lkif-core/action.owl"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="fa7b28e9a37474b6fba492ce12ffec85ab8">
-    <rdf:first rdf:resource="https://w3id.org/akn/ontology/allot/FRBRExpression"/>
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-    <rdf:rest rdf:nodeID="fa7b28e9a37474b6fba492ce12ffec85ab9"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/OfficialStatement">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/Communication"/>
-    <rdfs:comment xml:lang="en">A document introducing a pronunciation of officers in their official capacity.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
-    <rdfs:label xml:lang="en">official statement</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="fa7b28e9a37474b6fba492ce12ffec85ab7">
-    <owl:unionOf rdf:nodeID="fa7b28e9a37474b6fba492ce12ffec85ab8"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/Convention">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:comment xml:lang="en">Mandatory regulations subject to ratification. Instruments usually negotiated under the auspices of an international organization.</rdfs:comment>
-    <rdfs:label xml:lang="en">convention</rdfs:label>
     <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/NormativeDocument"/>
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
+    <rdfs:label xml:lang="en">code of conduct</rdfs:label>
+    <rdfs:comment xml:lang="en">A document listing rules outlining the responsibilities of, or proper practices for, individuals, parties, organizations, or countries on specific issues.</rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/PositionPaper">
+  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/Memoranda">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
-    <rdfs:comment xml:lang="en">An essay detailing facts and opinions regarding specific issues.</rdfs:comment>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">position paper</rdfs:label>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/Paper"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/RulesOfProcedure">
-    <rdfs:comment xml:lang="en">A document that prescribes guides for conduct or actions, such as rules for conducting business within a body, as well as for the financial administration of organizations and their members.</rdfs:comment>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/NormativeDocument"/>
-    <rdfs:label xml:lang="en">rules of procedure</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/Collection">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/Publication"/>
-    <rdfs:comment xml:lang="en">A collection of individual autonomous documents.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
-    <rdfs:label xml:lang="en">collection</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/AgendaListing">
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
-    <rdfs:label xml:lang="en">agenda listing</rdfs:label>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/MeetingAgenda"/>
-    <rdfs:comment xml:lang="en">A document listing agenda items to be considered at a specific meeting/s or session/s. It may report time, location, etc.</rdfs:comment>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/akn/ontology/allot/Event">
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/akn/ontology/allot"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="fa7b28e9a37474b6fba492ce12ffec85ab16">
-    <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#hasIntervalEndDate"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/PressRelease">
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">memoranda</rdfs:label>
+    <rdfs:comment xml:lang="en">An official written communication issued to disseminate information.</rdfs:comment>
     <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/Communication"/>
-    <rdfs:label xml:lang="en">press release</rdfs:label>
-    <rdfs:comment xml:lang="en">A written communication to the public that serves information purposes only. It is not considered an official document.</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/spar/fabio/Expression">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/fabio"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="fa7b28e9a37474b6fba492ce12ffec85ab29">
-    <owl:inverseOf rdf:resource="http://www.essepuntato.it/2012/04/tvc/hasValue"/>
+  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/Protocol">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
+    <rdfs:label xml:lang="en">protocol</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/NormativeDocument"/>
+    <rdfs:comment xml:lang="en">International agreement that supplements a previous treaty or international agreement.</rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/vocab/frbr/core#exemplar">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/frbr/core"/>
+  <rdf:Description rdf:about="http://id.loc.gov/vocabulary/iso639-1/es">
+    <rdfs:label xml:lang="en">Spanish</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://id.loc.gov/vocabulary/iso639-1"/>
+    <rdf:type rdf:resource="https://w3id.org/un/ontology/undo/Language"/>
+    <dc:description xml:lang="en">This entity representing the Spanish language has been originally defined in the Library of Congress concept scheme (skos:ConceptScheme) available at http://id.loc.gov/vocabulary/iso639-1, which maps all the two-letters codes for languages introduced in the specification ISO 639-1 as Linked Open Data.</dc:description>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:comment xml:lang="en">The Spanish is one of the languages used for publishing United Nations documents.</rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="fa7b28e9a37474b6fba492ce12ffec85ab10">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-    <rdf:first rdf:resource="https://w3id.org/akn/ontology/allot/FRBRManifestation"/>
-    <rdf:rest rdf:nodeID="fa7b28e9a37474b6fba492ce12ffec85ab11"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="fa7b28e9a37474b6fba492ce12ffec85ab1">
+  <rdf:Description rdf:nodeID="fa4aeefa306f24ada9a4b2792423fcebdb12">
+    <owl:someValuesFrom rdf:resource="https://w3id.org/un/ontology/undo/DocumentVersion"/>
+    <owl:onProperty rdf:resource="https://w3id.org/akn/ontology/allot/hasRealization"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="http://purl.org/dc/terms/language"/>
-    <owl:onClass rdf:resource="https://w3id.org/un/ontology/undo/Language"/>
-    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="fa4aeefa306f24ada9a4b2792423fcebdb25">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:resource="https://w3id.org/un/ontology/undo/Interval"/>
+    <owl:onProperty rdf:resource="http://www.essepuntato.it/2012/04/tvc/atTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Organization">
+    <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/Standard">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:comment xml:lang="en">A document introducing a set of guides established by consensus outlining the responsibilities of, or proper practices for, individuals, parties, organizations or countries on specific issues.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/NormativeDocument"/>
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
     <rdfs:label xml:lang="en">standard</rdfs:label>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/NormativeDocument"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="fa7b28e9a37474b6fba492ce12ffec85ab21">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="http://purl.org/spar/pwo/hasNextStep"/>
-    <owl:allValuesFrom rdf:resource="https://w3id.org/un/ontology/undo/Step"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing">
+  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/Annotation">
+    <rdfs:comment xml:lang="en">A mechanism that allows someone to link a specific entity (e.g. a relation) to a target document (or its parts), with the intent of specifying from where that entity has been actually derived from.</rdfs:comment>
+    <rdfs:subClassOf rdf:nodeID="fa4aeefa306f24ada9a4b2792423fcebdb6"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/akn/ontology/allot/Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/ProgressReport">
-    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/Paper"/>
-    <rdfs:comment xml:lang="en">A document assessing projects or processes.</rdfs:comment>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="fa4aeefa306f24ada9a4b2792423fcebdb5"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/oa#Annotation"/>
+    <rdfs:label xml:lang="en">annotation</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
-    <rdfs:label xml:lang="en">progress report</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/ValueInTimeAndContext">
+    <rdfs:subClassOf rdf:resource="https://w3id.org/akn/ontology/allot/Concept"/>
+    <rdfs:subClassOf rdf:nodeID="fa4aeefa306f24ada9a4b2792423fcebdb26"/>
+    <rdfs:subClassOf rdf:resource="http://www.essepuntato.it/2012/04/tvc/ValueInTime"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="fa4aeefa306f24ada9a4b2792423fcebdb28"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
+    <rdfs:label xml:lang="en">value in time and context</rdfs:label>
+    <rdfs:subClassOf rdf:nodeID="fa4aeefa306f24ada9a4b2792423fcebdb25"/>
+    <rdfs:comment xml:lang="en">The situation that involves an entity (with the object property tvc:hasValue) having a particular value (tvc:withValue) associated during a certain time interval (tvc:atTime) and within a specific context (tvc:withinContext).</rdfs:comment>
+    <rdfs:subClassOf rdf:nodeID="fa4aeefa306f24ada9a4b2792423fcebdb27"/>
+    <dc:description xml:lang="en">This class is based on a particular ontology pattern called Time-indexed Value in Context (http://www.essepuntato.it/2012/04/tvc). It has been used by several ontologies for describing values that can be assigned/held by an entity at different times and according to different contexts. Notable ontologies that are using it are the Publishing Roles Ontology (PRO, http://purl.org/spar/pro) and the Publishing Status Ontology (PSO, http://purl.org/spar/pso).
+
+More information are available at the following paper:
+
+Peroni, S., Shotton, D., Vitali, F. (2012). Scholarly publishing and the Linked Data: describing roles, statuses, temporal and contextual extents. In Sack, H., Pellegrini, T. (Eds.), Proceedings of the 8th International Conference on Semantic Systems (i-Semantics 2012): 9-16. New York, New York, USA: ACM. DOI: http://dx.doi.org/10.1145/2362499.2362502 (Open Access version available at http://speroni.web.cs.unibo.it/publications/peroni-2012-scholarly-publishing-linked.pdf)</dc:description>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/ConferenceReport">
+    <rdfs:comment xml:lang="en">A document summarising discussions held during a conference. It may also contain full text of resolutions or decisions, either proposed or adopted; recommended actions to be taken by other organs, etc., in the body of the document or as annexes.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/MeetingReport"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">conference report</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/AdministrativeIssuance">
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
+    <rdfs:label xml:lang="en">administrative issuance</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">Document concerning administrative instructions and circulars. Their structures vary widely across organizations and traditions but may have the format of a formal communication with a title and content in unnumbered or numbered paragraphs or be divided into sections.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/Document"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/Workflow">
+    <rdfs:subClassOf rdf:resource="http://purl.org/spar/pwo/Workflow"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/akn/ontology/allot/Concept"/>
+    <rdfs:comment xml:lang="en">A description of a sequence of connected steps, representing a sequence of publishing operations undertaken by agents.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
+    <rdfs:label xml:lang="en">workflow</rdfs:label>
+    <rdfs:subClassOf rdf:nodeID="fa4aeefa306f24ada9a4b2792423fcebdb30"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/akn/ontology/allot/FRBRExpression">
+    <rdfs:subClassOf rdf:nodeID="fa4aeefa306f24ada9a4b2792423fcebdb1"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/akn/ontology/allot"/>
+    <rdfs:subClassOf rdf:resource="http://purl.org/vocab/frbr/core#Expression"/>
+    <rdfs:subClassOf rdf:resource="http://purl.org/spar/fabio/Expression"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/akn/ontology/allot/Person">
+    <rdfs:subClassOf rdf:resource="http://www.estrellaproject.org/lkif-core/action.owl#Person"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/Agent"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/akn/ontology/allot"/>
+    <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/akn/ontology/allot/Role">
+    <rdfs:subClassOf rdf:resource="http://www.estrellaproject.org/lkif-core/role.owl#Role"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://purl.org/spar/pro/Role"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/Value"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/akn/ontology/allot"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/language">
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms"/>
+    <rdfs:label xml:lang="en">has language</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en">This property enables one to specify the language associated to a particular document version.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="fa4aeefa306f24ada9a4b2792423fcebdb18">
+    <owl:onProperty rdf:resource="https://w3id.org/un/ontology/undo/hasProponent"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="fa4aeefa306f24ada9a4b2792423fcebdb21">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:resource="https://w3id.org/un/ontology/undo/Step"/>
+    <owl:onProperty rdf:resource="http://purl.org/spar/pwo/hasNextStep"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/Amendment">
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">amendment</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/ModificatoryInstruction"/>
+    <rdfs:comment xml:lang="en">A document that provides modifications to other normative documents. The modifications could appear in different structured texts like normative and deliberative documents, debate records, etc.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/Rules">
+    <rdfs:comment xml:lang="en">A document prescribing principles governing conduct or procedure within a particular area of activity.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/NormativeDocument"/>
+    <rdfs:label xml:lang="en">rules</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/ModificatoryInstruction">
+    <rdfs:comment xml:lang="en">A document containing formal proposals for modifications, as single instruction or as a collection of instructions, of previously issued documents issued by the same body that approved the original document. Its structures vary widely across organizations and traditions.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/Document"/>
+    <rdfs:label xml:lang="en">modificatory instruction</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.loc.gov/vocabulary/iso639-1/ru">
+    <rdf:type rdf:resource="https://w3id.org/un/ontology/undo/Language"/>
+    <rdfs:comment xml:lang="en">The Russian is one of the languages used for publishing United Nations documents.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://id.loc.gov/vocabulary/iso639-1"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <dc:description xml:lang="en">This entity representing the Russian language has been originally defined in the Library of Congress concept scheme (skos:ConceptScheme) available at http://id.loc.gov/vocabulary/iso639-1, which maps all the two-letters codes for languages introduced in the specification ISO 639-1 as Linked Open Data.</dc:description>
+    <rdfs:label xml:lang="en">Russian</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.loc.gov/vocabulary/iso639-1/ar">
+    <rdf:type rdf:resource="https://w3id.org/un/ontology/undo/Language"/>
+    <rdfs:label xml:lang="en">Arabic</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://id.loc.gov/vocabulary/iso639-1"/>
+    <rdfs:comment xml:lang="en">The Arabic is one of the languages used for publishing United Nations documents.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <dc:description xml:lang="en">This entity representing the Arabic language has been originally defined in the Library of Congress concept scheme (skos:ConceptScheme) available at http://id.loc.gov/vocabulary/iso639-1, which maps all the two-letters codes for languages introduced in the specification ISO 639-1 as Linked Open Data.</dc:description>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/CouncilReport">
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">A document summarising discussions held during a council. It may also contain full text of resolutions or decisions, either proposed or adopted; recommended actions to be taken by other organs, etc., in the body of the document or as annexes.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/MeetingReport"/>
+    <rdfs:label xml:lang="en">council report</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/Bulletin">
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/Communication"/>
+    <rdfs:comment xml:lang="en">A document containing information not requiring any action by the addressees.</rdfs:comment>
+    <rdfs:label xml:lang="en">bulletin</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="fa4aeefa306f24ada9a4b2792423fcebdb16">
+    <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#hasIntervalEndDate"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/Regulation">
+    <rdfs:label xml:lang="en">regulation</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/NormativeDocument"/>
+    <rdfs:comment xml:lang="en">A set guides to enforce a statutory instrument or regulate activities.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/CodeOfPractice">
+    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/NormativeDocument"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">A document that defines correct procedures on how to implement principles and/or standards.</rdfs:comment>
+    <rdfs:label xml:lang="en">code of practice</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/frbr/core#revision">
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/frbr/core"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/Step">
+    <rdfs:subClassOf rdf:nodeID="fa4aeefa306f24ada9a4b2792423fcebdb22"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/akn/ontology/allot/Concept"/>
+    <rdfs:label xml:lang="en">step</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://purl.org/spar/pwo/Step"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
+    <rdfs:subClassOf rdf:nodeID="fa4aeefa306f24ada9a4b2792423fcebdb21"/>
+    <rdfs:subClassOf rdf:nodeID="fa4aeefa306f24ada9a4b2792423fcebdb23"/>
+    <rdfs:comment xml:lang="en">An atomic unit of a workflow that involves some input entity needed to complete the step, and produces some outcomes, such as a document.</rdfs:comment>
+    <rdfs:subClassOf rdf:nodeID="fa4aeefa306f24ada9a4b2792423fcebdb24"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/Charter">
+    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/NormativeDocument"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">Foundational treaty outlining the conditions under which a body is organised, and defining its rights and privileges.</rdfs:comment>
+    <rdfs:label xml:lang="en">charter</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/RulesOfProcedure">
+    <rdfs:label xml:lang="en">rules of procedure</rdfs:label>
+    <rdfs:comment xml:lang="en">A document that prescribes guides for conduct or actions, such as rules for conducting business within a body, as well as for the financial administration of organizations and their members.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/NormativeDocument"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="fa4aeefa306f24ada9a4b2792423fcebdb28">
+    <owl:allValuesFrom rdf:resource="https://w3id.org/akn/ontology/allot/Reference"/>
+    <owl:onProperty rdf:nodeID="fa4aeefa306f24ada9a4b2792423fcebdb29"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/akn/ontology/allot/FRBRItem">
     <rdfs:subClassOf rdf:resource="http://purl.org/spar/fabio/Item"/>
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/akn/ontology/allot"/>
     <rdfs:subClassOf rdf:resource="http://purl.org/vocab/frbr/core#Item"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/Status">
-    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/Value"/>
-    <rdfs:label xml:lang="en">status</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://purl.org/spar/pso/Status"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
-    <rdfs:comment xml:lang="en">A value identifying the status of a document (e.g. in drafting, under revision, published).</rdfs:comment>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://id.loc.gov/vocabulary/iso639-1/es">
-    <dc:description xml:lang="en">This entity representing the Spanish language has been originally defined in the Library of Congress concept scheme (skos:ConceptScheme) available at http://id.loc.gov/vocabulary/iso639-1, which maps all the two-letters codes for languages introduced in the specification ISO 639-1 as Linked Open Data.</dc:description>
-    <rdfs:comment xml:lang="en">The Spanish is one of the languages used for publishing United Nations documents.</rdfs:comment>
-    <rdfs:label xml:lang="en">Spanish</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://id.loc.gov/vocabulary/iso639-1"/>
-    <rdf:type rdf:resource="https://w3id.org/un/ontology/undo/Language"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="fa7b28e9a37474b6fba492ce12ffec85ab11">
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-    <rdf:first rdf:resource="https://w3id.org/akn/ontology/allot/FRBRWork"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.estrellaproject.org/lkif-core/action.owl#Organisation">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:isDefinedBy rdf:resource="http://www.estrellaproject.org/lkif-core/action.owl"/>
-  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/NormativeDocument">
-    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/Document"/>
-    <rdfs:comment xml:lang="en">Formal provision concerning commands, recommendations, opinions or expressions of will issued or entered into by a principal or a subsidiary organ or other empowered bodies. Usually, it is articulated in hierarchical structures, in which the text is subdivided into higher and lower subdivisions.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">Formal provision concerning commands, recommendations, opinions or expressions of will issued or entered into by a principal or a subsidiary organ or other empowered bodies. Usually, it is articulated in hierarchical structures, in which the text is subdivided into higher and lower subdivisions.</rdfs:comment>
     <rdfs:label xml:lang="en">normative document</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/Document"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="fa7b28e9a37474b6fba492ce12ffec85ab30">
-    <owl:onProperty rdf:resource="http://purl.org/spar/pwo/hasStep"/>
+  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/PositionPaper">
+    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/Paper"/>
+    <rdfs:comment xml:lang="en">An essay detailing facts and opinions regarding specific issues.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">position paper</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="fa4aeefa306f24ada9a4b2792423fcebdb7">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:unionOf rdf:nodeID="fa4aeefa306f24ada9a4b2792423fcebdb8"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/Address">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/Communication"/>
+    <rdfs:comment xml:lang="en">A document exemplifying keynote speeches and opening addresses and messages.</rdfs:comment>
+    <rdfs:label xml:lang="en">address</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/DocumentVersion">
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
+    <rdfs:subClassOf rdf:nodeID="fa4aeefa306f24ada9a4b2792423fcebdb13"/>
+    <rdfs:label xml:lang="en">document version</rdfs:label>
+    <rdfs:comment xml:lang="en">A particular version of a document written according to a certain language.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="fa4aeefa306f24ada9a4b2792423fcebdb15"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/akn/ontology/allot/FRBRExpression"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/Agent">
+    <rdfs:comment xml:lang="en">An actor (e.g. a person, an organisation) that can perform some actions.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/akn/ontology/allot/Reference"/>
+    <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdfs:label xml:lang="en">agent</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.estrellaproject.org/lkif-core/action.owl#Agent"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/Collection">
+    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/Publication"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
+    <rdfs:comment xml:lang="en">A collection of individual autonomous documents.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">collection</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval">
+    <rdfs:isDefinedBy rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="fa4aeefa306f24ada9a4b2792423fcebdb10">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+    <rdf:first rdf:resource="https://w3id.org/akn/ontology/allot/FRBRManifestation"/>
+    <rdf:rest rdf:nodeID="fa4aeefa306f24ada9a4b2792423fcebdb11"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="fa4aeefa306f24ada9a4b2792423fcebdb19">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+    <owl:onProperty rdf:resource="https://w3id.org/un/ontology/undo/hasReceiver"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="fa4aeefa306f24ada9a4b2792423fcebdb30">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
     <owl:allValuesFrom rdf:resource="https://w3id.org/un/ontology/undo/Step"/>
+    <owl:onProperty rdf:resource="http://purl.org/spar/pwo/hasStep"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/hasStepType">
-    <rdfs:range rdf:resource="https://w3id.org/un/ontology/undo/StepType"/>
-    <rdfs:domain rdf:resource="https://w3id.org/un/ontology/undo/Step"/>
-    <rdfs:subPropertyOf rdf:resource="https://w3id.org/akn/ontology/allot/hasRelatedReference"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
+  <rdf:Description rdf:about="https://w3id.org/akn/ontology/allot/FRBRWork">
+    <rdfs:subClassOf rdf:resource="http://purl.org/spar/fabio/Work"/>
+    <rdfs:subClassOf rdf:resource="http://purl.org/vocab/frbr/core#Work"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/akn/ontology/allot"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/vocab/frbr/core#Work">
+  <rdf:Description rdf:about="http://id.loc.gov/vocabulary/iso639-1/fr">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label xml:lang="en">French</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://id.loc.gov/vocabulary/iso639-1"/>
+    <rdf:type rdf:resource="https://w3id.org/un/ontology/undo/Language"/>
+    <dc:description xml:lang="en">This entity representing the French language has been originally defined in the Library of Congress concept scheme (skos:ConceptScheme) available at http://id.loc.gov/vocabulary/iso639-1, which maps all the two-letters codes for languages introduced in the specification ISO 639-1 as Linked Open Data.</dc:description>
+    <rdfs:comment xml:lang="en">The French is one of the languages used for publishing United Nations documents.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/Resolution">
+    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/DeliberativeDocument"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
+    <rdfs:label xml:lang="en">resolution</rdfs:label>
+    <rdfs:comment xml:lang="en">A particular kind of document that contains a formal expression of the will of a principal or subsidiary organ or other empowered bodies.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/DeliberativeDocument">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/Document"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
+    <rdfs:comment xml:lang="en">Formal expressions of the opinion or will of a principal or subsidiary organ or other empowered bodies. Usually they are open structure documents, sometimes articulated in hierarchical structures in which the text is subdivided into higher and lower subdivisions, generally including a preamble and operative paragraphs.</rdfs:comment>
+    <rdfs:label xml:lang="en">deliberative document</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="fa4aeefa306f24ada9a4b2792423fcebdb31">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://purl.org/spar/pwo/executes"/>
+    <owl:allValuesFrom rdf:resource="https://w3id.org/un/ontology/undo/Workflow"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#hasIntervalStartDate">
-    <rdfs:comment rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/MeetingRecord">
-    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/Document"/>
-    <rdfs:label xml:lang="en">meeting record</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:comment xml:lang="en">Documents containing full first-person records of a meeting (verbatim). Their structure reflects the different section of the debates and/or alternation of questions and answers that take place during meetings discussions.</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/vocab/frbr/core#Item">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/CodeOfConduct">
-    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/NormativeDocument"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
-    <rdfs:comment xml:lang="en">A document listing rules outlining the responsibilities of, or proper practices for, individuals, parties, organizations, or countries on specific issues.</rdfs:comment>
-    <rdfs:label xml:lang="en">code of conduct</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="fa7b28e9a37474b6fba492ce12ffec85ab19">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="https://w3id.org/un/ontology/undo/hasReceiver"/>
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="fa7b28e9a37474b6fba492ce12ffec85ab4">
-    <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#atTime"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:allValuesFrom rdf:resource="https://w3id.org/un/ontology/undo/Interval"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/Rules">
-    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/NormativeDocument"/>
-    <rdfs:label xml:lang="en">rules</rdfs:label>
-    <rdfs:comment xml:lang="en">A document prescribing principles governing conduct or procedure within a particular area of activity.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/spar/fabio/Item">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/fabio"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="fa7b28e9a37474b6fba492ce12ffec85ab9">
-    <rdf:first rdf:resource="https://w3id.org/akn/ontology/allot/FRBRItem"/>
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-    <rdf:rest rdf:nodeID="fa7b28e9a37474b6fba492ce12ffec85ab10"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.essepuntato.it/2012/04/tvc/hasValue">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:isDefinedBy rdf:resource="http://www.essepuntato.it/2012/04/tvc"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/vocab/frbr/core#Expression">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/hasReconfiguration">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/vocab/frbr/core#transformation"/>
+    <rdfs:range rdf:resource="https://w3id.org/un/ontology/undo/Document"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
+    <rdfs:comment xml:lang="en">This property describes documents that are intended to be reconfigured somehow in another original document in a sufficient degree to warrant their being considered as new works, rather than simply different versions of the same document.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/un/ontology/undo/Document"/>
+    <rdfs:label xml:lang="en">has reconfiguration</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/akn/ontology/allot/hasRelatedReference"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/Publication">
+    <rdfs:comment xml:lang="en">The documentary output of the process meant to share information in any form or medium.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/Document"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
+    <rdfs:label xml:lang="en">publication</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="fa4aeefa306f24ada9a4b2792423fcebdb24">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/taskexecution.owl#isExecutedIn"/>
+    <owl:allValuesFrom rdf:resource="https://w3id.org/un/ontology/undo/Action"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/Note">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/Communication"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
+    <rdfs:label xml:lang="en">note</rdfs:label>
+    <rdfs:comment xml:lang="en">A written communication to transmit comments or reports.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/ProgressReport">
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/Paper"/>
+    <rdfs:label xml:lang="en">progress report</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">A document assessing projects or processes.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/oa#hasBody">
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/oa#"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/akn/ontology/allot/Event">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/akn/ontology/allot"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/terms/LinguisticSystem">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="fa7b28e9a37474b6fba492ce12ffec85ab20">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-    <owl:onProperty rdf:resource="https://w3id.org/un/ontology/undo/hasSemantics"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/vocab/frbr/core#Manifestation">
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Agent">
+    <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="fa7b28e9a37474b6fba492ce12ffec85ab22">
-    <owl:allValuesFrom rdf:resource="https://w3id.org/akn/ontology/allot/Reference"/>
+  <rdf:Description rdf:nodeID="fa4aeefa306f24ada9a4b2792423fcebdb15">
+    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="http://purl.org/spar/pwo/needs"/>
+    <owl:onClass rdf:resource="https://w3id.org/un/ontology/undo/Language"/>
+    <owl:onProperty rdf:resource="http://purl.org/dc/terms/language"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="fa4aeefa306f24ada9a4b2792423fcebdb17">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#hasIntervalStartDate"/>
+    <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="fa4aeefa306f24ada9a4b2792423fcebdb3">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/taskexecution.owl#executesTask"/>
+    <owl:allValuesFrom rdf:resource="https://w3id.org/un/ontology/undo/Step"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="fa4aeefa306f24ada9a4b2792423fcebdb27">
+    <owl:onProperty rdf:resource="http://www.essepuntato.it/2012/04/tvc/withinContext"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:resource="https://w3id.org/akn/ontology/allot/Reference"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/frbr/core#embodiment">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/frbr/core"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="fa4aeefa306f24ada9a4b2792423fcebdb9">
+    <rdf:rest rdf:nodeID="fa4aeefa306f24ada9a4b2792423fcebdb10"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+    <rdf:first rdf:resource="https://w3id.org/akn/ontology/allot/FRBRItem"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/akn/ontology/allot/Concept">
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/akn/ontology/allot"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/frbr/core#exemplar">
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/frbr/core"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/Status">
+    <rdfs:comment xml:lang="en">A value identifying the status of a document (e.g. in drafting, under revision, published).</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">status</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://purl.org/spar/pso/Status"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/Value"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://www.essepuntato.it/2012/04/tvc/atTime">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
     <rdfs:isDefinedBy rdf:resource="http://www.essepuntato.it/2012/04/tvc"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="fa4aeefa306f24ada9a4b2792423fcebdb5">
+    <owl:onProperty rdf:resource="http://www.w3.org/ns/oa#hasBody"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:resource="https://w3id.org/akn/ontology/allot/Reference"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/akn/ontology/allot/Reference">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/akn/ontology/allot"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/spar/pso/Status">
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/pso"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="fa4aeefa306f24ada9a4b2792423fcebdb13">
+    <owl:onProperty rdf:nodeID="fa4aeefa306f24ada9a4b2792423fcebdb14"/>
+    <owl:allValuesFrom rdf:resource="https://w3id.org/un/ontology/undo/Document"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.essepuntato.it/2012/04/tvc/withValue">
+    <rdfs:isDefinedBy rdf:resource="http://www.essepuntato.it/2012/04/tvc"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="fa4aeefa306f24ada9a4b2792423fcebdb14">
+    <owl:inverseOf rdf:resource="https://w3id.org/akn/ontology/allot/hasRealization"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/frbr/core#Work">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="fa4aeefa306f24ada9a4b2792423fcebdb32">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://purl.org/spar/pwo/involvesAction"/>
+    <owl:allValuesFrom rdf:resource="https://w3id.org/un/ontology/undo/Action"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#hasIntervalEndDate">
+    <rdfs:comment rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/akn/ontology/allot/mentions">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/oa#hasTarget">
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/oa#"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/frbr/core#realization">
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/frbr/core"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.essepuntato.it/2012/04/tvc/withinContext">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.essepuntato.it/2012/04/tvc"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/un/ontology/undo/CourtDecision">
+    <rdfs:comment xml:lang="en">A document introducing a court of law or adjudicating authority formal decision or specific determination following a legal proceedings. The typical narrative of judgments is often divided in background, introduction, motivation and decision.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/un/ontology/undo"/>
+    <rdfs:label xml:lang="en">court decision</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/un/ontology/undo/Document"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/frbr/core#Item">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="fa4aeefa306f24ada9a4b2792423fcebdb26">
+    <owl:onProperty rdf:resource="http://www.essepuntato.it/2012/04/tvc/withValue"/>
+    <owl:allValuesFrom rdf:resource="https://w3id.org/un/ontology/undo/Value"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.estrellaproject.org/lkif-core/action.owl#Agent">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.estrellaproject.org/lkif-core/action.owl"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/akn/ontology/allot/hasExemplar">
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/vocab/frbr/core#exemplar"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.estrellaproject.org/lkif-core/role.owl#Role">
+    <rdfs:isDefinedBy rdf:resource="http://www.estrellaproject.org/lkif-core/role.owl"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="fa4aeefa306f24ada9a4b2792423fcebdb23">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:resource="https://w3id.org/akn/ontology/allot/Reference"/>
+    <owl:onProperty rdf:resource="http://purl.org/spar/pwo/produces"/>
   </rdf:Description>
 </rdf:RDF>

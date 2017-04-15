@@ -936,7 +936,9 @@ oa:hasTarget a owl:ObjectProperty ;
 	rdfs:subPropertyOf frbr:transformation , <https://w3id.org/akn/ontology/allot/hasRelatedReference> ;
 	rdfs:domain :Document ;
 	rdfs:range :Document ;
-	rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> .
+	rdfs:comment "This property describes documents that are intended to be reconfigured somehow in another original document in a sufficient degree to warrant their being considered as new works, rather than simply different versions of the same document."@en ;
+	rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> ;
+	rdfs:label "has reconfiguration"@en .
 # 
 # https://w3id.org/un/ontology/undo/hasRelatedConcept
 
@@ -954,7 +956,9 @@ oa:hasTarget a owl:ObjectProperty ;
 	rdfs:subPropertyOf frbr:revision , <https://w3id.org/akn/ontology/allot/hasRelatedReference> ;
 	rdfs:domain :DocumentVersion ;
 	rdfs:range :DocumentVersion ;
-	rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> .
+	rdfs:comment "It links a document version with another altered or updated version of it."@en ;
+	rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> ;
+	rdfs:label "has revision"@en .
 # 
 # https://w3id.org/un/ontology/undo/hasSemantics
 
@@ -1187,7 +1191,9 @@ _:genid4 a owl:Restriction ;
 	owl:onProperty <http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#atTime> ;
 	owl:allValuesFrom :Interval .
 
-:Action rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> .
+:Action rdfs:comment "An event with at least one agent that is participant in it and that is linked to a workflow execution and to a step of a workflow description."@en ;
+	rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> ;
+	rdfs:label "action"@en .
 # 
 # https://w3id.org/un/ontology/undo/Address
 
@@ -1742,13 +1748,17 @@ _:genid24 a owl:Restriction ;
 	owl:onProperty <http://www.ontologydesignpatterns.org/cp/owl/taskexecution.owl#isExecutedIn> ;
 	owl:allValuesFrom :Action .
 
-:Step rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> .
+:Step rdfs:comment "An atomic unit of a workflow that involves some input entity needed to complete the step, and produces some outcomes, such as a document."@en ;
+	rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> ;
+	rdfs:label "step"@en .
 # 
 # https://w3id.org/un/ontology/undo/StepType
 
 :StepType a owl:Class ;
 	rdfs:subClassOf <https://w3id.org/akn/ontology/allot/Concept> ;
-	rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> .
+	rdfs:comment "The class of all the types for categorising the steps in workflow descriptions."@en ;
+	rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> ;
+	rdfs:label "step type"@en .
 # 
 # https://w3id.org/un/ontology/undo/Treaty
 
@@ -1814,7 +1824,9 @@ _:genid30 a owl:Restriction ;
 	owl:onProperty pwo:hasStep ;
 	owl:allValuesFrom :Step .
 
-:Workflow rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> .
+:Workflow rdfs:comment "A description of a sequence of connected steps, representing a sequence of publishing operations undertaken by agents."@en ;
+	rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> ;
+	rdfs:label "workflow"@en .
 # 
 # https://w3id.org/un/ontology/undo/WorkflowExecution
 
@@ -1831,7 +1843,9 @@ _:genid32 a owl:Restriction ;
 	owl:onProperty pwo:involvesAction ;
 	owl:allValuesFrom :Action .
 
-:WorkflowExecution rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> .
+:WorkflowExecution rdfs:comment "A collection of actions that address all the step defined in a workflow."@en ;
+	rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> ;
+	rdfs:label "workflow execution"@en .
 # 
 # 
 # 
