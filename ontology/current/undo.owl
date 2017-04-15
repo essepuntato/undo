@@ -1,4 +1,4 @@
-@prefix : <https://w3id.org/akn/ontology/undo/> .
+@prefix : <https://w3id.org/un/ontology/undo/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix oa: <http://www.w3.org/ns/oa#> .
 @prefix ti: <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#> .
@@ -6,6 +6,7 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix pro: <http://purl.org/spar/pro/> .
 @prefix pso: <http://purl.org/spar/pso/> .
+@prefix pwo: <http://purl.org/spar/pwo/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix tvc: <http://www.essepuntato.it/2012/04/tvc/> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
@@ -18,20 +19,26 @@
 @prefix lkif-role: <http://www.estrellaproject.org/lkif-core/role.owl#> .
 @prefix lkif-action: <http://www.estrellaproject.org/lkif-core/action.owl#> .
 
-<https://w3id.org/akn/ontology/undo> a owl:Ontology ;
-	owl:versionIRI :2017-03-08 ;
-	owl:imports <https://w3id.org/akn/ontology/allot/2017-01-31> , <http://www.essepuntato.it/2012/04/tvc> , <http://www.w3.org/ns/oa#> , <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl> ;
+<https://w3id.org/un/ontology/undo> a owl:Ontology ;
+	owl:versionIRI :2017-04-14 ;
+	owl:imports <https://w3id.org/akn/ontology/allot/2017-01-31> , <http://www.essepuntato.it/2012/04/tvc> , <http://www.w3.org/ns/oa#> , <http://purl.org/spar/pwo> , <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl> ;
 	rdfs:comment "The United Nations Document Ontology (UNDO) is an OWL 2 DL ontology that aims at providing a framework for the description of all entities and the relations that are explicitly or implicitly introduced within United Nations documents (normative documents, legal documents, etc.)."@en ;
 	<http://purl.org/vocab/vann/preferredNamespacePrefix> "undo" ;
-	dc:description """The parliamentary, normative and legal documents published by the United Nations system of organisations, from now on \"UN documents\", are full of references to real-world objects and concepts, such as other documents, people, organisations, legal terms, and roles. Such entities are linked with the actual content of the document, even by means of different terms being the UN documents often issued in several official languages. 
+	rdfs:label "UNDO"@en ;
+	dc:description """The parliamentary, normative and legal documents published by the United Nations system (hereafter \"UN documents\"), contain many references to real-world objects and concepts, such as: other documents, people, organisations, legal terms, and roles. These objects and concepts, called in general terms “entities”, are related with the actual content of the document, even by means of different terms being the UN documents often issued in several official languages.
 
-The United Nations Document Ontology (UNDO, GitHub repository available at https://github.com/essepuntato/undo) is an OWL 2 DL ontology that aims at providing a framework for the description of all these entities and the relations that can exists among them. These entities and relations are, thus, implicitly defined by the content of the document in consideration, and typically can concern at least one of the following layers:
+The United Nations System Document Ontology (UNDO, GitHub repository available at https://github.com/essepuntato/undo) is an OWL 2 DL ontology that aims at providing a framework for the description of all these entities and the relations that can exists among them in UN documents. The rationale behind the development of this model is to provide a common framework to be used by the various United Nations organisations for sharing data about documents and their content in RDF format.
 
-1. document-oriented layer, which allows the creation of direct links from a document (a resolution, a report, etc.) to other relevant entities that are mentioned within;
-2. entity-oriented layer, which enables the identification of entities cited in the document content (e.g. organisations) acting with other relevant entities (people, events, organizations, etc.);
-3. content-oriented layer, which provides a specific semantics to all the terms identified in the document content.
- 
-The document (or any of its parts) can be explicitly annotated by someone with all these relations in order to create a formal connection between the text and the entities its introduces.
+Currently, UNDO is able to describe the following entities:
+
+* documents and their versions (e.g. in different languages);
+* several relevant document types, organised in a taxonomy;
+* relations, with the possibility of defining their semantics dynamically (outside the scope of the TBox of the ontology) as individual of the class defining concepts;
+* annotations, in order to link any RDF description to a particular document;
+* terms, i.e. tokens as they can appear in a text;
+* concepts, i.e. any notion or idea that can be used to provide a meaning to terms and a specific semantics to relations;
+* values that can change in time and context (such as agents’ roles and document statuses);
+* workflows and their executions.
 
 The following figure contains a [Graffoo diagram](http://www.essepuntato.it/graffoo) that provides an overview of the class and properties introduced in UNDO.
 
@@ -40,6 +47,8 @@ The following figure contains a [Graffoo diagram](http://www.essepuntato.it/graf
 The current version of the ontology imports several ontologies:
 
 * [ALLOT](https://w3id.org/akn/ontology/allot) provides a formal implementation of Akoma Ntoso Top Level Classes (TLCs) in OWL 2 DL, so as to make available a vocabulary for enabling the integration of heterogeneous legal knowledge-bases based on Akoma Ntoso documents;
+
+* [Publishing Workflow Ontology](http://purl.org/spar/pwo) provides a framework for characterising the main stages in the workflow associated with the publication of a document;
 
 * [Time-indexed Value in Context](http://www.essepuntato.it/2012/04/tvc) is an ontology pattern that allows one to describe scenarios in which someone (e.g., a person) has a value (e.g., a particular role) during a particular time and for a particular context;
 
@@ -71,6 +80,36 @@ In addition to these ontologies, UNDO is also aligned with entities defined in e
 
 A full version of UNDO, where all the aforementioned ontologies have been imported formally within the ontology, is available at https://w3id.org/akn/ontology/undo-imports, so as to enable advanced automatic reasoning and classification.
 
+The next subsections provide a quick overview of all the entities defined, some exemple of usage, and the query that UNDO can answer.
+
+### Documents and their versions
+
+These entities and relations introduced in any UN document are implicitly defined by the content of the document in consideration, and typically can relate to (at least) one of the following layers:
+
+* document-oriented layer, which allows the creation of direct links (via `allot:mentions`) from a document (`undo:Document`) or a specific version of it (`undo:DocumentVersion`) to other relevant entities that are mentioned within;
+* entity-oriented layer, which enables the identification of entities cited in the document content (e.g. organisations) acting with other relevant entities (people, events, organizations, etc.), described by the class `undo:Relation`;
+* content-oriented layer, which provides a specific semantics (via `undo:hasRelatedConcept`) to all the terms (`allot:Term`) identified in the document content.
+In addition, each document (or any of its parts) can be explicitly annotated (using instances of `undo:Annotation`) by someone with all these relations in order to create a formal connection between the text and the entities its introduces.
+
+
+### Time and context
+
+Several kinds of objects can be involved in situations (`undo:ValueInTimeAndContext`) describing them as holding a certain value (`tvc:withValue`) associated for a specific interval (tvc:atTime) or according to a specific context (`tvc:withinContext`). For instance, agents having a particular role (e.g. being the President of Italy from 2006 to 2015) or documents holding particular status (e.g. a document that has been under-review from September 2016 to October 2016) in a specific time and/or related to a particular context are good examples for these situations.
+
+These kinds of scenario involve at least four specific kinds of entities:
+
+* the entity holding such value (e.g. an agent or a document);
+* the value held (e.g. a role or a status);
+* the time defining when such value is held (e.g. from 2006 to 2015);
+* the context to which the scenario applies (Italy).
+
+
+### Workflows and their executions
+
+Keeping track of the processes concerning the creation and modification of documents is a crucial task in the legal and legislative domain. Each of these processes, commonly called workflows, is actually composed by a sequence of steps. Each step is responsible to produce some outputs (e.g. a review) starting from some inputs (e.g. a document). 
+Workflows can be described from two different points of view. On the one hand, there is the declaration of the workflow schema, or simply the workflow (`undo:Workflow`), which is how a specific process (e.g. the publication of a document) is actually organised in sequential steps (`undo:Step`), each having a specific type (e.g. write, review, revise), involving different kinds of actors, and producing, in the end, a particular output. On the other hand, each particular execution of a workflow (`undo:WorkflowExecution`) is a specific entity per se. It is usually composed by sets of actions (`undo:Action`), and each set of actions is addressing a particular step defined in the workflow in consideration.
+
+
 
 ### Example of use
 
@@ -85,7 +124,11 @@ The prefixes that are used in all the examples provided below are defined as fol
     @prefix dcterms: <http://purl.org/dc/terms/> .
     @prefix lan: <http://id.loc.gov/vocabulary/iso639-1/> .
     @prefix oa: <http://www.w3.org/ns/oa#> .
+    @prefix part: <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#> .
+    @prefix pwo: <http://purl.org/spar/pwo/> .
+    @prefix taskex: <http://www.ontologydesignpatterns.org/cp/owl/taskexecution.owl#> .
     @prefix ti: <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#> .
+    @prefix tisit: <http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#> .
     @prefix tvc: <http://www.essepuntato.it/2012/04/tvc/> .
 
 
@@ -310,6 +353,229 @@ A document has been in drafting from the 14th of May to the 14th of June 2016. T
 :published a undo:Status .
 ```
 
+#### Scenario 6
+
+The publication of a document should go through four phases, or steps: 
+
+1. writing, which will produce a document;
+2. review, that will produce comments starting from the input document;
+3. revision, that will produce a new version of the previous document corrected considering the comments produced by the previous step; 
+4. publication, which will assign the \"published\" status to that document. 
+
+```
+:publication a undo:Workflow ;
+	pwo:hasStep
+		:step-1 ,
+		:step-2 ,
+		:step-3 ,
+		:step-4 .
+
+:step-1 a undo:Step ;
+	undo:hasStepType :write ;
+	pwo:hasNextStep :step-2 .
+
+:write a undo:StepType .
+
+:step-2 a undo:Step ;
+	undo:hasStepType :review ;
+	pwo:hasNextStep :step-3 .
+
+:review a undo:StepType .
+	
+:step-3 a undo:Step ;
+	undo:hasStepType :revise ;
+	pwo:hasNextStep :step-4 .
+
+:revise a undo:StepType .
+	
+:step-4 a undo:Step ;
+	undo:hasStepType :publish .
+
+:publish a undo:StepType .
+```
+
+
+#### Scenario 7
+
+The Assistant of the Italian Representative writes the first draft of a resolution from the 1st of March 2017 to the 5th of March 2017. On the 7th of March, the Italian Representative revises it, and extends the introduction. From the 9th of March to the 10th of March, Assistant of the Italian Representative finalises the document. On the 11th of March, the State Member Italy makes it available for review.
+
+On the 12th of March, the Office of the Presidency of the General Assembly read the draft. From the 13th of March to the 20th of March, the Office of the Presidency of the General Assembly writes a comment highlighting issues. The comment is then made available to the President of the General Assembly on the 21st of March.
+
+From the 22nd to the 27th of March, the Committee Number 1 revises the draft and addresses the main issues raised by the Office of the Presidency of the General Assembly. On the 28th, the draft is sent to the General Assembly.
+
+The General Assembly approves and publishes the resolution on the 31st of March.
+
+```
+:future-resolution a undo:Document ;
+    allot:hasRealization
+        :assistant-first-draft-resolution ,
+        :it-rep-extended-introduction-first-draft ,
+        :final-first-draft ,
+        :revised-draft .
+
+:assistant-it-rep a undo:Actor .
+:assistant-first-draft-resolution a undo:DocumentVersion .
+:2017-03-01_05 a undo:Interval ;
+ 	ti:hasIntervalStartDate \"2017-03-01T00:00:00\"^^xsd:dateTime ;
+ 	ti:hasIntervalEndDate \"2017-03-05T23:59:59\"^^xsd:dateTime .
+:writing-first-draft a undo:Action ;
+	taskex:executesTask :step-1 ;
+	part:hasParticipant
+		:assistant-it-rep ,
+		:assistant-first-draft-resolution ;
+	tisit:atTime :2017-03-01_05 .
+
+:it-rep a undo:Actor .
+:assistant-first-draft-resolution 
+	undo:hasRevision :it-rep-extended-introduction-first-draft .
+:it-rep-extended-introduction-first-draft a undo:DocumentVersion .
+:2017-03-07 a undo:Interval ;
+ 	ti:hasIntervalStartDate \"2017-03-07T00:00:00\"^^xsd:dateTime ;
+ 	ti:hasIntervalEndDate \"2017-03-07T23:59:59\"^^xsd:dateTime .
+:extending-first-draft a undo:Action ;
+	taskex:executesTask :step-1 ;
+	part:hasParticipant 
+		:it-rep ,
+		:assistant-first-draft-resolution ,
+		:it-rep-extended-introduction-first-draft ;
+	tisit:atTime :2017-03-07 .
+
+:it-rep-extended-introduction-first-draft
+	undo:hasRevision :final-first-draft .
+:final-first-draft a undo:DocumentVersion .
+:2017-03-09_10 a undo:Interval ;
+ 	ti:hasIntervalStartDate \"2017-03-09T00:00:00\"^^xsd:dateTime ;
+ 	ti:hasIntervalEndDate \"2017-03-10T23:59:59\"^^xsd:dateTime .
+:revision-first-draft a undo:Action ;
+	taskex:executesTask :step-1 ;
+	part:hasParticipant 
+		:assistant-it-rep ,
+		:it-rep-extended-introduction-first-draft ,
+		:final-first-draft ;
+	tisit:atTime :2017-03-09_10 .
+
+:italy a undo:Actor .
+:2017-03-11 a undo:Interval ;
+ 	ti:hasIntervalStartDate \"2017-03-11T00:00:00\"^^xsd:dateTime ;
+ 	ti:hasIntervalEndDate \"2017-03-11T23:59:59\"^^xsd:dateTime .
+:making-available-first-draft a undo:Action ;
+	taskex:executesTask :step-1 ;
+	part:hasParticipant 
+		:italy ,
+		:final-first-draft ;
+	tisit:atTime :2017-03-11 .
+
+:step-1 pwo:produces :final-first-draft .
+
+:office-presidency-ga a undo:Actor .
+:2017-03-12 a undo:Interval ;
+ 	ti:hasIntervalStartDate \"2017-03-12T00:00:00\"^^xsd:dateTime ;
+ 	ti:hasIntervalEndDate \"2017-03-12T23:59:59\"^^xsd:dateTime .
+:reading-final-first-draft a undo:Action ;
+	taskex:executesTask :step-2 ;
+	part:hasParticipant 
+		:office-presidency-ga ,
+		:final-first-draft ;
+	tisit:atTime :2017-03-12 .
+
+:2017-03-13_20 a undo:Interval ;
+ 	ti:hasIntervalStartDate \"2017-03-13T00:00:00\"^^xsd:dateTime ;
+ 	ti:hasIntervalEndDate \"2017-03-20T23:59:59\"^^xsd:dateTime .
+:comment a undo:Document ;
+    allot:hasRepresentation :comment-content .
+:comment-content a undo:DocumentVersion .
+
+:writing-comment a undo:Action ;
+	taskex:executesTask :step-2 ;
+	part:hasParticipant 
+		:office-presidency-ga ,
+		:final-first-draft ,
+		:comment-content ;
+	tisit:atTime :2017-03-13_20 .
+
+:president-ga a undo:Actor .
+:2017-03-21 a undo:Interval ;
+ 	ti:hasIntervalStartDate \"2017-03-12T00:00:00\"^^xsd:dateTime ;
+ 	ti:hasIntervalEndDate \"2017-03-12T23:59:59\"^^xsd:dateTime .
+:making-available-comment a undo:Action ;
+	taskex:executesTask :step-2 ;
+	part:hasParticipant 
+		:office-presidency-ga ,
+		:president-ga ,
+		:comment-content ;
+	tisit:atTime :2017-03-21 .
+
+:step-2 
+	pwo:needs :final-first-draft ;
+	pwo:produces :comment-content .
+
+:committee-1 a undo:Actor .
+:final-first-draft
+	undo:hasRevision :revised-draft .
+:revised-draft a undo:DocumentVersion .
+:2017-03-22_27 a undo:Interval ;
+ 	ti:hasIntervalStartDate \"2017-03-22T00:00:00\"^^xsd:dateTime ;
+ 	ti:hasIntervalEndDate \"2017-03-27T23:59:59\"^^xsd:dateTime .
+:revision-final-first-draft a undo:Action ;
+	taskex:executesTask :step-3 ;
+	part:hasParticipant 
+		:committee-1 ,
+		:final-first-draft ,
+		:comment ,
+		:revised-draft ;
+	tisit:atTime :2017-03-22_27 .
+
+:ga a undo:Actor .
+:2017-03-28 a undo:Interval ;
+ 	ti:hasIntervalStartDate \"2017-03-28T00:00:00\"^^xsd:dateTime ;
+ 	ti:hasIntervalEndDate \"2017-03-28T23:59:59\"^^xsd:dateTime .
+:sending-revision a undo:Action ;
+	taskex:executesTask :step-3 ;
+	part:hasParticipant 
+		:committee-1 ,
+		:revised-draft ,
+		:ga ;
+	tisit:atTime :2017-03-28 .
+
+:step-3 
+	pwo:needs :final-first-draft , :comment ;
+	pwo:produces :revised-draft .
+
+:future-resolution
+	undo:hasReconfiguration :resolution .
+:resolution a undo:Resolution ;
+    allot:hasRealization :resolution-text .
+:resolution-text a undo:DocumentVersion .
+:2017-03-31 a undo:Interval ;
+ 	ti:hasIntervalStartDate \"2017-03-31T00:00:00\"^^xsd:dateTime ;
+ 	ti:hasIntervalEndDate \"2017-03-31T23:59:59\"^^xsd:dateTime .
+:approving-and-publishing-resolution a undo:Action ;
+	taskex:executesTask :step-4 ;
+	part:hasParticipant 
+		:revised-draft ,
+		:resolution-text ,
+		:ga ;
+	tisit:atTime :2017-03-31 .
+
+:step-4
+	pwo:needs :revised-draft ;
+	pwo:produces :resolution-text .
+
+:publication-execution a undo:WorkflowExecution ;
+	pwo:executes :publication ;
+	pwo:involvesAction
+		:writing-first-draft ,
+		:extending-first-draft ,
+		:revision-first-draft ,
+		:making-available-first-draft ,
+		:reading-final-first-draft ,
+		:writing-comment ,
+		:making-available-comment ,
+		:revision-final-first-draft ,
+		:sending-revision ,
+		:approving-and-publishing-resolution .
+```
+
 
 ### Competency questions
 
@@ -322,6 +588,12 @@ The prefixes that are used in all the SPARQL queries provided below are defined 
     PREFIX oa: <http://www.w3.org/ns/oa#>
     PREFIX owl: <http://www.w3.org/2002/07/owl#>
     PREFIX undo: <https://w3id.org/akn/ontology/undo/>
+    PREFIX ti: <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#>
+    PREFIX tvc: <http://www.essepuntato.it/2012/04/tvc/>
+    PREFIX tisit: <http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#>
+    PREFIX pwo: <http://purl.org/spar/pwo/>
+    PREFIX taskex: <http://www.ontologydesignpatterns.org/cp/owl/taskexecution.owl#>
+
 
 #### Question 1
 
@@ -381,11 +653,6 @@ What are all the terms that actually refer to the concept of taking a decision, 
 
 What are the current roles of all the agents?
 
-    PREFIX allot: <https://w3id.org/akn/ontology/allot/>
-    PREFIX undo: <https://w3id.org/akn/ontology/undo/>
-    PREFIX ti: <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#>
-    PREFIX tvc: <http://www.essepuntato.it/2012/04/tvc/>
-    
     SELECT DISTINCT ?agent ?role ?context
     WHERE {
         ?agent a undo:Agent ;
@@ -407,12 +674,6 @@ What are the current roles of all the agents?
 
 What roles have been held by Sergio Mattarella during his life?
 
-    PREFIX : <https://w3id.org/akn/data/undo/>
-    PREFIX allot: <https://w3id.org/akn/ontology/allot/>
-    PREFIX undo: <https://w3id.org/akn/ontology/undo/>
-    PREFIX ti: <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#>
-    PREFIX tvc: <http://www.essepuntato.it/2012/04/tvc/>
-    
     SELECT DISTINCT ?role ?context ?start ?end
     WHERE {
         :sergio-mattarella tvc:hasValue ?value .
@@ -437,11 +698,6 @@ What roles have been held by Sergio Mattarella during his life?
 
 How many times an agent has been assigned to a specific role?
 
-    PREFIX allot: <https://w3id.org/akn/ontology/allot/>
-    PREFIX undo: <https://w3id.org/akn/ontology/undo/>
-    PREFIX ti: <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#>
-    PREFIX tvc: <http://www.essepuntato.it/2012/04/tvc/>
-    
     SELECT DISTINCT ?agent ?role ?context (count(?agent) AS ?count)
     WHERE {
         ?agent a undo:Agent ;
@@ -460,10 +716,6 @@ How many times an agent has been assigned to a specific role?
 
 Which roles are involved in particular contexts?
 
-    PREFIX allot: <https://w3id.org/akn/ontology/allot/>
-    PREFIX undo: <https://w3id.org/akn/ontology/undo/>
-    PREFIX tvc: <http://www.essepuntato.it/2012/04/tvc/>
-    
     SELECT DISTINCT ?context ?role
     WHERE {
         ?value a undo:ValueInTimeAndContext ;
@@ -478,11 +730,6 @@ Which roles are involved in particular contexts?
 
 What are all the statuses that have been associated to all the documents?
 
-    PREFIX allot: <https://w3id.org/akn/ontology/allot/>
-    PREFIX undo: <https://w3id.org/akn/ontology/undo/>
-    PREFIX ti: <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#>
-    PREFIX tvc: <http://www.essepuntato.it/2012/04/tvc/>
-    
     SELECT DISTINCT ?document ?status ?start ?end
     WHERE {
         ?document a undo:Document ;
@@ -500,13 +747,81 @@ What are all the statuses that have been associated to all the documents?
         }
             
         ?status a undo:Status .
+    }
+
+
+#### Question 10
+
+In which step of all the workflows the first version of a document has been produced?
+
+    SELECT ?doc ?step 
+    WHERE {
+        ?step a undo:Step ;
+            pwo:produces ?doc .
+            ?doc a undo:DocumentVersion .
+        FILTER NOT EXISTS {
+            ?another_step a undo:Step ;
+                pwo:produces ?prev_version .
+            ?prev_version undo:hasRevision+ ?doc
+        }
+    }
+
+
+#### Question 11
+
+How many steps (on average) are used in each workflow?
+
+    SELECT (avg(?n_step) as ?average)
+    WHERE {
+        {
+            SELECT ?workflow (count(?step) as ?n_step)
+            {
+                ?workflow a undo:Workflow ;
+                    pwo:hasStep ?step .
+            } GROUP BY ?workflow
+        }
+    } GROUP BY ?workflow
+
+
+#### Question 12
+
+How much did it take to executing each step in each workflow execution?
+    
+    SELECT ?execution ?step (round(?end - ?start) as ?minutes)
+    WHERE {
+        {
+            SELECT ?execution ?step (min(?s_date) as ?start) (max(?e_date) as ?end) {
+                ?execution a undo:WorkflowExecution ;
+                    pwo:involvesAction ?action .
+                ?action a undo:Action ;
+                    taskex:executesTask ?step ;
+                    tisit:atTime ?time .
+                ?time a undo:Interval ;
+                    ti:hasIntervalStartDate ?s_date ;
+                    ti:hasIntervalEndDate ?e_date .
+            } GROUP BY ?execution ?step
+        }
+    }
+
+
+#### Question 13
+
+What was the last entities produced by all the workflow executions?
+
+    SELECT ?execution ?entity {
+        ?execution a undo:WorkflowExecution ;
+            pwo:involvesAction/taskex:executesTask ?step .
+        ?step a undo:Step ;
+            pwo:produces ?entity .
+        FILTER NOT EXISTS {
+            ?step pwo:hasNextStep ?another_step .
+        }
     }"""@en ;
-	rdfs:label "UNDO"@en ;
-	owl:versionInfo "March 8, 2017"@en ;
-	dc:title "The United Nations Document Ontology (UNDO)"@en ;
+	owl:versionInfo "April 14, 2017"@en ;
+	owl:priorVersion :2017-03-08 ;
+	dc:title "The United Nations System Document Ontology (UNDO)"@en ;
 	dc:creator "Silvio Peroni (http://orcid.org/0000-0003-0530-4305)" ;
-	owl:priorVersion :2017-02-13 ;
-	<http://purl.org/vocab/vann/preferredNamespaceUri> "https://w3id.org/akn/ontology/undo/" .
+	<http://purl.org/vocab/vann/preferredNamespaceUri> "https://w3id.org/un/ontology/undo/" .
 # 
 # 
 # #################################################################
@@ -536,6 +851,16 @@ frbr:exemplar a owl:ObjectProperty ;
 # http://purl.org/vocab/frbr/core#realization
 
 frbr:realization a owl:ObjectProperty ;
+	rdfs:isDefinedBy <http://purl.org/vocab/frbr/core> .
+# 
+# http://purl.org/vocab/frbr/core#revision
+
+frbr:revision a owl:ObjectProperty ;
+	rdfs:isDefinedBy <http://purl.org/vocab/frbr/core> .
+# 
+# http://purl.org/vocab/frbr/core#transformation
+
+frbr:transformation a owl:ObjectProperty ;
 	rdfs:isDefinedBy <http://purl.org/vocab/frbr/core> .
 # 
 # http://www.essepuntato.it/2012/04/tvc/atTime
@@ -585,45 +910,69 @@ oa:hasTarget a owl:ObjectProperty ;
 
 <https://w3id.org/akn/ontology/allot/mentions> a owl:ObjectProperty .
 # 
-# https://w3id.org/akn/ontology/undo/hasProponent
+# https://w3id.org/un/ontology/undo/hasProponent
 
 :hasProponent a owl:ObjectProperty ;
 	rdfs:subPropertyOf <https://w3id.org/akn/ontology/allot/hasRelatedReference> ;
 	rdfs:domain :Relation ;
 	rdfs:range <https://w3id.org/akn/ontology/allot/Reference> ;
 	rdfs:comment "The proponent entity of a relation."@en ;
-	rdfs:isDefinedBy <https://w3id.org/akn/ontology/undo> ;
+	rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> ;
 	rdfs:label "has proponent"@en .
 # 
-# https://w3id.org/akn/ontology/undo/hasReceiver
+# https://w3id.org/un/ontology/undo/hasReceiver
 
 :hasReceiver a owl:ObjectProperty ;
 	rdfs:subPropertyOf <https://w3id.org/akn/ontology/allot/hasRelatedReference> ;
 	rdfs:domain :Relation ;
 	rdfs:range <https://w3id.org/akn/ontology/allot/Reference> ;
 	rdfs:comment "The receiver entity of a relation."@en ;
-	rdfs:isDefinedBy <https://w3id.org/akn/ontology/undo> ;
+	rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> ;
 	rdfs:label "has receiver"@en .
 # 
-# https://w3id.org/akn/ontology/undo/hasRelatedConcept
+# https://w3id.org/un/ontology/undo/hasReconfiguration
+
+:hasReconfiguration a owl:ObjectProperty ;
+	rdfs:subPropertyOf frbr:transformation , <https://w3id.org/akn/ontology/allot/hasRelatedReference> ;
+	rdfs:domain :Document ;
+	rdfs:range :Document ;
+	rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> .
+# 
+# https://w3id.org/un/ontology/undo/hasRelatedConcept
 
 :hasRelatedConcept a owl:ObjectProperty ;
 	rdfs:subPropertyOf <https://w3id.org/akn/ontology/allot/hasRelatedReference> ;
 	rdfs:domain <https://w3id.org/akn/ontology/allot/Term> ;
 	rdfs:range <https://w3id.org/akn/ontology/allot/Concept> ;
 	rdfs:comment "A concept that is related somehow to a term (e.g. because it represents the meaning of a particular term)."@en ;
-	rdfs:isDefinedBy <https://w3id.org/akn/ontology/undo> ;
+	rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> ;
 	rdfs:label "has related concept"@en .
 # 
-# https://w3id.org/akn/ontology/undo/hasSemantics
+# https://w3id.org/un/ontology/undo/hasRevision
+
+:hasRevision a owl:ObjectProperty ;
+	rdfs:subPropertyOf frbr:revision , <https://w3id.org/akn/ontology/allot/hasRelatedReference> ;
+	rdfs:domain :DocumentVersion ;
+	rdfs:range :DocumentVersion ;
+	rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> .
+# 
+# https://w3id.org/un/ontology/undo/hasSemantics
 
 :hasSemantics a owl:ObjectProperty ;
 	rdfs:subPropertyOf <https://w3id.org/akn/ontology/allot/hasRelatedReference> ;
 	rdfs:domain :Relation ;
 	rdfs:range <https://w3id.org/akn/ontology/allot/Concept> ;
 	rdfs:comment "The semantics of a relation."@en ;
-	rdfs:isDefinedBy <https://w3id.org/akn/ontology/undo> ;
+	rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> ;
 	rdfs:label "has semantics"@en .
+# 
+# https://w3id.org/un/ontology/undo/hasStepType
+
+:hasStepType a owl:ObjectProperty ;
+	rdfs:subPropertyOf <https://w3id.org/akn/ontology/allot/hasRelatedReference> ;
+	rdfs:domain :Step ;
+	rdfs:range :StepType ;
+	rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> .
 # 
 # 
 # 
@@ -688,6 +1037,22 @@ pro:Role a owl:Class ;
 pso:Status a owl:Class ;
 	rdfs:isDefinedBy <http://purl.org/spar/pso> .
 # 
+# http://purl.org/vocab/frbr/core#Expression
+
+frbr:Expression a owl:Class .
+# 
+# http://purl.org/vocab/frbr/core#Item
+
+frbr:Item a owl:Class .
+# 
+# http://purl.org/vocab/frbr/core#Manifestation
+
+frbr:Manifestation a owl:Class .
+# 
+# http://purl.org/vocab/frbr/core#Work
+
+frbr:Work a owl:Class .
+# 
 # http://www.essepuntato.it/2012/04/tvc/ValueInTime
 
 tvc:ValueInTime a owl:Class ;
@@ -750,7 +1115,7 @@ owl:Thing a owl:Class .
 # 
 # https://w3id.org/akn/ontology/allot/FRBRExpression
 
-<https://w3id.org/akn/ontology/allot/FRBRExpression> rdfs:subClassOf fabio:Expression , _:genid1 .
+<https://w3id.org/akn/ontology/allot/FRBRExpression> rdfs:subClassOf fabio:Expression , frbr:Expression , _:genid1 .
 
 _:genid1 a owl:Restriction ;
 	owl:onProperty <http://purl.org/dc/terms/language> ;
@@ -761,17 +1126,17 @@ _:genid1 a owl:Restriction ;
 # 
 # https://w3id.org/akn/ontology/allot/FRBRItem
 
-<https://w3id.org/akn/ontology/allot/FRBRItem> rdfs:subClassOf fabio:Item ;
+<https://w3id.org/akn/ontology/allot/FRBRItem> rdfs:subClassOf fabio:Item , frbr:Item ;
 	rdfs:isDefinedBy <https://w3id.org/akn/ontology/allot> .
 # 
 # https://w3id.org/akn/ontology/allot/FRBRManifestation
 
-<https://w3id.org/akn/ontology/allot/FRBRManifestation> rdfs:subClassOf fabio:Manifestation ;
+<https://w3id.org/akn/ontology/allot/FRBRManifestation> rdfs:subClassOf fabio:Manifestation , frbr:Manifestation ;
 	rdfs:isDefinedBy <https://w3id.org/akn/ontology/allot> .
 # 
 # https://w3id.org/akn/ontology/allot/FRBRWork
 
-<https://w3id.org/akn/ontology/allot/FRBRWork> rdfs:subClassOf fabio:Work ;
+<https://w3id.org/akn/ontology/allot/FRBRWork> rdfs:subClassOf fabio:Work , frbr:Work ;
 	rdfs:isDefinedBy <https://w3id.org/akn/ontology/allot> .
 # 
 # https://w3id.org/akn/ontology/allot/Organization
@@ -788,7 +1153,7 @@ _:genid1 a owl:Restriction ;
 # https://w3id.org/akn/ontology/allot/Reference
 
 <https://w3id.org/akn/ontology/allot/Reference> a owl:Class ;
-	rdfs:isDefinedBy <https://w3id.org/akn/ontology/allot> .
+	rdfs:isDefinedBy <https://w3id.org/akn/ontology/allot> , <https://w3id.org/un/ontology/undo> .
 # 
 # https://w3id.org/akn/ontology/allot/Role
 
@@ -801,577 +1166,635 @@ _:genid1 a owl:Restriction ;
 <https://w3id.org/akn/ontology/allot/Term> a owl:Class ;
 	rdfs:isDefinedBy <https://w3id.org/akn/ontology/allot> .
 # 
-# https://w3id.org/akn/ontology/undo/Address
+# https://w3id.org/un/ontology/undo/Action
+
+:Action a owl:Class ;
+	rdfs:subClassOf pwo:Action , <https://w3id.org/akn/ontology/allot/Event> , _:genid2 .
+
+_:genid2 a owl:Restriction ;
+	owl:onProperty <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#hasParticipant> ;
+	owl:allValuesFrom <https://w3id.org/akn/ontology/allot/Reference> .
+
+:Action rdfs:subClassOf _:genid3 .
+
+_:genid3 a owl:Restriction ;
+	owl:onProperty <http://www.ontologydesignpatterns.org/cp/owl/taskexecution.owl#executesTask> ;
+	owl:allValuesFrom :Step .
+
+:Action rdfs:subClassOf _:genid4 .
+
+_:genid4 a owl:Restriction ;
+	owl:onProperty <http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#atTime> ;
+	owl:allValuesFrom :Interval .
+
+:Action rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> .
+# 
+# https://w3id.org/un/ontology/undo/Address
 
 :Address a owl:Class ;
 	rdfs:subClassOf :Communication ;
 	rdfs:comment "A document exemplifying keynote speeches and opening addresses and messages."@en ;
-	rdfs:isDefinedBy <https://w3id.org/akn/ontology/undo> ;
+	rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> ;
 	rdfs:label "address"@en .
 # 
-# https://w3id.org/akn/ontology/undo/AdministrativeCircular
+# https://w3id.org/un/ontology/undo/AdministrativeCircular
 
 :AdministrativeCircular a owl:Class ;
 	rdfs:subClassOf :AdministrativeIssuance ;
 	rdfs:comment "A document containing general information of administrative nature as well as clarifications of established rules, policies and procedures."@en ;
-	rdfs:isDefinedBy <https://w3id.org/akn/ontology/undo> ;
+	rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> ;
 	rdfs:label "administrative circular"@en .
 # 
-# https://w3id.org/akn/ontology/undo/AdministrativeInstruction
+# https://w3id.org/un/ontology/undo/AdministrativeInstruction
 
 :AdministrativeInstruction a owl:Class ;
 	rdfs:subClassOf :AdministrativeIssuance ;
 	rdfs:comment "A document that prescribes instructions and procedures for the implementation of rules and regulations, as well as formally communicate decisions on, for example, appointment, promotion, transfer and change of duty station."@en ;
-	rdfs:isDefinedBy <https://w3id.org/akn/ontology/undo> ;
+	rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> ;
 	rdfs:label "administrative instruction"@en .
 # 
-# https://w3id.org/akn/ontology/undo/AdministrativeIssuance
+# https://w3id.org/un/ontology/undo/AdministrativeIssuance
 
 :AdministrativeIssuance a owl:Class ;
 	rdfs:subClassOf :Document ;
 	rdfs:comment "Document concerning administrative instructions and circulars. Their structures vary widely across organizations and traditions but may have the format of a formal communication with a title and content in unnumbered or numbered paragraphs or be divided into sections."@en ;
-	rdfs:isDefinedBy <https://w3id.org/akn/ontology/undo> ;
+	rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> ;
 	rdfs:label "administrative issuance"@en .
 # 
-# https://w3id.org/akn/ontology/undo/AdvisoryOpinion
+# https://w3id.org/un/ontology/undo/AdvisoryOpinion
 
 :AdvisoryOpinion a owl:Class ;
 	rdfs:subClassOf :CourtDecision ;
 	rdfs:comment "A document introducing an opinion rendered by a court or adjudicating body upon request."@en ;
-	rdfs:isDefinedBy <https://w3id.org/akn/ontology/undo> ;
+	rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> ;
 	rdfs:label "advisory opinion"@en .
 # 
-# https://w3id.org/akn/ontology/undo/AgendaListing
+# https://w3id.org/un/ontology/undo/AgendaListing
 
 :AgendaListing a owl:Class ;
 	rdfs:subClassOf :MeetingAgenda ;
 	rdfs:comment "A document listing agenda items to be considered at a specific meeting/s or session/s. It may report time, location, etc."@en ;
-	rdfs:isDefinedBy <https://w3id.org/akn/ontology/undo> ;
+	rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> ;
 	rdfs:label "agenda listing"@en .
 # 
-# https://w3id.org/akn/ontology/undo/Agent
+# https://w3id.org/un/ontology/undo/Agent
 
 :Agent a owl:Class ;
 	rdfs:subClassOf lkif-action:Agent , <http://xmlns.com/foaf/0.1/Agent> , <https://w3id.org/akn/ontology/allot/Reference> ;
 	rdfs:comment "An actor (e.g. a person, an organisation) that can perform some actions."@en ;
-	rdfs:isDefinedBy <https://w3id.org/akn/ontology/undo> ;
+	rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> ;
 	rdfs:label "agent"@en .
 # 
-# https://w3id.org/akn/ontology/undo/Amendment
+# https://w3id.org/un/ontology/undo/Amendment
 
 :Amendment a owl:Class ;
 	rdfs:subClassOf :ModificatoryInstruction ;
 	rdfs:comment "A document that provides modifications to other normative documents. The modifications could appear in different structured texts like normative and deliberative documents, debate records, etc."@en ;
-	rdfs:isDefinedBy <https://w3id.org/akn/ontology/undo> ;
+	rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> ;
 	rdfs:label "amendment"@en .
 # 
-# https://w3id.org/akn/ontology/undo/AmendmentList
+# https://w3id.org/un/ontology/undo/AmendmentList
 
 :AmendmentList a owl:Class ;
 	rdfs:subClassOf :ModificatoryInstruction ;
 	rdfs:comment "A document listing proposals for modifications submitted to official deliberative bodies for discussion. It provides modifications to other normative documents."@en ;
-	rdfs:isDefinedBy <https://w3id.org/akn/ontology/undo> ;
+	rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> ;
 	rdfs:label "amendment list"@en .
 # 
-# https://w3id.org/akn/ontology/undo/AnnotatedAgenda
+# https://w3id.org/un/ontology/undo/AnnotatedAgenda
 
 :AnnotatedAgenda a owl:Class ;
 	rdfs:subClassOf :MeetingAgenda ;
 	rdfs:comment "An agenda with a brief description of agenda items, citation of related documents as well as information and other announcements."@en ;
-	rdfs:isDefinedBy <https://w3id.org/akn/ontology/undo> ;
+	rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> ;
 	rdfs:label "annotated agenda"@en .
 # 
-# https://w3id.org/akn/ontology/undo/Annotation
+# https://w3id.org/un/ontology/undo/Annotation
 
 :Annotation a owl:Class ;
-	rdfs:subClassOf oa:Annotation , <https://w3id.org/akn/ontology/allot/Concept> , _:genid2 .
+	rdfs:subClassOf oa:Annotation , <https://w3id.org/akn/ontology/allot/Concept> , _:genid5 .
 
-_:genid2 a owl:Restriction ;
+_:genid5 a owl:Restriction ;
 	owl:onProperty oa:hasBody ;
 	owl:allValuesFrom <https://w3id.org/akn/ontology/allot/Reference> .
 
-:Annotation rdfs:subClassOf _:genid3 .
+:Annotation rdfs:subClassOf _:genid6 .
 
-_:genid3 a owl:Restriction ;
+_:genid6 a owl:Restriction ;
 	owl:onProperty oa:hasTarget ;
-	owl:allValuesFrom _:genid4 .
+	owl:allValuesFrom _:genid7 .
 
-_:genid4 a owl:Class ;
-	owl:unionOf _:genid8 .
+_:genid7 a owl:Class ;
+	owl:unionOf _:genid11 .
+
+_:genid11 a rdf:List ;
+	rdf:first <https://w3id.org/akn/ontology/allot/FRBRExpression> ;
+	rdf:rest _:genid10 .
+
+_:genid10 a rdf:List ;
+	rdf:first <https://w3id.org/akn/ontology/allot/FRBRItem> ;
+	rdf:rest _:genid9 .
+
+_:genid9 a rdf:List ;
+	rdf:first <https://w3id.org/akn/ontology/allot/FRBRManifestation> ;
+	rdf:rest _:genid8 .
 
 _:genid8 a rdf:List ;
-	rdf:first <https://w3id.org/akn/ontology/allot/FRBRExpression> ;
-	rdf:rest _:genid7 .
-
-_:genid7 a rdf:List ;
-	rdf:first <https://w3id.org/akn/ontology/allot/FRBRItem> ;
-	rdf:rest _:genid6 .
-
-_:genid6 a rdf:List ;
-	rdf:first <https://w3id.org/akn/ontology/allot/FRBRManifestation> ;
-	rdf:rest _:genid5 .
-
-_:genid5 a rdf:List ;
 	rdf:first <https://w3id.org/akn/ontology/allot/FRBRWork> ;
 	rdf:rest rdf:nil .
 
 :Annotation rdfs:comment "A mechanism that allows someone to link a specific entity (e.g. a relation) to a target document (or its parts), with the intent of specifying from where that entity has been actually derived from."@en ;
-	rdfs:isDefinedBy <https://w3id.org/akn/ontology/undo> ;
+	rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> ;
 	rdfs:label "annotation"@en .
 # 
-# https://w3id.org/akn/ontology/undo/Bulletin
+# https://w3id.org/un/ontology/undo/Bulletin
 
 :Bulletin a owl:Class ;
 	rdfs:subClassOf :Communication ;
 	rdfs:comment "A document containing information not requiring any action by the addressees."@en ;
-	rdfs:isDefinedBy <https://w3id.org/akn/ontology/undo> ;
+	rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> ;
 	rdfs:label "bulletin"@en .
 # 
-# https://w3id.org/akn/ontology/undo/Charter
+# https://w3id.org/un/ontology/undo/Charter
 
 :Charter a owl:Class ;
 	rdfs:subClassOf :NormativeDocument ;
 	rdfs:comment "Foundational treaty outlining the conditions under which a body is organised, and defining its rights and privileges."@en ;
-	rdfs:isDefinedBy <https://w3id.org/akn/ontology/undo> ;
+	rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> ;
 	rdfs:label "charter"@en .
 # 
-# https://w3id.org/akn/ontology/undo/Circular
+# https://w3id.org/un/ontology/undo/Circular
 
 :Circular a owl:Class ;
 	rdfs:subClassOf :Communication ;
 	rdfs:comment "A document containing specialized information of specific interests."@en ;
-	rdfs:isDefinedBy <https://w3id.org/akn/ontology/undo> ;
+	rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> ;
 	rdfs:label "circular"@en .
 # 
-# https://w3id.org/akn/ontology/undo/CodeOfConduct
+# https://w3id.org/un/ontology/undo/CodeOfConduct
 
 :CodeOfConduct a owl:Class ;
 	rdfs:subClassOf :NormativeDocument ;
 	rdfs:comment "A document listing rules outlining the responsibilities of, or proper practices for, individuals, parties, organizations, or countries on specific issues."@en ;
-	rdfs:isDefinedBy <https://w3id.org/akn/ontology/undo> ;
+	rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> ;
 	rdfs:label "code of conduct"@en .
 # 
-# https://w3id.org/akn/ontology/undo/CodeOfPractice
+# https://w3id.org/un/ontology/undo/CodeOfPractice
 
 :CodeOfPractice a owl:Class ;
 	rdfs:subClassOf :NormativeDocument ;
 	rdfs:comment "A document that defines correct procedures on how to implement principles and/or standards."@en ;
-	rdfs:isDefinedBy <https://w3id.org/akn/ontology/undo> ;
+	rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> ;
 	rdfs:label "code of practice"@en .
 # 
-# https://w3id.org/akn/ontology/undo/Collection
+# https://w3id.org/un/ontology/undo/Collection
 
 :Collection a owl:Class ;
 	rdfs:subClassOf :Publication ;
 	rdfs:comment "A collection of individual autonomous documents."@en ;
-	rdfs:isDefinedBy <https://w3id.org/akn/ontology/undo> ;
+	rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> ;
 	rdfs:label "collection"@en .
 # 
-# https://w3id.org/akn/ontology/undo/Communication
+# https://w3id.org/un/ontology/undo/Communication
 
 :Communication a owl:Class ;
 	rdfs:subClassOf :Document ;
 	rdfs:comment "A document containing an official communication used to formally inform the UN community of events and of the outcome of non-UN meetings, to transmit reports or communications, and for a variety of other purposes. Its structures vary widely across organizations and traditions but generally assume the format of a formal communication with title and content in unnumbered paragraphs."@en ;
-	rdfs:isDefinedBy <https://w3id.org/akn/ontology/undo> ;
+	rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> ;
 	rdfs:label "communication"@en .
 # 
-# https://w3id.org/akn/ontology/undo/ConferenceReport
+# https://w3id.org/un/ontology/undo/ConferenceReport
 
 :ConferenceReport a owl:Class ;
 	rdfs:subClassOf :MeetingReport ;
 	rdfs:comment "A document summarising discussions held during a conference. It may also contain full text of resolutions or decisions, either proposed or adopted; recommended actions to be taken by other organs, etc., in the body of the document or as annexes."@en ;
-	rdfs:isDefinedBy <https://w3id.org/akn/ontology/undo> ;
+	rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> ;
 	rdfs:label "conference report"@en .
 # 
-# https://w3id.org/akn/ontology/undo/Constitution
+# https://w3id.org/un/ontology/undo/Constitution
 
 :Constitution a owl:Class ;
 	rdfs:subClassOf :NormativeDocument ;
 	rdfs:comment "A document describing a set of fundamental principles or established precedents according to which a body is acknowledged to be governed."@en ;
-	rdfs:isDefinedBy <https://w3id.org/akn/ontology/undo> ;
+	rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> ;
 	rdfs:label "constitution"@en .
 # 
-# https://w3id.org/akn/ontology/undo/Convention
+# https://w3id.org/un/ontology/undo/Convention
 
 :Convention a owl:Class ;
 	rdfs:subClassOf :NormativeDocument ;
 	rdfs:comment "Mandatory regulations subject to ratification. Instruments usually negotiated under the auspices of an international organization."@en ;
-	rdfs:isDefinedBy <https://w3id.org/akn/ontology/undo> ;
+	rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> ;
 	rdfs:label "convention"@en .
 # 
-# https://w3id.org/akn/ontology/undo/CouncilReport
+# https://w3id.org/un/ontology/undo/CouncilReport
 
 :CouncilReport a owl:Class ;
 	rdfs:subClassOf :MeetingReport ;
 	rdfs:comment "A document summarising discussions held during a council. It may also contain full text of resolutions or decisions, either proposed or adopted; recommended actions to be taken by other organs, etc., in the body of the document or as annexes."@en ;
-	rdfs:isDefinedBy <https://w3id.org/akn/ontology/undo> ;
+	rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> ;
 	rdfs:label "council report"@en .
 # 
-# https://w3id.org/akn/ontology/undo/CourtDecision
+# https://w3id.org/un/ontology/undo/CourtDecision
 
 :CourtDecision a owl:Class ;
 	rdfs:subClassOf :Document ;
 	rdfs:comment "A document introducing a court of law or adjudicating authority formal decision or specific determination following a legal proceedings. The typical narrative of judgments is often divided in background, introduction, motivation and decision."@en ;
-	rdfs:isDefinedBy <https://w3id.org/akn/ontology/undo> ;
+	rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> ;
 	rdfs:label "court decision"@en .
 # 
-# https://w3id.org/akn/ontology/undo/Decision
+# https://w3id.org/un/ontology/undo/Decision
 
 :Decision a owl:Class ;
 	rdfs:subClassOf :DeliberativeDocument ;
 	rdfs:comment "A document describing a formal action regarding administrative and procedural matters of principal or subsidiary organ or other empowered bodies. This kind of documents is sometimes also used to record the adoption of a text representing the consensus of the members of a given organ."@en ;
-	rdfs:isDefinedBy <https://w3id.org/akn/ontology/undo> ;
+	rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> ;
 	rdfs:label "decision"@en .
 # 
-# https://w3id.org/akn/ontology/undo/DeliberativeDocument
+# https://w3id.org/un/ontology/undo/DeliberativeDocument
 
 :DeliberativeDocument a owl:Class ;
 	rdfs:subClassOf :Document ;
 	rdfs:comment "Formal expressions of the opinion or will of a principal or subsidiary organ or other empowered bodies. Usually they are open structure documents, sometimes articulated in hierarchical structures in which the text is subdivided into higher and lower subdivisions, generally including a preamble and operative paragraphs."@en ;
-	rdfs:isDefinedBy <https://w3id.org/akn/ontology/undo> ;
+	rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> ;
 	rdfs:label "deliberative document"@en .
 # 
-# https://w3id.org/akn/ontology/undo/Document
+# https://w3id.org/un/ontology/undo/Document
 
 :Document a owl:Class ;
-	rdfs:subClassOf <https://w3id.org/akn/ontology/allot/FRBRWork> , _:genid9 .
+	rdfs:subClassOf <https://w3id.org/akn/ontology/allot/FRBRWork> , _:genid12 .
 
-_:genid9 a owl:Restriction ;
+_:genid12 a owl:Restriction ;
 	owl:onProperty <https://w3id.org/akn/ontology/allot/hasRealization> ;
 	owl:someValuesFrom :DocumentVersion .
 
 :Document rdfs:comment "A document of a specific kind (e.g. normative documents, legal documents, etc.) published by someone for certain reasons."@en ;
-	rdfs:isDefinedBy <https://w3id.org/akn/ontology/undo> ;
+	rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> ;
 	rdfs:label "document"@en .
 # 
-# https://w3id.org/akn/ontology/undo/DocumentVersion
+# https://w3id.org/un/ontology/undo/DocumentVersion
 
 :DocumentVersion a owl:Class ;
-	rdfs:subClassOf <https://w3id.org/akn/ontology/allot/FRBRExpression> , _:genid10 .
+	rdfs:subClassOf <https://w3id.org/akn/ontology/allot/FRBRExpression> , _:genid13 .
 
-_:genid10 a owl:Restriction ;
-	owl:onProperty _:genid11 .
+_:genid13 a owl:Restriction ;
+	owl:onProperty _:genid14 .
 
-_:genid11 owl:inverseOf <https://w3id.org/akn/ontology/allot/hasRealization> .
+_:genid14 owl:inverseOf <https://w3id.org/akn/ontology/allot/hasRealization> .
 
-_:genid10 owl:allValuesFrom :Document .
+_:genid13 owl:allValuesFrom :Document .
 
-:DocumentVersion rdfs:subClassOf _:genid12 .
+:DocumentVersion rdfs:subClassOf _:genid15 .
 
-_:genid12 a owl:Restriction ;
+_:genid15 a owl:Restriction ;
 	owl:onProperty <http://purl.org/dc/terms/language> ;
 	owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 	owl:onClass :Language .
 
 :DocumentVersion rdfs:comment "A particular version of a document written according to a certain language."@en ;
-	rdfs:isDefinedBy <https://w3id.org/akn/ontology/undo> ;
+	rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> ;
 	rdfs:label "document version"@en .
 # 
-# https://w3id.org/akn/ontology/undo/Interval
+# https://w3id.org/un/ontology/undo/Interval
 
 :Interval a owl:Class ;
-	rdfs:subClassOf ti:TimeInterval , <https://w3id.org/akn/ontology/allot/Concept> , _:genid13 .
+	rdfs:subClassOf ti:TimeInterval , <https://w3id.org/akn/ontology/allot/Concept> , _:genid16 .
 
-_:genid13 a owl:Restriction ;
+_:genid16 a owl:Restriction ;
 	owl:onProperty ti:hasIntervalEndDate ;
 	owl:allValuesFrom xsd:dateTime .
 
-:Interval rdfs:subClassOf _:genid14 .
+:Interval rdfs:subClassOf _:genid17 .
 
-_:genid14 a owl:Restriction ;
+_:genid17 a owl:Restriction ;
 	owl:onProperty ti:hasIntervalStartDate ;
 	owl:allValuesFrom xsd:dateTime .
 
 :Interval rdfs:comment "A particular time period characterised by a starting date (specified by means of the property ti:hasIntervalStartDate) and an ending date (specified by means of the property ti:hasIntervalEndDate)."@en ;
-	rdfs:isDefinedBy <https://w3id.org/akn/ontology/undo> ;
+	rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> ;
 	rdfs:label "interval"@en .
 # 
-# https://w3id.org/akn/ontology/undo/Judgment
+# https://w3id.org/un/ontology/undo/Judgment
 
 :Judgment a owl:Class ;
 	rdfs:subClassOf :CourtDecision ;
 	rdfs:comment "A document formalising a decision or specific determination following a legal proceeding. Its structures are highly formalised."@en ;
-	rdfs:isDefinedBy <https://w3id.org/akn/ontology/undo> ;
+	rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> ;
 	rdfs:label "judgement"@en .
 # 
-# https://w3id.org/akn/ontology/undo/Language
+# https://w3id.org/un/ontology/undo/Language
 
 :Language a owl:Class ;
 	rdfs:subClassOf <http://purl.org/dc/terms/LinguisticSystem> , <https://w3id.org/akn/ontology/allot/Concept> ;
 	rdfs:comment "A particular language adopted by the United Nation for publishing their documents (e.g. Arabic, Chinese, English, French, Russian, Spanish)."@en ;
-	rdfs:isDefinedBy <https://w3id.org/akn/ontology/undo> ;
+	rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> ;
 	rdfs:label "language"@en .
 # 
-# https://w3id.org/akn/ontology/undo/MeetingAgenda
+# https://w3id.org/un/ontology/undo/MeetingAgenda
 
 :MeetingAgenda a owl:Class ;
 	rdfs:subClassOf :Document ;
 	rdfs:comment "Documents listing agenda items of a meeting or a series of meetings, at times with brief description of agenda items, citation of related documents, and other announcements, such as consultations, informal meetings or side events, as well as summaries of the previous day's meetings. Their structures vary widely across organizations and traditions."@en ;
-	rdfs:isDefinedBy <https://w3id.org/akn/ontology/undo> ;
+	rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> ;
 	rdfs:label "meeting agenda"@en .
 # 
-# https://w3id.org/akn/ontology/undo/MeetingMinute
+# https://w3id.org/un/ontology/undo/MeetingMinute
 
 :MeetingMinute a owl:Class ;
 	rdfs:subClassOf :MeetingReport ;
 	rdfs:comment "A document providing a third-person accounts of meetings."@en ;
-	rdfs:isDefinedBy <https://w3id.org/akn/ontology/undo> ;
+	rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> ;
 	rdfs:label "meeting minute"@en .
 # 
-# https://w3id.org/akn/ontology/undo/MeetingRecord
+# https://w3id.org/un/ontology/undo/MeetingRecord
 
 :MeetingRecord a owl:Class ;
 	rdfs:subClassOf :Document ;
 	rdfs:comment "Documents containing full first-person records of a meeting (verbatim). Their structure reflects the different section of the debates and/or alternation of questions and answers that take place during meetings discussions."@en ;
-	rdfs:isDefinedBy <https://w3id.org/akn/ontology/undo> ;
-	rdfs:label "meeting report"@en .
+	rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> ;
+	rdfs:label "meeting record"@en .
 # 
-# https://w3id.org/akn/ontology/undo/MeetingReport
+# https://w3id.org/un/ontology/undo/MeetingReport
 
 :MeetingReport a owl:Class ;
 	rdfs:subClassOf :Document ;
 	rdfs:comment "Documents containing summarized accounts of meetings. Their structures vary widely across organizations and traditions."@en ;
-	rdfs:isDefinedBy <https://w3id.org/akn/ontology/undo> ;
+	rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> ;
 	rdfs:label "meeting report"@en .
 # 
-# https://w3id.org/akn/ontology/undo/Memoranda
+# https://w3id.org/un/ontology/undo/Memoranda
 
 :Memoranda a owl:Class ;
 	rdfs:subClassOf :Communication ;
 	rdfs:comment "An official written communication issued to disseminate information."@en ;
-	rdfs:isDefinedBy <https://w3id.org/akn/ontology/undo> ;
+	rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> ;
 	rdfs:label "memoranda"@en .
 # 
-# https://w3id.org/akn/ontology/undo/ModificatoryInstruction
+# https://w3id.org/un/ontology/undo/ModificatoryInstruction
 
 :ModificatoryInstruction a owl:Class ;
 	rdfs:subClassOf :Document ;
 	rdfs:comment "A document containing formal proposals for modifications, as single instruction or as a collection of instructions, of previously issued documents issued by the same body that approved the original document. Its structures vary widely across organizations and traditions."@en ;
-	rdfs:isDefinedBy <https://w3id.org/akn/ontology/undo> ;
+	rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> ;
 	rdfs:label "modificatory instruction"@en .
 # 
-# https://w3id.org/akn/ontology/undo/NormativeDocument
+# https://w3id.org/un/ontology/undo/NormativeDocument
 
 :NormativeDocument a owl:Class ;
 	rdfs:subClassOf :Document ;
 	rdfs:comment "Formal provision concerning commands, recommendations, opinions or expressions of will issued or entered into by a principal or a subsidiary organ or other empowered bodies. Usually, it is articulated in hierarchical structures, in which the text is subdivided into higher and lower subdivisions."@en ;
-	rdfs:isDefinedBy <https://w3id.org/akn/ontology/undo> ;
+	rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> ;
 	rdfs:label "normative document"@en .
 # 
-# https://w3id.org/akn/ontology/undo/Note
+# https://w3id.org/un/ontology/undo/Note
 
 :Note a owl:Class ;
 	rdfs:subClassOf :Communication ;
 	rdfs:comment "A written communication to transmit comments or reports."@en ;
-	rdfs:isDefinedBy <https://w3id.org/akn/ontology/undo> ;
+	rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> ;
 	rdfs:label "note"@en .
 # 
-# https://w3id.org/akn/ontology/undo/OfficialCompilation
+# https://w3id.org/un/ontology/undo/OfficialCompilation
 
 :OfficialCompilation a owl:Class ;
 	rdfs:subClassOf :Publication ;
 	rdfs:comment "An authoritative compilation of official documents."@en ;
-	rdfs:isDefinedBy <https://w3id.org/akn/ontology/undo> ;
+	rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> ;
 	rdfs:label "official compilation"@en .
 # 
-# https://w3id.org/akn/ontology/undo/OfficialLetter
+# https://w3id.org/un/ontology/undo/OfficialLetter
 
 :OfficialLetter a owl:Class ;
 	rdfs:subClassOf :Communication ;
 	rdfs:comment "Official written correspondence; communications or notes verbale concerning issues under the authority of the organisation to provide information, requiring specific action by the addressees or stating a position."@en ;
-	rdfs:isDefinedBy <https://w3id.org/akn/ontology/undo> ;
+	rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> ;
 	rdfs:label "official letter"@en .
 # 
-# https://w3id.org/akn/ontology/undo/OfficialStatement
+# https://w3id.org/un/ontology/undo/OfficialStatement
 
 :OfficialStatement a owl:Class ;
 	rdfs:subClassOf :Communication ;
 	rdfs:comment "A document introducing a pronunciation of officers in their official capacity."@en ;
-	rdfs:isDefinedBy <https://w3id.org/akn/ontology/undo> ;
+	rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> ;
 	rdfs:label "official statement"@en .
 # 
-# https://w3id.org/akn/ontology/undo/Paper
+# https://w3id.org/un/ontology/undo/Paper
 
 :Paper a owl:Class ;
 	rdfs:subClassOf :Document ;
 	rdfs:comment "An official document that provides information about a particular subject or a detailed account of issues, policies or outcomes of, for example, inquiries or scientific investigations. Its structures vary widely across organizations and traditions."@en ;
-	rdfs:isDefinedBy <https://w3id.org/akn/ontology/undo> ;
+	rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> ;
 	rdfs:label "paper"@en .
 # 
-# https://w3id.org/akn/ontology/undo/Policy
+# https://w3id.org/un/ontology/undo/Policy
 
 :Policy a owl:Class ;
 	rdfs:subClassOf :Paper ;
 	rdfs:comment "A document introducing general course or principle of action adopted or proposed by the official authorities or bodies."@en ;
-	rdfs:isDefinedBy <https://w3id.org/akn/ontology/undo> ;
+	rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> ;
 	rdfs:label "policy"@en .
 # 
-# https://w3id.org/akn/ontology/undo/PositionPaper
+# https://w3id.org/un/ontology/undo/PositionPaper
 
 :PositionPaper a owl:Class ;
 	rdfs:subClassOf :Paper ;
 	rdfs:comment "An essay detailing facts and opinions regarding specific issues."@en ;
-	rdfs:isDefinedBy <https://w3id.org/akn/ontology/undo> ;
+	rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> ;
 	rdfs:label "position paper"@en .
 # 
-# https://w3id.org/akn/ontology/undo/PressRelease
+# https://w3id.org/un/ontology/undo/PressRelease
 
 :PressRelease a owl:Class ;
 	rdfs:subClassOf :Communication ;
 	rdfs:comment "A written communication to the public that serves information purposes only. It is not considered an official document."@en ;
-	rdfs:isDefinedBy <https://w3id.org/akn/ontology/undo> ;
+	rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> ;
 	rdfs:label "press release"@en .
 # 
-# https://w3id.org/akn/ontology/undo/ProgressReport
+# https://w3id.org/un/ontology/undo/ProgressReport
 
 :ProgressReport a owl:Class ;
 	rdfs:subClassOf :Paper ;
 	rdfs:comment "A document assessing projects or processes."@en ;
-	rdfs:isDefinedBy <https://w3id.org/akn/ontology/undo> ;
+	rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> ;
 	rdfs:label "progress report"@en .
 # 
-# https://w3id.org/akn/ontology/undo/Protocol
+# https://w3id.org/un/ontology/undo/Protocol
 
 :Protocol a owl:Class ;
 	rdfs:subClassOf :NormativeDocument ;
 	rdfs:comment "International agreement that supplements a previous treaty or international agreement."@en ;
-	rdfs:isDefinedBy <https://w3id.org/akn/ontology/undo> ;
+	rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> ;
 	rdfs:label "protocol"@en .
 # 
-# https://w3id.org/akn/ontology/undo/Publication
+# https://w3id.org/un/ontology/undo/Publication
 
 :Publication a owl:Class ;
 	rdfs:subClassOf :Document ;
 	rdfs:comment "The documentary output of the process meant to share information in any form or medium."@en ;
-	rdfs:isDefinedBy <https://w3id.org/akn/ontology/undo> ;
+	rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> ;
 	rdfs:label "publication"@en .
 # 
-# https://w3id.org/akn/ontology/undo/Recommendation
+# https://w3id.org/un/ontology/undo/Recommendation
 
 :Recommendation a owl:Class ;
 	rdfs:subClassOf :NormativeDocument ;
 	rdfs:comment "A document that provides guidance and may create reporting obligations for parties."@en ;
-	rdfs:isDefinedBy <https://w3id.org/akn/ontology/undo> ;
+	rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> ;
 	rdfs:label "recommendation"@en .
 # 
-# https://w3id.org/akn/ontology/undo/Regulation
+# https://w3id.org/un/ontology/undo/Regulation
 
 :Regulation a owl:Class ;
 	rdfs:subClassOf :NormativeDocument ;
 	rdfs:comment "A set guides to enforce a statutory instrument or regulate activities."@en ;
-	rdfs:isDefinedBy <https://w3id.org/akn/ontology/undo> ;
+	rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> ;
 	rdfs:label "regulation"@en .
 # 
-# https://w3id.org/akn/ontology/undo/Relation
+# https://w3id.org/un/ontology/undo/Relation
 
 :Relation a owl:Class ;
-	rdfs:subClassOf <https://w3id.org/akn/ontology/allot/Concept> , _:genid15 .
+	rdfs:subClassOf <https://w3id.org/akn/ontology/allot/Concept> , _:genid18 .
 
-_:genid15 a owl:Restriction ;
+_:genid18 a owl:Restriction ;
 	owl:onProperty :hasProponent ;
 	owl:cardinality "1"^^xsd:nonNegativeInteger .
 
-:Relation rdfs:subClassOf _:genid16 .
+:Relation rdfs:subClassOf _:genid19 .
 
-_:genid16 a owl:Restriction ;
+_:genid19 a owl:Restriction ;
 	owl:onProperty :hasReceiver ;
 	owl:cardinality "1"^^xsd:nonNegativeInteger .
 
-:Relation rdfs:subClassOf _:genid17 .
+:Relation rdfs:subClassOf _:genid20 .
 
-_:genid17 a owl:Restriction ;
+_:genid20 a owl:Restriction ;
 	owl:onProperty :hasSemantics ;
 	owl:cardinality "1"^^xsd:nonNegativeInteger .
 
 :Relation rdfs:comment "Something that allows one to link a proponent entity to a receiver entity according to a specific semantics - e.g. saying that a document (proponent) cites (semantics) another document (receiver), or that an organization (proponent) approves (semantics) a certain document (receiver), etc."@en ;
-	rdfs:isDefinedBy <https://w3id.org/akn/ontology/undo> ;
+	rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> ;
 	rdfs:label "relation"@en .
 # 
-# https://w3id.org/akn/ontology/undo/Resolution
+# https://w3id.org/un/ontology/undo/Resolution
 
 :Resolution a owl:Class ;
 	rdfs:subClassOf :DeliberativeDocument ;
 	rdfs:comment "A particular kind of document that contains a formal expression of the will of a principal or subsidiary organ or other empowered bodies."@en ;
-	rdfs:isDefinedBy <https://w3id.org/akn/ontology/undo> ;
+	rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> ;
 	rdfs:label "resolution"@en .
 # 
-# https://w3id.org/akn/ontology/undo/Rules
+# https://w3id.org/un/ontology/undo/Rules
 
 :Rules a owl:Class ;
 	rdfs:subClassOf :NormativeDocument ;
 	rdfs:comment "A document prescribing principles governing conduct or procedure within a particular area of activity."@en ;
-	rdfs:isDefinedBy <https://w3id.org/akn/ontology/undo> ;
+	rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> ;
 	rdfs:label "rules"@en .
 # 
-# https://w3id.org/akn/ontology/undo/RulesOfProcedure
+# https://w3id.org/un/ontology/undo/RulesOfProcedure
 
 :RulesOfProcedure a owl:Class ;
 	rdfs:subClassOf :NormativeDocument ;
 	rdfs:comment "A document that prescribes guides for conduct or actions, such as rules for conducting business within a body, as well as for the financial administration of organizations and their members."@en ;
-	rdfs:isDefinedBy <https://w3id.org/akn/ontology/undo> ;
+	rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> ;
 	rdfs:label "rules of procedure"@en .
 # 
-# https://w3id.org/akn/ontology/undo/Standard
+# https://w3id.org/un/ontology/undo/Standard
 
 :Standard a owl:Class ;
 	rdfs:subClassOf :NormativeDocument ;
 	rdfs:comment "A document introducing a set of guides established by consensus outlining the responsibilities of, or proper practices for, individuals, parties, organizations or countries on specific issues."@en ;
-	rdfs:isDefinedBy <https://w3id.org/akn/ontology/undo> ;
+	rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> ;
 	rdfs:label "standard"@en .
 # 
-# https://w3id.org/akn/ontology/undo/Status
+# https://w3id.org/un/ontology/undo/Status
 
 :Status a owl:Class ;
 	rdfs:subClassOf pso:Status , :Value ;
 	rdfs:comment "A value identifying the status of a document (e.g. in drafting, under revision, published)."@en ;
-	rdfs:isDefinedBy <https://w3id.org/akn/ontology/undo> ;
+	rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> ;
 	rdfs:label "status"@en .
 # 
-# https://w3id.org/akn/ontology/undo/Treaty
+# https://w3id.org/un/ontology/undo/Step
+
+:Step a owl:Class ;
+	rdfs:subClassOf pwo:Step , <https://w3id.org/akn/ontology/allot/Concept> , _:genid21 .
+
+_:genid21 a owl:Restriction ;
+	owl:onProperty pwo:hasNextStep ;
+	owl:allValuesFrom :Step .
+
+:Step rdfs:subClassOf _:genid22 .
+
+_:genid22 a owl:Restriction ;
+	owl:onProperty pwo:needs ;
+	owl:allValuesFrom <https://w3id.org/akn/ontology/allot/Reference> .
+
+:Step rdfs:subClassOf _:genid23 .
+
+_:genid23 a owl:Restriction ;
+	owl:onProperty pwo:produces ;
+	owl:allValuesFrom <https://w3id.org/akn/ontology/allot/Reference> .
+
+:Step rdfs:subClassOf _:genid24 .
+
+_:genid24 a owl:Restriction ;
+	owl:onProperty <http://www.ontologydesignpatterns.org/cp/owl/taskexecution.owl#isExecutedIn> ;
+	owl:allValuesFrom :Action .
+
+:Step rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> .
+# 
+# https://w3id.org/un/ontology/undo/StepType
+
+:StepType a owl:Class ;
+	rdfs:subClassOf <https://w3id.org/akn/ontology/allot/Concept> ;
+	rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> .
+# 
+# https://w3id.org/un/ontology/undo/Treaty
 
 :Treaty a owl:Class ;
 	rdfs:subClassOf :NormativeDocument ;
 	rdfs:comment "An international agreement concluded between States, and bilateral or multilateral agreements governed by international law to which international organizations are parties."@en ;
-	rdfs:isDefinedBy <https://w3id.org/akn/ontology/undo> ;
+	rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> ;
 	rdfs:label "treaty"@en .
 # 
-# https://w3id.org/akn/ontology/undo/Value
+# https://w3id.org/un/ontology/undo/Value
 
 :Value a owl:Class ;
 	rdfs:subClassOf <https://w3id.org/akn/ontology/allot/Reference> ;
 	rdfs:comment "Something that can be held by an entity (e.g. a particular role or status)."@en ;
-	rdfs:isDefinedBy <https://w3id.org/akn/ontology/undo> ;
+	rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> ;
 	rdfs:label "value"@en .
 # 
-# https://w3id.org/akn/ontology/undo/ValueInTimeAndContext
+# https://w3id.org/un/ontology/undo/ValueInTimeAndContext
 
 :ValueInTimeAndContext a owl:Class ;
-	rdfs:subClassOf tvc:ValueInTime , <https://w3id.org/akn/ontology/allot/Concept> , _:genid18 .
+	rdfs:subClassOf tvc:ValueInTime , <https://w3id.org/akn/ontology/allot/Concept> , _:genid25 .
 
-_:genid18 a owl:Restriction ;
+_:genid25 a owl:Restriction ;
 	owl:onProperty tvc:atTime ;
 	owl:allValuesFrom :Interval .
 
-:ValueInTimeAndContext rdfs:subClassOf _:genid19 .
+:ValueInTimeAndContext rdfs:subClassOf _:genid26 .
 
-_:genid19 a owl:Restriction ;
+_:genid26 a owl:Restriction ;
 	owl:onProperty tvc:withValue ;
 	owl:allValuesFrom :Value .
 
-:ValueInTimeAndContext rdfs:subClassOf _:genid20 .
+:ValueInTimeAndContext rdfs:subClassOf _:genid27 .
 
-_:genid20 a owl:Restriction ;
+_:genid27 a owl:Restriction ;
 	owl:onProperty tvc:withinContext ;
 	owl:allValuesFrom <https://w3id.org/akn/ontology/allot/Reference> .
 
-:ValueInTimeAndContext rdfs:subClassOf _:genid21 .
+:ValueInTimeAndContext rdfs:subClassOf _:genid28 .
 
-_:genid21 a owl:Restriction ;
-	owl:onProperty _:genid22 .
+_:genid28 a owl:Restriction ;
+	owl:onProperty _:genid29 .
 
-_:genid22 owl:inverseOf tvc:hasValue .
+_:genid29 owl:inverseOf tvc:hasValue .
 
-_:genid21 owl:allValuesFrom <https://w3id.org/akn/ontology/allot/Reference> .
+_:genid28 owl:allValuesFrom <https://w3id.org/akn/ontology/allot/Reference> .
 
 :ValueInTimeAndContext dc:description """This class is based on a particular ontology pattern called Time-indexed Value in Context (http://www.essepuntato.it/2012/04/tvc). It has been used by several ontologies for describing values that can be assigned/held by an entity at different times and according to different contexts. Notable ontologies that are using it are the Publishing Roles Ontology (PRO, http://purl.org/spar/pro) and the Publishing Status Ontology (PSO, http://purl.org/spar/pso).
 
@@ -1379,8 +1802,36 @@ More information are available at the following paper:
 
 Peroni, S., Shotton, D., Vitali, F. (2012). Scholarly publishing and the Linked Data: describing roles, statuses, temporal and contextual extents. In Sack, H., Pellegrini, T. (Eds.), Proceedings of the 8th International Conference on Semantic Systems (i-Semantics 2012): 9-16. New York, New York, USA: ACM. DOI: http://dx.doi.org/10.1145/2362499.2362502 (Open Access version available at http://speroni.web.cs.unibo.it/publications/peroni-2012-scholarly-publishing-linked.pdf)"""@en ;
 	rdfs:comment "The situation that involves an entity (with the object property tvc:hasValue) having a particular value (tvc:withValue) associated during a certain time interval (tvc:atTime) and within a specific context (tvc:withinContext)."@en ;
-	rdfs:isDefinedBy <https://w3id.org/akn/ontology/undo> ;
+	rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> ;
 	rdfs:label "value in time and context"@en .
+# 
+# https://w3id.org/un/ontology/undo/Workflow
+
+:Workflow a owl:Class ;
+	rdfs:subClassOf pwo:Workflow , <https://w3id.org/akn/ontology/allot/Concept> , _:genid30 .
+
+_:genid30 a owl:Restriction ;
+	owl:onProperty pwo:hasStep ;
+	owl:allValuesFrom :Step .
+
+:Workflow rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> .
+# 
+# https://w3id.org/un/ontology/undo/WorkflowExecution
+
+:WorkflowExecution a owl:Class ;
+	rdfs:subClassOf pwo:WorkflowExecution , <https://w3id.org/akn/ontology/allot/Event> , _:genid31 .
+
+_:genid31 a owl:Restriction ;
+	owl:onProperty pwo:executes ;
+	owl:allValuesFrom :Workflow .
+
+:WorkflowExecution rdfs:subClassOf _:genid32 .
+
+_:genid32 a owl:Restriction ;
+	owl:onProperty pwo:involvesAction ;
+	owl:allValuesFrom :Action .
+
+:WorkflowExecution rdfs:isDefinedBy <https://w3id.org/un/ontology/undo> .
 # 
 # 
 # 
