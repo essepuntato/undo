@@ -5,6 +5,12 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix lan: <http://id.loc.gov/vocabulary/iso639-1/> .
 @prefix oa: <http://www.w3.org/ns/oa#> .
+@prefix part:  <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#> .
+@prefix pwo: <http://purl.org/spar/pwo/> .
+@prefix taskex: <http://www.ontologydesignpatterns.org/cp/owl/taskexecution.owl#> .
+@prefix ti: <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#> .
+@prefix frbr: <http://purl.org/vocab/frbr/core#> .
+@prefix tvc: <http://www.essepuntato.it/2012/04/tvc/> .
 
 # Linking to the main ontology
 <https://w3id.org/akn/ontology/undo-abox> a owl:Ontology ;
@@ -18,15 +24,13 @@
 # 3. the United Nations Conference on Human Settlements (Habitat II).
 
 :a-res-50-100-1996-02-02 a undo:Resolution ;
-	allot:mentions
-		:a-res-47-180-1992-12-22 ,
-		:government-of-turkey ,
-		:habitat-ii .
+    allot:mentions
+        :a-res-47-180-1992-12-22 ,
+        :government-of-turkey ,
+        :habitat-ii .
 
 :a-res-47-180-1992-12-22 a undo:Resolution .
-
 :government-of-turkey a allot:Organization .
-
 :habitat-ii a allot:Event .
 
 
@@ -39,38 +43,39 @@
 #    Settlements (Habitat II).
 
 :a-res-50-100-1996-02-02 a undo:Resolution .
-
 :a-res-47-180-1992-12-22 a undo:Resolution .
-
 :general-assembly a allot:Organization .
-
 :organization a allot:Organization .
-
 :government-of-turkey a allot:Organization .
-
 :habitat-ii a allot:Event .
-
 :recall a allot:Concept .
-
 :reiterate-its-gratitude a allot:Concept .
-
 :note-the-progress a allot:Concept .
 
+# This relation describes the General Assembly recalling the
+ # resolution A/RES/47/180.
 :relation-1 a undo:Relation ;
-	undo:hasProponent :general-assembly ;
-	undo:hasSemantics :recall ;
-	undo:hasReceiver :a-res-47-180-1992-12-22 .
+    undo:hasProponent :general-assembly ;
+    undo:hasSemantics :recall ;
+    undo:hasReceiver :a-res-47-180-1992-12-22 .
 
+# This relation describes the General Assembly reiterating its gratitude 
+ # to the Government of Turkey.
 :relation-2 a undo:Relation ;
-	undo:hasProponent :general-assembly ;
-	undo:hasSemantics :reiterate-its-gratitude ;
-	undo:hasReceiver :government-of-turkey .
+    undo:hasProponent :general-assembly ;
+    undo:hasSemantics :reiterate-its-gratitude ;
+    undo:hasReceiver :government-of-turkey .
 
+# This relation describes the General Assembly noting the progress for the 
+ # preparation of Habitat II.
 :relation-3 a undo:Relation ;
-	undo:hasProponent :general-assembly ;
-	undo:hasSemantics :note-the-progress ;
-	undo:hasReceiver :habitat-ii .
+    undo:hasProponent :general-assembly ;
+    undo:hasSemantics :note-the-progress ;
+    undo:hasReceiver :habitat-ii .
 
+# The following are a three annotations that attached the aforementioned 
+# relations to the resolution A/RES/50/100 from which they have been
+ # extracted.
 :annotation-1-a-res-50-100-1996-02-02 a undo:Annotation ;
     oa:hasBody :relation-1 ;
     oa:hasTarget :a-res-50-100-1996-02-02 .
@@ -91,17 +96,25 @@
 # higher-level concept of taking a decision, even if this aspect has
 # not been made formally explicit in the document itself.
 
+# The resolution A/RES/50/100 that has been made available in two different
+# versions according to two languages.
 :a-res-50-100-1996-02-02 a undo:Resolution ;
     allot:hasRealization
         :a-res-50-100-1996-02-02-en ,
         :a-res-50-100-1996-02-02-es .
 
+# The English version of the resolution.
 :a-res-50-100-1996-02-02-en a undo:DocumentVersion ;
     dcterms:language lan:en .
 
+# The Spanish version of the resolution.
 :a-res-50-100-1996-02-02-es a undo:DocumentVersion ;
     dcterms:language lan:es .
 
+# The definition of an English term describing the concept of 
+# ‘taking a decision’ and two distinct annotation that attach it
+# to the same English version of the resolution – since the term
+# appears twice in the document.
 :decides a allot:Term ;
     undo:hasRelatedConcept :taking-a-decision .
 
@@ -113,6 +126,8 @@
     oa:hasBody :decides ;
     oa:hasTarget :a-res-50-100-1996-02-02-en .
 
+# A similar description of the previous term, but by means of its Spanish
+# translation.
 :decide a allot:Term ;
     undo:hasRelatedConcept :taking-a-decision .
 
