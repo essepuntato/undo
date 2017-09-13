@@ -1731,7 +1731,7 @@ What was the last entities produced by all the workflow executions?
         <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl>,
         oa:,
         <https://w3id.org/akn/ontology/allot/2017-04-21> ;
-    owl:priorVersion : ;
-    owl:versionIRI : ;
+    owl:priorVersion <https://w3id.org/un/ontology/undo/2017-04-21> ;
+    owl:versionIRI <https://w3id.org/un/ontology/undo/2017-06-01> ;
     owl:versionInfo "June 1, 2017"@en .
 

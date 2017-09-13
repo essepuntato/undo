@@ -22,7 +22,9 @@
 @base <https://w3id.org/un/ontology/undo> .
 
 <https://w3id.org/un/ontology/undo> rdf:type owl:Ontology ;
-                                     owl:versionIRI : ;
+                                     owl:priorVersion <https://w3id.org/un/ontology/undo/2017-04-21> ;
+                                     owl:versionIRI <https://w3id.org/un/ontology/undo/2017-06-01> ;
+                                     owl:versionInfo "June 1, 2017"@en ;
                                      owl:imports <https://w3id.org/akn/ontology/allot/2017-04-21> ,
                                                  <http://www.essepuntato.it/2012/04/tvc> ,
                                                  oa: ,
@@ -34,7 +36,6 @@
                                                     "HLCM Working Group on Document Standards of the United Nations" ;
                                      <http://purl.org/vocab/vann/preferredNamespacePrefix> "undo" ;
                                      rdfs:label "UNDO"@en ;
-                                     owl:priorVersion : ;
                                      dc:description """The parliamentary, normative and judicial documents published by the United Nations system of organizations, from now on “UN Documents”, are full of references to real-world objects and concepts, such as other documents, people, organizations, legal terms, and roles. Such entities are linked with the actual content of the document, even by means of different terms being the UN documents often issued in several official languages.
 
 The HLCM Working Group on Document Standards was tasked to define a common set of guidelines for the semantic mark-up of UN documents based on the [Akoma Ntoso standard](http://akomantoso.org) of the LegalDocumentML Technical Committee of the Organization for the Advancement of Structured Information Standards (OASIS), which has defined an open document standard for parliamentary, legislative, administrative, executive, and judicial documents.
@@ -970,8 +971,7 @@ What was the last entities produced by all the workflow executions?
     }"""@en ;
                                      dc:title "The United Nations System Document Ontology (UNDO)"@en ;
                                      dc:rights "This work is distributed under a Creative Commons Attribution License (http://creativecommons.org/licenses/by/4.0/)."@en ;
-                                     <http://purl.org/vocab/vann/preferredNamespaceUri> "https://w3id.org/un/ontology/undo/" ;
-                                     owl:versionInfo "June 1, 2017"@en .
+                                     <http://purl.org/vocab/vann/preferredNamespaceUri> "https://w3id.org/un/ontology/undo/" .
 
 #################################################################
 #    Object Properties
